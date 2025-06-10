@@ -1,0 +1,29 @@
+Fetching bafybeigvgzoolc3drupxhlevdp2ugqcrbcsqfmcek2zxiw5wctk3xjpjwy
+
+Querying indexer for bafybeigvgzoolc3drupxhlevdp2ugqcrbcsqfmcek2zxiw5wctk3xjpjwy...
+Found 2 storage provider candidate(s) in the indexer:
+
+	12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws, Protocols: [transport-graphsync-filecoinv1]
+
+	12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws, Protocols: [transport-ipfs-gateway-http]
+
+Retrieving from [12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws] (started-retrieval)...
+
+Retrieving from [12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws] (connected-to-provider)...
+
+Retrieving from [12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws] (started-retrieval)...
+
+Retrieving from [12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws] (first-byte-received)...
+
+Received 1 blocks / 60 B...
+Received 2 blocks / 15 KiB...
+Retrieval failure from indexer: context canceled
+2025-06-10T11:12:40.448-0400	INFO	lassie/retriever	retriever/retriever.go:180	Successfully retrieved from miner 12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws for bafybeigvgzoolc3drupxhlevdp2ugqcrbcsqfmcek2zxiw5wctk3xjpjwy
+	Duration: 377.18639ms
+	Bytes Received: 15 KiB
+	Total Payment: 0
+
+Fetched [bafybeigvgzoolc3drupxhlevdp2ugqcrbcsqfmcek2zxiw5wctk3xjpjwy] from [12D3KooWMdvJ2PT8Rph2UYUneXwGKFu5DfUNbmkZBziJweXV6Nws]:
+	Duration: 377.18639ms
+	  Blocks: 2
+	   Bytes: 15 KiB
