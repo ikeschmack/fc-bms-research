@@ -7,7 +7,7 @@ HEADERS = {
 }
 all_jobs = []
 
-with open("job_data.json", "r") as f:
+with open("json/job_data.json", "r") as f:
     data = json.load(f)
 f.close()
 if not data:

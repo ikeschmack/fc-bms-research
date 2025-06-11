@@ -140,9 +140,51 @@ Simple script to extract domains from URLs, used LLM assistance
 ### How to run
 
 ```bash
-make domain
+make job_domain.json
+```
+
+### job_domain.json Formatting
+```json
+...
+{"domain":"x.x.x.x"}
+{"domain":"x.x.x.x"}
+...
 ```
 
 ### Notes
 - A piece of what will become the scraper to grab the location of these nodes
+- Has NOT been tested with IPv6 addresses
+---------------------------------------------------------------------------------
+## ip-to-location.py
+Simple script to get location data from ip addresses
+Uses [IPinfo.io](https://ipinfo.io/) API to translate IP into geographic data
+- Produces a list of geographic information in geo-location.json
+
+
+
+### How to run
+
+```bash
+make geo-location.json
+```
+
+### geo-location.json Formatting
+
+```json
+
+{
+    "ip": "x.x.x.x",
+    "asn": "AS0000",
+    "as_name": "Communications corperation",
+    "as_domain": "example.com",
+    "country_code": "XX",
+    "country": "Country",
+    "continent_code": "XX",
+    "continent": "Continent"
+}
+
+```
+
+### Notes
+- This data will be used in conjunction with BMS data to map the global bandwidth distribution
 ---------------------------------------------------------------------------------

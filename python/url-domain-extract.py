@@ -5,15 +5,19 @@ import matplotlib.pyplot as plt
 import json
 
 # Load jobs into a DataFrame
-with open("job_with_subjobs.json", "r") as f:
+with open("json/job_with_subjobs.json", "r") as f:
     data = json.load(f)
 if not data:
     print("No jobs to process.")
     exit()
 df = pd.json_normalize(data)
 # Extract the domain from the URL
-df['domain'] = df['url'].str.extract(r'https?://([^/]+)')
+df['domain'] = df['url'].str.extract(r'https?://([^/:]+)')
 # Create json file with only the domain names
 df_domain = df[['domain']].drop_duplicates()
-df_domain.to_json("job_domain.json", orient="records", lines=True)
 
+#Temporary remove non-IP address domains
+df_domain = df_domain[df_domain['domain'].str.match(r'^((?:\d{1,3}\.){3}\d{1,3})$')]
+# End temporary
+
+df_domain.to_json("json/job_domain.json", orient="records", lines=True)
