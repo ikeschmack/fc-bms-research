@@ -131,8 +131,18 @@ make cdf.png
 - Not beautiful, but it will be used as a jumping off point to analyze further
 - Based on first glances, it appears very similar to the results from the exploratory project, but this CDF needs to be vetted further to ensure that it behaves exactly the same way, and should be cast into the same scale.
 ---------------------------------------------------------------------------------
-## geo-variation.py
+## url-domain-extract.py
+Simple script to extract domains from URLs, used LLM assistance
+- Produces a duplicate-free list of the domains in job_with_subjobs.json
+- List is in the file job_domain.json
 
-Not yet functional
 
+### How to run
+
+```bash
+make domain
+```
+
+### Notes
+- A piece of what will become the scraper to grab the location of these nodes
 ---------------------------------------------------------------------------------
