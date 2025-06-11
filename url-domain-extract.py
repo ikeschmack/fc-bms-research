@@ -17,5 +17,3 @@ df['domain'] = df['url'].str.extract(r'https?://([^/]+)')
 df_domain = df[['domain']].drop_duplicates()
 df_domain.to_json("job_domain.json", orient="records", lines=True)
 
-# Save the DataFrame to a Json file
-df_domain.to_json("job_domain.json", orient="records", lines=True)

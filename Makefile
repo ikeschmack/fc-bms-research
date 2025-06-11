@@ -6,7 +6,7 @@ all:
 
 clean:
 	echo "Cleaning up..."
-	rm -f job_data.json job_with_subjobs.json cdf.png
+	rm -f job_data.json job_with_subjobs.json cdf.png job_domain.json
 
 # Extract job data from API and save to job_data.json
 job_data.json: data-extract.py
@@ -24,3 +24,8 @@ cdf.png: job_with_subjobs.json
 	echo "Generating CDF from job data..."
 	python3 cdf.py job_with_subjobs.json > cdf.png
 	echo "CDF saved to cdf.png"
+
+domain: job_data.json job_with_subjobs.json
+	echo "All tasks completed successfully."
+	python3 url-domain-extract.py job_with_subjobs.json
+	echo "Domain data saved to job_domain.json"
