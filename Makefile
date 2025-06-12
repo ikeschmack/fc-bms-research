@@ -30,6 +30,7 @@ job_domain.json: job_with_subjobs.json
 	python3 python/url-domain-extract.py json/job_with_subjobs.json
 	echo "Domain data saved to job_domain.json"
 
+# Only run geo-location IF data is lost. DO not want to waste api calls
 geo-location.json: job_domain.json
 	echo "Extracting geolocation data..."
 	python3 python/ip-to-location.py json/job_domain.json > json/geo-location.json
