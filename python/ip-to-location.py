@@ -16,6 +16,7 @@ if not data:
     print("No IPs to fetch.")
     exit()
 
+retrieved = []
 for entry in data:
     ip = entry.get('domain')  # Assuming the domain field contains the IP address
     if not ip:
@@ -27,7 +28,13 @@ for entry in data:
     if response.status_code != 200:
         print(f"Request failed (status {response.status_code}): {response.text}")
         continue
-    retrieved = response.json()
-    print(json.dumps(retrieved, indent=4))
+    retrieved.append(response.json())
+
+# Save the retrieved data to a JSON file
+with open("json/geo-location.json", "w") as f:
+    json.dump(retrieved, f, indent=4)
+
+
+
 
 
