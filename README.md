@@ -135,6 +135,7 @@ make cdf.png
 Simple script to extract domains from URLs, used LLM assistance
 - Produces a duplicate-free list of the domains in job_with_subjobs.json
 - List is in the file job_domain.json
+- Hardcoded way to change domain names to IP addresses
 
 
 ### How to run
@@ -188,3 +189,25 @@ make geo-location.json
 ### Notes
 - This data will be used in conjunction with BMS data to map the global bandwidth distribution
 ---------------------------------------------------------------------------------
+## cdf-max-mean.py
+Creates a CDF using second by second logs in the old worker data.
+- CDF displays the differences between the Max, 90th Percentile, and Median with the Mean
+- The purpose of this is to assess whether bandwidth calculations are satasfactory in the BMS
+- Used old code and some LLM assistance
+
+### How to run
+
+```bash
+make calculation_cdf.png
+```
+
+### Notes
+- May be iterated on
+---------------------------------------------------------------------------------
+## provider-contribution-bar.py
+
+### Unfinished
+
+---------------------------------------------------------------------------------
+
+
