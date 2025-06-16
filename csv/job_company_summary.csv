@@ -39,13 +39,13 @@ ef586e63-3e57-4f3c-9c54-d560f03fc5fb,http://47.254.47.133:58421/piece/baga6ea4se
 041b3bbb-48e7-4ee1-8254-2218698ea01e,http://222.214.219.199:7777/piece/baga6ea4seaqllr6klqlddwkdj4jklvf7owoupjygz7rvs2aih4iowzmw7xvlefq,China,11.959750875511004,CHINANET-BACKBONE,us_east
 4e39288f-028a-4649-8ddc-2846acceb89e,http://162.219.87.217:34985/piece/baga6ea4seaqmwioqo3ggow2yh3dk26gnduv6lkpsmekhiquxwbthdrzx6rbiwii,Hong Kong,898.1719232001124,China Unicom Global,us_east
 f7cf7c9a-c220-4372-bd2e-5da8e1ee3fa3,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,0.0,China Unicom Global,singapore
-b1ea0b1e-9395-4a5f-b309-a82bb841d6e6,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,38438.0352851433,Unknown Company,us_east
-bc57e6d1-9c8c-4893-944c-6d99c26b4e83,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,38573.25574786522,Unknown Company,us_east
-e6883fc1-6834-445a-ad91-aaa669cde560,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,38488.26256878142,Unknown Company,us_east
-dc97e2f8-d1ae-4119-9d6f-bc4ea1e0a4a0,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,15328.092441879846,Unknown Company,us_east
-81b009b0-0923-46a8-a144-17e1af44a5f0,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7679.348679982002,Unknown Company,us_east
-cb049a79-61dc-4697-b07b-e2138d92a9dd,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7554.513131828878,Unknown Company,us_east
-b0d43fe9-4fb1-4296-ae22-a708f149aff3,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7249.528665387902,Unknown Company,us_east
+b1ea0b1e-9395-4a5f-b309-a82bb841d6e6,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,38438.0352851433,Amazon.com,us_east
+bc57e6d1-9c8c-4893-944c-6d99c26b4e83,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,38573.25574786522,Amazon.com,us_east
+e6883fc1-6834-445a-ad91-aaa669cde560,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,38488.26256878142,Amazon.com,us_east
+dc97e2f8-d1ae-4119-9d6f-bc4ea1e0a4a0,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,15328.092441879846,Amazon.com,us_east
+81b009b0-0923-46a8-a144-17e1af44a5f0,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7679.348679982002,Amazon.com,us_east
+cb049a79-61dc-4697-b07b-e2138d92a9dd,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7554.513131828878,Amazon.com,us_east
+b0d43fe9-4fb1-4296-ae22-a708f149aff3,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7249.528665387902,Amazon.com,us_east
 bfc91625-a85a-4806-b066-54b6cf5d9acd,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,2523.2249925053165,China Unicom Global,singapore
 2c4664c4-6c17-40ef-9a2a-8468babaa27c,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,5206.199454507558,China Unicom Global,hong_kong
 c588366d-42b4-4227-8250-6e4898aac41e,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,792.0792154746481,China Unicom Global,hong_kong
@@ -53,7 +53,7 @@ c588366d-42b4-4227-8250-6e4898aac41e,http://203.160.91.76:11876/piece/baga6ea4se
 ee34f8ee-e376-40bf-9afc-4b6e3f4bca54,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,5192.671683742079,China Unicom Global,singapore
 8fc0e53e-5f1e-4e7b-b539-66502407b6f1,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,3186.382804213316,China Unicom Global,singapore
 00ffb82c-e6d6-4d78-a278-acb216fde739,http://203.160.91.76:11876/piece/baga6ea4seaqeegsfeyqlyvccmnklnxab2sl3da7zsguqgaq7gc57fthps2ndudi,Hong Kong,874.5769020661583,China Unicom Global,us_east
-109e43f4-dc51-44df-8ce6-591ec169a130,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7742.334560757406,Unknown Company,us_east
+109e43f4-dc51-44df-8ce6-591ec169a130,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7742.334560757406,Amazon.com,us_east
 40f92fe0-aa82-402f-8fce-9486841745aa,http://157.148.101.187:58420/piece/baga6ea4seaqpl36xzc5tjhqsfgi243e52fvzlgrugsc6xyfbfq4fttcymvnrgna,China,247.8116709787265,China Unicom Guangdong IP network,us_east
 f6f76215-da14-4f20-872c-8a890bf9aaad,http://157.148.101.187:58420/piece/baga6ea4seaqpl36xzc5tjhqsfgi243e52fvzlgrugsc6xyfbfq4fttcymvnrgna,China,449.2704357475404,China Unicom Guangdong IP network,singapore
 45211aa4-334d-4511-a2d5-64dd635af558,http://157.148.101.187:58420/piece/baga6ea4seaqpl36xzc5tjhqsfgi243e52fvzlgrugsc6xyfbfq4fttcymvnrgna,China,383.051894712604,China Unicom Guangdong IP network,hong_kong
@@ -69,20 +69,20 @@ c204528f-31a3-4f5c-a142-30632e18affc,http://122.114.2.214:7777/piece/baga6ea4sea
 e7cfd0e0-cb64-4cb6-be33-e736988fd089,http://222.214.219.199:7777/piece/baga6ea4seaqllr6klqlddwkdj4jklvf7owoupjygz7rvs2aih4iowzmw7xvlefq,China,11.462851386544957,CHINANET-BACKBONE,us_east
 5ab38e34-c1a6-478e-ae9b-b502608205e5,http://222.214.219.199:7777/piece/baga6ea4seaqllr6klqlddwkdj4jklvf7owoupjygz7rvs2aih4iowzmw7xvlefq,China,18.069544474499345,CHINANET-BACKBONE,hong_kong
 61e021aa-be64-478c-b629-2b765c056351,http://222.214.219.199:7777/piece/baga6ea4seaqllr6klqlddwkdj4jklvf7owoupjygz7rvs2aih4iowzmw7xvlefq,China,19.79869130367308,CHINANET-BACKBONE,singapore
-02d466c5-ba4f-4bed-8651-7efbbed94d54,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,371.51754980353735,Unknown Company,hong_kong
-8a3107e8-772e-41ac-8d90-550684e1c371,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,376.8423940260925,Unknown Company,singapore
-0ed9699b-b898-458d-9e49-907e4c907d65,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,1056.6866530329792,Unknown Company,us_east
-29ec95d8-cbee-4907-8444-3f12da6a7426,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,836.2518852771716,Unknown Company,us_east
-aef4f589-395e-4fed-b4a0-90e6ad20134a,https://f010479.twinquasar.io/piece/baga6ea4seaqfhg3glmn7wfousy3tyemhferh3qr6p4yynuyjdnkl3ytyuerhynq,France,63.59300537594551,Unknown Company,us_east
+02d466c5-ba4f-4bed-8651-7efbbed94d54,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,371.51754980353735,AT&T Enterprises,hong_kong
+8a3107e8-772e-41ac-8d90-550684e1c371,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,376.8423940260925,AT&T Enterprises,singapore
+0ed9699b-b898-458d-9e49-907e4c907d65,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,1056.6866530329792,AT&T Enterprises,us_east
+29ec95d8-cbee-4907-8444-3f12da6a7426,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,836.2518852771716,AT&T Enterprises,us_east
+aef4f589-395e-4fed-b4a0-90e6ad20134a,https://f010479.twinquasar.io/piece/baga6ea4seaqfhg3glmn7wfousy3tyemhferh3qr6p4yynuyjdnkl3ytyuerhynq,France,63.59300537594551,CELESTE SAS,us_east
 e21fde0b-243c-42c1-81c3-32b49651dbdd,http://47.254.47.133:58420/piece/baga6ea4seaqbuiacse3m66bz3wze265rld6q642va7ngfl7cxyaw2juzboo6wpq,United States,1.055329483679471,"Alibaba (US) Technology Co., Ltd.",hong_kong
 3ed65aec-5697-404b-b869-567804eec977,http://47.254.47.133:58420/piece/baga6ea4seaqbuiacse3m66bz3wze265rld6q642va7ngfl7cxyaw2juzboo6wpq,United States,1.0446645589890744,"Alibaba (US) Technology Co., Ltd.",us_east
-f1743201-f2e6-422e-b94f-44561cc3aa37,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,703.5171783471026,Unknown Company,us_east
-3c8196f3-313b-4a84-94a1-c49684dc10fe,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,946.0174528530448,Unknown Company,us_east
+f1743201-f2e6-422e-b94f-44561cc3aa37,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,703.5171783471026,AT&T Enterprises,us_east
+3c8196f3-313b-4a84-94a1-c49684dc10fe,https://cesginc.com/piece/baga6ea4seaqlmf34rja2d5erth6uge6hixwoca3o5y2mphh2ko2d4qgcw55u4mq,United States,946.0174528530448,AT&T Enterprises,us_east
 023624df-e299-4cdd-8228-2c529182642d,http://54.209.183.46:7777/piece/baga6ea4seaqcv5sjnvugabhwnipchkciutpo5nddrb3ddkj5qzmqnu5yregi4pi,United States,56.05285719429087,"Amazon.com, Inc.",us_east
 4625d744-d723-4fd3-914f-7f2847c566d1,http://54.158.66.216:7777/piece/baga6ea4seaqi33pu74dal72texuh7cdqgzl3v3w2voqcusyca3jjtbxx2uokeci,United States,79.83119787524795,"Amazon.com, Inc.",us_east
-75579f18-65d8-4c61-9a92-fe51ea6bd7c5,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7650.006317747416,Unknown Company,us_east
-7ef16b49-a940-4b03-ba4b-d49f1bbaf599,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7681.174002172475,Unknown Company,us_east
-20e7f2d4-d853-4ce4-816d-25a2a8a0a73b,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7631.07556396404,Unknown Company,us_east
+75579f18-65d8-4c61-9a92-fe51ea6bd7c5,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7650.006317747416,Amazon.com,us_east
+7ef16b49-a940-4b03-ba4b-d49f1bbaf599,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7681.174002172475,Amazon.com,us_east
+20e7f2d4-d853-4ce4-816d-25a2a8a0a73b,https://ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com/test.zip,United States,7631.07556396404,Amazon.com,us_east
 125abaf4-204f-43bc-844e-29b7de0d0ef8,http://54.158.66.216:7777/piece/baga6ea4seaqi33pu74dal72texuh7cdqgzl3v3w2voqcusyca3jjtbxx2uokeci,United States,0.0,"Amazon.com, Inc.",us_east
 887bf991-5683-4bfb-8e38-09e2d344a333,http://157.148.101.187:58420/piece/baga6ea4seaqev6jwzmjtsppdyhaocy4ao5ky5e2lbygxvskyam7uaneemtw54dy,China,164.69888122158795,China Unicom Guangdong IP network,hong_kong
 e9f94805-e0ba-430d-ab6d-eb022ce9e6d5,http://157.148.101.187:58420/piece/baga6ea4seaqev6jwzmjtsppdyhaocy4ao5ky5e2lbygxvskyam7uaneemtw54dy,China,161.88626124260497,China Unicom Guangdong IP network,singapore
@@ -173,6 +173,6 @@ c854ca33-b6dd-4e56-bb20-385e8f712b25,http://207.189.117.196:26195/piece/baga6ea4
 f84dd79d-0bfb-4c3b-9d43-a8a7dce26fa7,http://120.236.8.226:6940/piece/baga6ea4seaqczxubtrvdzqk2llihfl2i4wrda7qo5r65i7zco67xhgbp2trpily,China,97.66437185336213,China Mobile communications corporation,us_east
 6fdc8043-0101-450a-9733-5a5c54de69e0,http://120.236.8.226:6940/piece/baga6ea4seaqczxubtrvdzqk2llihfl2i4wrda7qo5r65i7zco67xhgbp2trpily,China,93.43983200789604,China Mobile communications corporation,us_east
 e1032366-5276-4375-9262-a854b777054e,http://120.236.8.226:6940/piece/baga6ea4seaqczxubtrvdzqk2llihfl2i4wrda7qo5r65i7zco67xhgbp2trpily,China,93.5836034566292,China Mobile communications corporation,asia
-47e83c0c-7642-4ba6-9c7e-4c0e28fe5e76,http://yablufc.ddns.net:7878/piece/baga6ea4seaqb4lqf6fzjomlnhn3jahwxg52ewgcbjelzyflqjjuc7by224hbwla,United States,0.0,Unknown Company,asia
-d0b3872b-b68c-417f-ac20-a9ec83b07a35,http://yablufc.ddns.net:7878/piece/baga6ea4seaqb4lqf6fzjomlnhn3jahwxg52ewgcbjelzyflqjjuc7by224hbwla,United States,96.51165520650068,Unknown Company,all
-7c626bba-3cbc-4664-a2e6-bfb7834978b5,http://yablufc.ddns.net:7878/piece/baga6ea4seaqb4lqf6fzjomlnhn3jahwxg52ewgcbjelzyflqjjuc7by224hbwla,United States,93.18294313194184,Unknown Company,us_east
+47e83c0c-7642-4ba6-9c7e-4c0e28fe5e76,http://yablufc.ddns.net:7878/piece/baga6ea4seaqb4lqf6fzjomlnhn3jahwxg52ewgcbjelzyflqjjuc7by224hbwla,United States,0.0,Columbia University,asia
+d0b3872b-b68c-417f-ac20-a9ec83b07a35,http://yablufc.ddns.net:7878/piece/baga6ea4seaqb4lqf6fzjomlnhn3jahwxg52ewgcbjelzyflqjjuc7by224hbwla,United States,96.51165520650068,Columbia University,all
+7c626bba-3cbc-4664-a2e6-bfb7834978b5,http://yablufc.ddns.net:7878/piece/baga6ea4seaqb4lqf6fzjomlnhn3jahwxg52ewgcbjelzyflqjjuc7by224hbwla,United States,93.18294313194184,Columbia University,us_east
