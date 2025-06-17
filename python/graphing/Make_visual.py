@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 import os
 
 # Define file paths
-INPUT_CSV_FILE = '/Users/sofiahirao/fc-bms-research-1/csv/job_company_summary.csv'
+INPUT_CSV_FILE = '/csv/job_company_summary.csv'
 OUTPUT_IMAGE_FILE = 'bandwidth_flow_provider_country_to_routing_key_sankey.png' # Updated output filename
 
 # --- Configuration for Visualization Improvement ---
