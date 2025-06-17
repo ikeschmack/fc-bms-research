@@ -1,0 +1,601 @@
+subjob_id,job_id,status,type,details,deadline_at,worker_count
+4e15199d-d8e6-4466-becd-028121fefab6,474e12cb-a3cf-4819-83f1-969dd26f4052,Canceled,Scaling,{'topic': 'hong_kong'},,0
+8bf85872-f19c-4eaa-bf9b-efd97badbfb9,474e12cb-a3cf-4819-83f1-969dd26f4052,Canceled,CombinedDHP,{'partial': 80},,0
+b8147dfa-3588-46f1-9226-a2e8a11e275c,474e12cb-a3cf-4819-83f1-969dd26f4052,Canceled,CombinedDHP,{},,0
+f5526989-5fde-4a15-920d-07045096e4e6,d4cf7286-95f7-42cf-811c-aec161b699a5,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-29T16:45:33.526069Z,0
+33a01779-b8cd-4fad-8b2e-67c93cfabdcd,d4cf7286-95f7-42cf-811c-aec161b699a5,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+0669d764-2c85-45e5-97b7-a85424afa7c7,d4cf7286-95f7-42cf-811c-aec161b699a5,Failed,CombinedDHP,{'error': 'No workers online'},,0
+e561967e-22cd-4ec4-808d-2bb437fef0df,bd6c9540-117d-498c-8471-7e7e51979971,Canceled,Scaling,{'topic': 'us_east'},,0
+e8ee33a5-777f-48f9-b116-6d5b89800cfe,bd6c9540-117d-498c-8471-7e7e51979971,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-29T14:54:29.075032Z,8
+f388d0bb-eb0e-4191-b23a-9dbfbd6b27b6,bd6c9540-117d-498c-8471-7e7e51979971,Completed,CombinedDHP,{'workers_count': 10},2025-05-29T14:55:49.159767Z,10
+d9ec4d4d-ff77-425d-8389-06b4c383cd36,254a20c3-c22f-4db6-a1cb-a811e26f4e07,Canceled,Scaling,{'topic': 'us_east'},2025-05-29T14:54:42.357700Z,0
+b5414e12-dd5a-4ca1-bd15-e06e589380e4,254a20c3-c22f-4db6-a1cb-a811e26f4e07,Canceled,CombinedDHP,{'partial': 80},,0
+d81b91e9-d1cf-42af-a22a-a986a9ffcc02,254a20c3-c22f-4db6-a1cb-a811e26f4e07,Canceled,CombinedDHP,{},,0
+f944efcd-8de9-454d-8891-5d5e049edec2,61828f8a-b2fc-4800-b817-544c6b0e8d55,Completed,Scaling,{'topic': 'us_east'},2025-05-26T22:00:34.700426Z,0
+5facdd7d-043b-4778-bb3c-1e5dd742866e,61828f8a-b2fc-4800-b817-544c6b0e8d55,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T21:38:35.769471Z,1
+b3df2c8e-7c7e-4920-ad02-fbc32d15a318,61828f8a-b2fc-4800-b817-544c6b0e8d55,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T21:39:05.807366Z,8
+4ab1c67f-0fef-4f58-9b69-1bd4a602f8ed,61828f8a-b2fc-4800-b817-544c6b0e8d55,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T21:39:35.846212Z,10
+89a9c65a-8f39-4110-ab9f-83b70e229009,148a35ae-6492-4ad3-af9b-663c30536279,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T21:35:13.030382Z,0
+1205d206-bf85-44b2-974a-004c520632cf,148a35ae-6492-4ad3-af9b-663c30536279,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+0dcb0f0a-1f77-40aa-9e3d-888d386bd9af,148a35ae-6492-4ad3-af9b-663c30536279,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+9914e6e4-7d14-4eee-919c-75f99bf6616e,148a35ae-6492-4ad3-af9b-663c30536279,Failed,CombinedDHP,{'error': 'No workers online'},,0
+ebe7db46-73c9-43f4-a638-891cec27a2d8,8efbd3e5-b1b5-402e-be37-3d0d5c335ee5,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T21:09:49.065797Z,0
+766425f9-311f-486f-a55e-a6865b6b2784,8efbd3e5-b1b5-402e-be37-3d0d5c335ee5,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+e115147a-7aa1-4b2c-828a-1fc9b4a60166,8efbd3e5-b1b5-402e-be37-3d0d5c335ee5,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+2f53daef-6069-4bcf-8b9a-d9ced96fa8e5,8efbd3e5-b1b5-402e-be37-3d0d5c335ee5,Failed,CombinedDHP,{'error': 'No workers online'},,0
+19c7ff82-0ba7-4a3a-9727-63ca1bf3e8a1,a62bf1f3-3f41-484c-919f-337a99d3f3b3,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T20:44:25.243638Z,0
+f1511843-9799-4b76-89c4-1f310f0dce58,a62bf1f3-3f41-484c-919f-337a99d3f3b3,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+20845598-67e6-463f-8d56-59009d58b92a,a62bf1f3-3f41-484c-919f-337a99d3f3b3,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+bd2288ab-a0d2-4ecd-a176-215cc6866822,a62bf1f3-3f41-484c-919f-337a99d3f3b3,Failed,CombinedDHP,{'error': 'No workers online'},,0
+46f25aa0-e2b0-4c2d-bdb9-f91a41c64653,9e861255-ebb2-4b5e-a821-c88554851f7e,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T20:18:56.354653Z,0
+a468d623-726e-4166-a0dd-29e10fee56b0,9e861255-ebb2-4b5e-a821-c88554851f7e,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+be8c3ff1-912b-4b85-99a3-1eb5eb45f587,9e861255-ebb2-4b5e-a821-c88554851f7e,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+41806982-ebf7-4db7-a70a-0afd23754591,9e861255-ebb2-4b5e-a821-c88554851f7e,Failed,CombinedDHP,{'error': 'No workers online'},,0
+9289a23e-c0cf-40d8-af64-2674bb900fc9,ccac1545-9098-4be0-a75a-1b15290b3ae6,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T19:53:37.703572Z,0
+54abfe56-4f1e-4037-b4c6-a4941162ea10,ccac1545-9098-4be0-a75a-1b15290b3ae6,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+793d8c27-7dbf-46cb-837b-21b706417430,ccac1545-9098-4be0-a75a-1b15290b3ae6,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+ec88c775-ecce-4d9b-a7e6-ae64957b89af,ccac1545-9098-4be0-a75a-1b15290b3ae6,Failed,CombinedDHP,{'error': 'No workers online'},,0
+99cb5e23-5b5c-465b-a36f-c40cb2271ce4,8557dbf7-8310-41d1-ba4a-a4bd27d3dc26,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T19:28:13.773419Z,0
+67c09900-028f-452d-a65a-3240f06f069b,8557dbf7-8310-41d1-ba4a-a4bd27d3dc26,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+b47ac2d4-5cd4-41d6-8078-b652836a9cd2,8557dbf7-8310-41d1-ba4a-a4bd27d3dc26,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+fe73814c-3738-4144-9fe4-d96a1addd86f,8557dbf7-8310-41d1-ba4a-a4bd27d3dc26,Failed,CombinedDHP,{'error': 'No workers online'},,0
+1cebfbb6-f80c-48fc-9e5f-8ded95379bd0,5c346e69-1866-4b08-9419-d87ae34153fb,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T19:02:49.848133Z,0
+afaf022a-1fbd-42d0-b028-ada1eb1022dd,5c346e69-1866-4b08-9419-d87ae34153fb,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+dea10b9c-a140-4d3e-9674-de633e7e2226,5c346e69-1866-4b08-9419-d87ae34153fb,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+8c24be53-cfd4-4f49-ae39-68db6ec9030e,5c346e69-1866-4b08-9419-d87ae34153fb,Failed,CombinedDHP,{'error': 'No workers online'},,0
+6f730caa-a21d-4264-a4ac-e229fe8cb6ad,f1f11c14-19d5-4cdc-b3eb-c8c2b58c9121,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T18:37:26.137978Z,0
+988474ef-eee8-4f12-8fa0-4364848777e8,f1f11c14-19d5-4cdc-b3eb-c8c2b58c9121,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+6413824e-5be3-435c-86cd-298f5f8ca379,f1f11c14-19d5-4cdc-b3eb-c8c2b58c9121,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+becddb67-6e8c-4e65-932f-189f2d113cbc,f1f11c14-19d5-4cdc-b3eb-c8c2b58c9121,Failed,CombinedDHP,{'error': 'No workers online'},,0
+3311556f-4d77-41e0-b830-24c42f391b0c,8a4238ad-6b9e-4959-8105-784c0659f6fe,Completed,Scaling,{'topic': 'us_east'},2025-05-26T18:35:18.553563Z,0
+5d48b120-8b3e-484c-bee0-c80a8f58e5b0,8a4238ad-6b9e-4959-8105-784c0659f6fe,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T18:13:09.592066Z,1
+303979f8-7f32-49cf-a6de-29e1e2576b86,8a4238ad-6b9e-4959-8105-784c0659f6fe,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T18:13:34.619064Z,8
+9cfebe39-6b65-4e82-b09a-b027a777f2fc,8a4238ad-6b9e-4959-8105-784c0659f6fe,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T18:14:04.665943Z,10
+fea059ce-51ee-41e7-bc8b-658a1d3a1da3,6cbb5c9e-a010-435d-885b-49db5bcbd958,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T18:09:56.816283Z,0
+7d6b33ed-f89d-43f2-b662-f43110f7b9c3,6cbb5c9e-a010-435d-885b-49db5bcbd958,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+1216a9cd-ff95-4251-91d5-5d7c462ab937,6cbb5c9e-a010-435d-885b-49db5bcbd958,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+ec9888ea-b32e-41c6-828b-312cd947ff0a,6cbb5c9e-a010-435d-885b-49db5bcbd958,Failed,CombinedDHP,{'error': 'No workers online'},,0
+8974771e-96e8-4f05-ad89-bc8c03d49f9c,44b83be8-cbce-4346-b4e1-b64348707cb0,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T17:44:32.985616Z,0
+2e32822f-e9d8-4fe4-8120-f246a7aefd8a,44b83be8-cbce-4346-b4e1-b64348707cb0,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+193d91b1-87a6-4543-9c82-0b06f63c4a06,44b83be8-cbce-4346-b4e1-b64348707cb0,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+5326f6a8-837b-4f9d-9528-89ad3320c6f1,44b83be8-cbce-4346-b4e1-b64348707cb0,Failed,CombinedDHP,{'error': 'No workers online'},,0
+5753ea7d-9575-44a6-a0e6-4cb8a3b78d60,37333d94-3012-4bcc-9bfd-4d15873af31b,Completed,Scaling,{'topic': 'us_east'},2025-05-26T17:41:05.452653Z,0
+d835600e-9215-4641-9ed0-50a9b11c926a,37333d94-3012-4bcc-9bfd-4d15873af31b,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T17:20:06.556259Z,1
+2f031337-e8ab-4676-96f1-bea5d72c80c1,37333d94-3012-4bcc-9bfd-4d15873af31b,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T17:20:31.584392Z,8
+5ac2a361-c4f0-4522-9892-76e64fa473cd,37333d94-3012-4bcc-9bfd-4d15873af31b,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T17:21:01.616076Z,10
+b4bbaf26-9adb-47f9-8db4-dea64255d5b8,e7f9b721-4c65-4830-8235-8f34675f5575,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T17:15:43.562229Z,0
+f0a57c8d-b21c-42c3-9962-fdb903edf058,e7f9b721-4c65-4830-8235-8f34675f5575,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+3d465f3a-f4e2-4dc3-aef6-a3ad79a28636,e7f9b721-4c65-4830-8235-8f34675f5575,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+6a59435a-9fbb-483c-b239-2c11e4e67ad7,e7f9b721-4c65-4830-8235-8f34675f5575,Failed,CombinedDHP,{'error': 'No workers online'},,0
+7ace7298-1b4f-45bb-929d-b65d450fff0a,65ea3795-6150-48c9-819a-175461b5d001,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T16:50:19.590893Z,0
+082fbf01-fee7-4414-b6af-e1b54ae9ec29,65ea3795-6150-48c9-819a-175461b5d001,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+6ace3bb6-21de-4499-8b5b-e05744ac11e9,65ea3795-6150-48c9-819a-175461b5d001,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+e95f42b9-ee84-47e3-a265-248414b4cb00,65ea3795-6150-48c9-819a-175461b5d001,Failed,CombinedDHP,{'error': 'No workers online'},,0
+3883dab1-51d0-4e94-a26d-02ca01b1019d,1a409e55-2bca-4da3-99be-de047ca47a33,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T16:24:55.822838Z,0
+b63076d2-4649-40fd-89b1-4090d339b0e4,1a409e55-2bca-4da3-99be-de047ca47a33,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+ad30a0f4-4b29-43f4-98af-3e12bd2960b1,1a409e55-2bca-4da3-99be-de047ca47a33,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+fb29aeb9-f2a1-4e90-a8c5-e5dc4ac35923,1a409e55-2bca-4da3-99be-de047ca47a33,Failed,CombinedDHP,{'error': 'No workers online'},,0
+5494d894-570e-47b8-906f-1d5d31b54dec,f3166ee6-6ccc-4c5c-943b-94483ae56676,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T15:59:31.910776Z,0
+5874607e-cffe-41ef-a930-84d25b4f00c5,f3166ee6-6ccc-4c5c-943b-94483ae56676,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+9617dead-1c95-4212-85b4-bb10447b9f95,f3166ee6-6ccc-4c5c-943b-94483ae56676,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+9a120a3c-8639-4de6-87b5-60ba9ccac73b,f3166ee6-6ccc-4c5c-943b-94483ae56676,Failed,CombinedDHP,{'error': 'No workers online'},,0
+f9e9ffc2-8d92-4562-954a-d940deb058b2,a408fc36-b06f-4849-98f4-573b8181fd84,Canceled,Scaling,{'topic': 'us_east'},,0
+2d6ef7a6-0091-4c1e-b53e-477f4861d265,a408fc36-b06f-4849-98f4-573b8181fd84,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T15:32:40.223231Z,1
+eb61b42c-9562-4944-9295-14430b0cb274,a408fc36-b06f-4849-98f4-573b8181fd84,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T15:34:00.284762Z,8
+0ef08a46-d69c-4963-8617-fa7f0a8d4b2a,a408fc36-b06f-4849-98f4-573b8181fd84,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T15:35:20.346311Z,10
+feacd058-dc2d-40e5-bf09-64f1f9572863,35413cb0-1c14-4041-8a48-2c07cb384735,Canceled,Scaling,{'topic': 'us_east'},,0
+ee9c3821-c510-47f6-82ce-94f94c1ebf7f,35413cb0-1c14-4041-8a48-2c07cb384735,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T15:29:45.062918Z,1
+e1f60c6a-4b85-40f2-8ca4-eb6f01e2a5d7,35413cb0-1c14-4041-8a48-2c07cb384735,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T15:30:20.097425Z,8
+5bc2adc2-457a-48a9-8463-34769d8d17c0,35413cb0-1c14-4041-8a48-2c07cb384735,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T15:31:25.149990Z,10
+b4762e37-6ce0-4b34-b334-8f36111ccc6b,55cde052-38a3-433b-a4e9-a4658a42b190,Canceled,Scaling,{'topic': 'us_east'},,0
+4a80aa64-dde0-4323-b9e8-7222328b2cbf,55cde052-38a3-433b-a4e9-a4658a42b190,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T15:25:29.852820Z,1
+c8d60616-9848-4ca4-b81a-b9f78e9b6d17,55cde052-38a3-433b-a4e9-a4658a42b190,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T15:26:49.915557Z,8
+3a28f1cc-a632-4240-ac85-7f87e4f0a157,55cde052-38a3-433b-a4e9-a4658a42b190,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T15:28:14.984049Z,10
+bbcd29c5-2cbe-4e18-ba9d-6dc095825287,6477fd64-50a3-4748-b040-385483ee4881,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T15:22:52.461286Z,0
+aee985a7-bfc8-4ac5-93eb-d7346217d4d8,6477fd64-50a3-4748-b040-385483ee4881,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+b656690d-a71d-44e8-b216-d3e966c1e38e,6477fd64-50a3-4748-b040-385483ee4881,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+4c3059ba-c59b-48d5-8c5b-aec21abe75cc,6477fd64-50a3-4748-b040-385483ee4881,Failed,CombinedDHP,{'error': 'No workers online'},,0
+f5e956ab-01be-4b17-91e0-e359087d2bc6,86873df7-323e-40b9-a8b5-f13e825c4437,Canceled,Scaling,{'topic': 'us_east'},,0
+1311eb85-8f3c-46a3-a503-5402de4215c0,86873df7-323e-40b9-a8b5-f13e825c4437,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T14:57:10.940294Z,1
+205c37a1-b5f3-4cce-8a0a-7f4d30dc7996,86873df7-323e-40b9-a8b5-f13e825c4437,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T14:57:45.973385Z,8
+40ac1472-e8b4-4741-a40a-ad038c79b216,86873df7-323e-40b9-a8b5-f13e825c4437,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T14:58:51.034931Z,10
+9852df3c-9d2c-4496-86a6-159785b54902,e6d3cdac-31bf-4908-a83d-9419882d3f98,Canceled,Scaling,{'topic': 'us_east'},,0
+ae373666-6f39-46fb-b038-932a3f72e3d0,e6d3cdac-31bf-4908-a83d-9419882d3f98,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T14:55:35.842371Z,1
+36ecf46d-7042-4d2a-b4e5-b15756bb7cf1,e6d3cdac-31bf-4908-a83d-9419882d3f98,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T14:56:00.867207Z,8
+9f554205-d98a-4ee2-9874-2991cd94d3be,e6d3cdac-31bf-4908-a83d-9419882d3f98,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T14:56:30.895497Z,10
+81a5449c-3897-42b6-87de-86d057dd53ae,c35fb54d-7f67-4fb6-8658-ea2ea3d934dd,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T14:52:58.361944Z,0
+91cceb96-8de5-48b6-a631-0221965a33ff,c35fb54d-7f67-4fb6-8658-ea2ea3d934dd,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+d5690fe5-891f-4289-b2ba-948ee75c68fc,c35fb54d-7f67-4fb6-8658-ea2ea3d934dd,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+667c0d81-f6b1-4987-86f9-6a586b510088,c35fb54d-7f67-4fb6-8658-ea2ea3d934dd,Failed,CombinedDHP,{'error': 'No workers online'},,0
+1b3e40a1-e354-41c1-8bc1-06ffb0480b89,eaae21ad-1c17-445e-8662-d29aa242b085,Completed,Scaling,{'topic': 'us_east'},2025-05-26T14:50:16.292030Z,0
+dc3bcae5-b074-445f-8951-32aff7aaa0bb,eaae21ad-1c17-445e-8662-d29aa242b085,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T14:28:37.358890Z,1
+ad55438a-6f3e-44c8-b9fe-64cb5d8a7338,eaae21ad-1c17-445e-8662-d29aa242b085,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T14:29:07.390172Z,8
+9dbe34ea-f164-4238-a664-8cce5a403a69,eaae21ad-1c17-445e-8662-d29aa242b085,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T14:29:37.423259Z,10
+e12f0aea-f989-4297-8763-8239dfce1213,d51ab2e0-0c3f-4edf-bdb3-da49a376c627,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T14:24:54.351713Z,0
+c41ae1a9-8cdb-4d3e-81be-a734abb6ccbe,d51ab2e0-0c3f-4edf-bdb3-da49a376c627,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+817a5c4f-5e98-42a7-9ac2-a04cb90c2eb1,d51ab2e0-0c3f-4edf-bdb3-da49a376c627,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+66017e03-72dc-40ff-83b7-5f67ed7e8808,d51ab2e0-0c3f-4edf-bdb3-da49a376c627,Failed,CombinedDHP,{'error': 'No workers online'},,0
+09269cb0-66a9-459c-b4ec-b3b2925be919,be924f1f-38ef-4ff3-90e7-66a87951b927,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T13:59:30.909042Z,0
+11fb1c1b-cbeb-4da9-b111-a3213e5df003,be924f1f-38ef-4ff3-90e7-66a87951b927,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+1531c80a-0e5d-4ac6-b03d-2d7db03ac78b,be924f1f-38ef-4ff3-90e7-66a87951b927,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+ee769295-4eb3-40f3-ae2b-fe278165ee93,be924f1f-38ef-4ff3-90e7-66a87951b927,Failed,CombinedDHP,{'error': 'No workers online'},,0
+9321280a-4754-478c-849c-7b88973db9f5,079101ef-e499-4531-a007-a48af1bb4343,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'hong_kong'}",2025-05-26T13:33:56.984556Z,0
+5ec1d449-e54a-43a1-b433-8fac154b05f4,079101ef-e499-4531-a007-a48af1bb4343,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+3bbdbb31-20f8-4adf-8f36-6a43c50815ec,079101ef-e499-4531-a007-a48af1bb4343,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+2fa48206-2f07-4e66-884c-000d5457680d,079101ef-e499-4531-a007-a48af1bb4343,Failed,CombinedDHP,{'error': 'No workers online'},,0
+9b39139e-9270-4f34-a8aa-f820f77c28ab,1448ea00-049c-4355-aba3-919b0c3b8c8b,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T13:08:43.539436Z,0
+1026cf63-6bf2-469e-8fb2-a696df1ad89f,1448ea00-049c-4355-aba3-919b0c3b8c8b,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+ba70c9a9-84e9-4e40-a63f-1d63965e0ca7,1448ea00-049c-4355-aba3-919b0c3b8c8b,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+e3f8628b-51c4-4e4e-9a3c-13be5660f660,1448ea00-049c-4355-aba3-919b0c3b8c8b,Failed,CombinedDHP,{'error': 'No workers online'},,0
+7aae811e-e0ba-49a8-892f-ab869437644b,6c840e11-80cc-4634-857a-afd854b0d61c,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T12:43:19.499593Z,0
+e941dd27-4b97-42fe-b767-577c22b7c116,6c840e11-80cc-4634-857a-afd854b0d61c,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+3954bba7-6154-4db9-b848-4c2930ebcbb2,6c840e11-80cc-4634-857a-afd854b0d61c,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+c9e53e14-3a8e-499f-ba24-6c0fc33523f5,6c840e11-80cc-4634-857a-afd854b0d61c,Failed,CombinedDHP,{'error': 'No workers online'},,0
+013a8232-e497-4261-9e12-a31b9562eed5,d0ca03aa-88b3-47cd-b88c-defb6af5dadf,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T12:17:55.627237Z,0
+89d72725-45f8-4783-b25a-b16433cd165f,d0ca03aa-88b3-47cd-b88c-defb6af5dadf,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+fa1e9c40-a50d-401f-bb8c-58a151fc735d,d0ca03aa-88b3-47cd-b88c-defb6af5dadf,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+e21b426a-5f8f-4d8c-9cf4-fb555c214e62,d0ca03aa-88b3-47cd-b88c-defb6af5dadf,Failed,CombinedDHP,{'error': 'No workers online'},,0
+cb816a08-a647-47e7-bfc6-b276a1dd8128,ef586e63-3e57-4f3c-9c54-d560f03fc5fb,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T11:52:32.176390Z,0
+159b15e8-08fd-480b-98d2-4b97025f1b93,ef586e63-3e57-4f3c-9c54-d560f03fc5fb,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+3fe26775-e858-47f0-89e0-5058b36f30d6,ef586e63-3e57-4f3c-9c54-d560f03fc5fb,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+d23124ad-ce13-4a22-9ba1-6ace07147e41,ef586e63-3e57-4f3c-9c54-d560f03fc5fb,Failed,CombinedDHP,{'error': 'No workers online'},,0
+18d0f723-bd51-4ebb-9ec3-841e6d3ff745,29010eff-b6a0-4de7-953e-8953601cfda2,Canceled,Scaling,{'topic': 'us_east'},,0
+88975411-3d29-4da0-a8af-537eed179e23,29010eff-b6a0-4de7-953e-8953601cfda2,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T11:25:40.851828Z,1
+51e5ebcf-f008-4319-ad32-ef48797f015c,29010eff-b6a0-4de7-953e-8953601cfda2,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T11:27:00.919334Z,8
+38d29936-d9d1-4f8a-a321-87e6026797d9,29010eff-b6a0-4de7-953e-8953601cfda2,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T11:28:20.986847Z,10
+aa25405f-5677-45e3-94d9-5ed74fec463a,041b3bbb-48e7-4ee1-8254-2218698ea01e,Canceled,Scaling,{'topic': 'us_east'},,0
+f8f3ceb0-cbc0-4a7c-983b-8d5bb0cb7c0a,041b3bbb-48e7-4ee1-8254-2218698ea01e,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T11:21:35.622634Z,1
+0c83fb84-1ada-4629-a142-6e5a648e5df8,041b3bbb-48e7-4ee1-8254-2218698ea01e,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T11:22:55.690977Z,8
+1a50dc56-eb14-4af2-a734-92eacf473633,041b3bbb-48e7-4ee1-8254-2218698ea01e,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T11:24:15.766295Z,10
+e216f77d-30ea-4b6b-b74b-9267476d7f2f,4e39288f-028a-4649-8ddc-2846acceb89e,Completed,Scaling,{'topic': 'us_east'},2025-05-26T11:42:09.480510Z,0
+83fad3b0-81b4-4548-80f1-cde88ce8c944,4e39288f-028a-4649-8ddc-2846acceb89e,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T11:20:05.524718Z,1
+ac5da2a6-ac1b-4f45-bd82-00bfb001d84a,4e39288f-028a-4649-8ddc-2846acceb89e,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-05-26T11:20:30.552162Z,8
+0d7afd25-323b-4832-8626-df72dc3f9b3f,4e39288f-028a-4649-8ddc-2846acceb89e,Completed,CombinedDHP,{'workers_count': 10},2025-05-26T11:21:00.582784Z,10
+4d9217b1-1589-467d-ab4e-54d7db307b62,f7cf7c9a-c220-4372-bd2e-5da8e1ee3fa3,Failed,Scaling,"{'error': 'Deadline passed', 'topic': 'singapore'}",2025-05-26T11:16:47.705346Z,0
+f4f867cc-8a07-4f1b-ae0e-1b353d57e707,f7cf7c9a-c220-4372-bd2e-5da8e1ee3fa3,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 1}",,0
+0e560cbf-7060-433c-9597-9f15c2fb9984,f7cf7c9a-c220-4372-bd2e-5da8e1ee3fa3,Failed,CombinedDHP,"{'error': 'No workers online', 'partial': 80}",,0
+c7aad59c-869c-466e-be63-9077ae76109e,f7cf7c9a-c220-4372-bd2e-5da8e1ee3fa3,Failed,CombinedDHP,{'error': 'No workers online'},,0
+f21e457c-7aaf-4c67-91f5-6083328a800f,b1ea0b1e-9395-4a5f-b309-a82bb841d6e6,Canceled,Scaling,{'topic': 'us_east'},,0
+eff5aae3-76e5-422a-810b-7c31da5fd7ce,b1ea0b1e-9395-4a5f-b309-a82bb841d6e6,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T10:18:25.533995Z,1
+33799a78-2fee-41dd-9f31-9f93bf6f4f2a,b1ea0b1e-9395-4a5f-b309-a82bb841d6e6,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 40}",2025-05-26T10:18:45.556662Z,40
+ca211a76-9a8a-437d-9045-15c26eca0543,b1ea0b1e-9395-4a5f-b309-a82bb841d6e6,Completed,CombinedDHP,{'workers_count': 50},2025-05-26T10:19:05.583136Z,50
+7582a8df-457e-4b4a-91c8-c85028938259,bc57e6d1-9c8c-4893-944c-6d99c26b4e83,Canceled,Scaling,{'topic': 'us_east'},,0
+284b9774-a23b-4510-be2f-b392ccdd8818,bc57e6d1-9c8c-4893-944c-6d99c26b4e83,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T10:11:40.300856Z,1
+4e460163-81d4-412f-9c8d-928cfb6b35e9,bc57e6d1-9c8c-4893-944c-6d99c26b4e83,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 40}",2025-05-26T10:12:00.319005Z,40
+d0083a86-4808-4e19-98d9-af595eb158ba,bc57e6d1-9c8c-4893-944c-6d99c26b4e83,Completed,CombinedDHP,{'workers_count': 50},2025-05-26T10:12:20.341807Z,50
+cfbeffa4-b783-49ac-b704-c09dfe9c617b,e6883fc1-6834-445a-ad91-aaa669cde560,Completed,Scaling,{'topic': 'us_east'},2025-05-26T10:20:13.857065Z,0
+411f22a4-480d-405a-a1d1-81626d041c7c,e6883fc1-6834-445a-ad91-aaa669cde560,Failed,CombinedDHP,"{'error': 'Deadline passed', 'partial': 1, 'workers_count': 1}",2025-05-26T09:57:54.889486Z,0
+aaa15a80-6164-44d5-ba33-a020cc097906,e6883fc1-6834-445a-ad91-aaa669cde560,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 40}",2025-05-26T10:00:14.962012Z,40
+0c345b43-8769-4a48-8056-2b83ecb1cf7e,e6883fc1-6834-445a-ad91-aaa669cde560,Completed,CombinedDHP,{'workers_count': 50},2025-05-26T10:00:34.984352Z,50
+874b2e65-3218-48ef-9ee9-9a83c2702d74,dc97e2f8-d1ae-4119-9d6f-bc4ea1e0a4a0,Completed,Scaling,{'topic': 'us_east'},2025-05-26T10:16:53.392693Z,0
+5df540e3-e1f2-49fc-82bd-7503e30a01ab,dc97e2f8-d1ae-4119-9d6f-bc4ea1e0a4a0,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-05-26T09:55:09.456336Z,1
+1425dadb-d6a0-4f2a-941f-31b93b5dacb9,dc97e2f8-d1ae-4119-9d6f-bc4ea1e0a4a0,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 16}",2025-05-26T09:55:29.476480Z,16
+1f679ce0-7f2c-4c81-b44d-ec7f765544ad,dc97e2f8-d1ae-4119-9d6f-bc4ea1e0a4a0,Completed,CombinedDHP,{'workers_count': 20},2025-05-26T09:55:49.502005Z,20
+16cc538b-d9ea-45dd-a4d1-bf254a5b97c3,81b009b0-0923-46a8-a144-17e1af44a5f0,Completed,Scaling,{'topic': 'us_east'},2025-02-05T12:57:25.859055Z,0
+8c398ee3-e6a6-4921-8881-65c3659e452c,81b009b0-0923-46a8-a144-17e1af44a5f0,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-02-05T12:35:26.932594Z,1
+f96a94d3-dd44-4e64-9320-4e315aa02bc3,81b009b0-0923-46a8-a144-17e1af44a5f0,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-02-05T12:35:46.965343Z,8
+acf21916-af95-4ac5-ba6b-5f1fc7f0ed21,81b009b0-0923-46a8-a144-17e1af44a5f0,Completed,CombinedDHP,{'workers_count': 10},2025-02-05T12:36:07.053702Z,10
+e8782cd9-6535-489b-aa2c-1dd709303577,cb049a79-61dc-4697-b07b-e2138d92a9dd,Completed,Scaling,{'topic': 'us_east'},2025-01-21T11:32:56.954859Z,0
+1eda0c49-cd51-42ba-ba24-29570a3ec9ab,cb049a79-61dc-4697-b07b-e2138d92a9dd,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-21T11:10:43.034289Z,1
+2c5394ba-3720-4350-9c93-274598b4eb23,cb049a79-61dc-4697-b07b-e2138d92a9dd,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-21T11:11:03.090319Z,8
+90b8db9b-5dc8-4bae-b163-8e7ba01f5401,cb049a79-61dc-4697-b07b-e2138d92a9dd,Completed,CombinedDHP,{'workers_count': 10},2025-01-21T11:11:23.142744Z,10
+3e47085c-7942-42e1-8b33-15c2104d7717,b0d43fe9-4fb1-4296-ae22-a708f149aff3,Completed,Scaling,{'topic': 'us_east'},2025-01-20T13:13:10.328438Z,0
+f0dd2a35-f59a-4b78-898d-319a0e861445,b0d43fe9-4fb1-4296-ae22-a708f149aff3,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-20T12:50:56.379303Z,1
+628292d7-1aae-43c8-b61e-27b9e9a7bfbe,b0d43fe9-4fb1-4296-ae22-a708f149aff3,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-20T12:51:16.414874Z,8
+6316832d-ec55-4814-bed4-99e4bee45ade,b0d43fe9-4fb1-4296-ae22-a708f149aff3,Completed,CombinedDHP,{'workers_count': 10},2025-01-20T12:51:36.500103Z,10
+0c77d554-67d2-4656-aec1-204dd9c58765,bfc91625-a85a-4806-b066-54b6cf5d9acd,Canceled,Scaling,{'topic': 'singapore'},2025-01-15T13:16:22.598284Z,0
+557df711-10d1-4bcc-9301-28b870867e44,bfc91625-a85a-4806-b066-54b6cf5d9acd,Canceled,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:54:23.653943Z,1
+cb58c02e-02c0-4281-8a00-9ef32e4c084d,bfc91625-a85a-4806-b066-54b6cf5d9acd,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'partial': 80, 'workers_count': 12}",2025-01-15T12:54:48.682781Z,12
+29e8616c-ab31-4c49-89f2-b014f89dad61,bfc91625-a85a-4806-b066-54b6cf5d9acd,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 15}",2025-01-15T12:57:08.803665Z,15
+8a004518-f35d-4abe-a429-97aba3fb3519,2c4664c4-6c17-40ef-9a2a-8468babaa27c,Canceled,Scaling,{'topic': 'hong_kong'},2025-01-15T13:06:54.949581Z,0
+b46069c7-14e9-476d-b7c5-eb9c9230ab21,2c4664c4-6c17-40ef-9a2a-8468babaa27c,Canceled,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:44:56.023365Z,1
+a9495684-59bb-4e43-945c-e02a08178ae6,2c4664c4-6c17-40ef-9a2a-8468babaa27c,Canceled,CombinedDHP,"{'partial': 80, 'workers_count': 12}",2025-01-15T12:45:16.240298Z,12
+c1cc35a1-060e-461c-81e4-0bfe6cd762ed,2c4664c4-6c17-40ef-9a2a-8468babaa27c,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 15}",2025-01-15T12:47:01.341739Z,15
+8a28996a-aaee-4aae-8d1e-b156c05bfc50,c588366d-42b4-4227-8250-6e4898aac41e,Canceled,Scaling,{'topic': 'hong_kong'},2025-01-15T12:47:31.926199Z,0
+a34ce84d-e88f-4ec4-8d03-64979d06d8eb,c588366d-42b4-4227-8250-6e4898aac41e,Canceled,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:25:37.988320Z,1
+95d7539f-8563-42a3-a741-1504cebbe72c,c588366d-42b4-4227-8250-6e4898aac41e,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'partial': 80, 'workers_count': 24}",2025-01-15T12:26:03.023991Z,0
+89a27e59-e30f-4813-afb1-a7ac3394b24b,c588366d-42b4-4227-8250-6e4898aac41e,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 30}",2025-01-15T12:28:23.203094Z,0
+24882996-ce86-4cac-b12d-d1ce2016dff6,17a8e3b2-e096-4950-9771-a8b9f7cbbd7f,Canceled,Scaling,{'topic': 'hong_kong'},2025-01-15T12:39:29.506490Z,0
+09f48a28-82ba-4237-8c89-f154a409b23e,17a8e3b2-e096-4950-9771-a8b9f7cbbd7f,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'partial': 1, 'workers_count': 1}",2025-01-15T12:17:40.586832Z,0
+706960d1-f9d0-4065-944e-8e2697adbb60,17a8e3b2-e096-4950-9771-a8b9f7cbbd7f,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'partial': 80, 'workers_count': 8}",2025-01-15T12:20:00.696821Z,5
+e77cf1ba-4e98-40e3-aa61-eddb8b065fc8,17a8e3b2-e096-4950-9771-a8b9f7cbbd7f,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 10}",2025-01-15T12:22:20.806170Z,6
+c5ec6fda-9077-436b-a653-097c08a10c43,ee34f8ee-e376-40bf-9afc-4b6e3f4bca54,Canceled,Scaling,{'topic': 'singapore'},2025-01-15T12:33:57.081362Z,0
+93223dcb-31a3-4abc-bea5-e20d974658b4,ee34f8ee-e376-40bf-9afc-4b6e3f4bca54,Canceled,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:11:48.137377Z,1
+6db2c12b-b0d3-4abe-a435-252840009d29,ee34f8ee-e376-40bf-9afc-4b6e3f4bca54,Canceled,CombinedDHP,"{'partial': 80, 'workers_count': 24}",2025-01-15T12:12:13.169536Z,24
+5627b82e-be74-464d-8dfe-4e52889593be,ee34f8ee-e376-40bf-9afc-4b6e3f4bca54,Canceled,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 30}",2025-01-15T12:14:18.385804Z,16
+6625ea37-498f-4e0e-9c78-d636d96e4504,8fc0e53e-5f1e-4e7b-b539-66502407b6f1,Completed,Scaling,{'topic': 'singapore'},2025-01-15T12:31:29.618293Z,0
+32ac6926-9a00-42c6-a7ec-25e90c42d56c,8fc0e53e-5f1e-4e7b-b539-66502407b6f1,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:09:25.678134Z,1
+fb5f5b04-6d75-4ccb-b40a-80142bde8a67,8fc0e53e-5f1e-4e7b-b539-66502407b6f1,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-15T12:09:50.703752Z,8
+6988371a-a726-410d-81ef-fd22528b3e2d,8fc0e53e-5f1e-4e7b-b539-66502407b6f1,Completed,CombinedDHP,{'workers_count': 10},2025-01-15T12:10:30.747316Z,10
+45c9107c-ef0d-47f7-940e-b7572475ffe6,00ffb82c-e6d6-4d78-a278-acb216fde739,Canceled,Scaling,{'topic': 'us_east'},,0
+ddea949b-6ed9-478d-b55e-c0f42d037d5d,00ffb82c-e6d6-4d78-a278-acb216fde739,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:06:28.267259Z,1
+5ff8f49b-108a-4e37-b347-fb6131e34b9a,00ffb82c-e6d6-4d78-a278-acb216fde739,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-15T12:06:58.296624Z,8
+b91b634a-fe96-42da-a539-6f1ba5fe66ea,00ffb82c-e6d6-4d78-a278-acb216fde739,Completed,CombinedDHP,{'workers_count': 10},2025-01-15T12:07:43.347452Z,10
+dfce0dff-08d5-4d5e-8b4c-902aa281bd99,109e43f4-dc51-44df-8ce6-591ec169a130,Completed,Scaling,{'topic': 'us_east'},2025-01-15T12:25:42.007714Z,0
+1a9e34d9-1e51-40c9-8bc6-d4cd635fb933,109e43f4-dc51-44df-8ce6-591ec169a130,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-15T12:03:38.074466Z,1
+a284911b-2e5f-48be-82ba-7ba0b3e36ff9,109e43f4-dc51-44df-8ce6-591ec169a130,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-15T12:03:58.114658Z,8
+68bc358f-de47-4166-bc82-fe7992c054cd,109e43f4-dc51-44df-8ce6-591ec169a130,Completed,CombinedDHP,{'workers_count': 10},2025-01-15T12:04:18.151221Z,10
+70ada629-c30a-4835-bbe3-f136dfd9174f,40f92fe0-aa82-402f-8fce-9486841745aa,Canceled,Scaling,{'topic': 'us_east'},,0
+a8c391d3-767a-46d3-a6fc-7f5ab43749d4,40f92fe0-aa82-402f-8fce-9486841745aa,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T13:17:44.987387Z,1
+fcdd8b6c-1e1d-4714-87ba-dbbe94bbfe46,40f92fe0-aa82-402f-8fce-9486841745aa,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T13:18:20.023402Z,8
+43ee8332-acdb-465f-be2d-c2779979d1af,40f92fe0-aa82-402f-8fce-9486841745aa,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:19:40.087314Z,10
+cd3840f5-e092-4e60-b8cf-3b5ad4470022,f6f76215-da14-4f20-872c-8a890bf9aaad,Canceled,Scaling,{'topic': 'singapore'},,0
+21bf35ec-94e3-48f4-ba8b-30fef1983681,f6f76215-da14-4f20-872c-8a890bf9aaad,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T13:15:34.849958Z,1
+bafa95e1-0d90-4f71-aa04-0e1ea092462e,f6f76215-da14-4f20-872c-8a890bf9aaad,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T13:15:59.880503Z,8
+879d1cb2-9800-4663-a9b6-4aa27d92815a,f6f76215-da14-4f20-872c-8a890bf9aaad,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:16:49.927430Z,10
+7c947cb6-1ecb-45c5-92b2-b4f352a64ca6,45211aa4-334d-4511-a2d5-64dd635af558,Canceled,Scaling,{'topic': 'hong_kong'},,0
+7740ad43-21c7-464e-b7f9-fcd63e3621d8,45211aa4-334d-4511-a2d5-64dd635af558,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T13:13:19.705703Z,1
+bdf27886-2456-4282-9e3d-f02f911d58d8,45211aa4-334d-4511-a2d5-64dd635af558,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T13:13:44.734878Z,8
+853a7f44-64ed-4e31-8a47-80cb2c366ede,45211aa4-334d-4511-a2d5-64dd635af558,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:14:39.788440Z,10
+512a0f77-4ef8-495e-9eec-a33fc3bf4900,4ebc1977-6ca6-4ca8-9f75-ed2c0c39c5e4,Canceled,Scaling,{'topic': 'hong_kong'},,0
+a192ef38-c4d5-4603-a760-4fe8e91ed922,4ebc1977-6ca6-4ca8-9f75-ed2c0c39c5e4,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T13:09:49.502887Z,1
+12b6557c-e473-40d7-ade5-d3367a0aa177,4ebc1977-6ca6-4ca8-9f75-ed2c0c39c5e4,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T13:10:34.546708Z,8
+47e9c760-e666-4bc5-af42-1738748f8da5,4ebc1977-6ca6-4ca8-9f75-ed2c0c39c5e4,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:11:54.618609Z,10
+cbc69d47-687e-427f-a656-a1f11a709b4d,489bc355-c5fa-4b1a-9b68-9192073d4a73,Canceled,Scaling,{'topic': 'singapore'},,0
+95c4cf1e-bcef-4741-975e-695f98ee60d1,489bc355-c5fa-4b1a-9b68-9192073d4a73,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T13:06:24.262408Z,1
+3080b738-1c85-4c6c-809b-be45244f8ba5,489bc355-c5fa-4b1a-9b68-9192073d4a73,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T13:07:04.307210Z,8
+0296a273-bc4e-4992-8ad1-1fdc086001e3,489bc355-c5fa-4b1a-9b68-9192073d4a73,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:08:24.404543Z,10
+1f77a938-3ed6-4395-bde4-9f3426b872ab,ec0779ba-08d3-4e1d-91df-237d310273c6,Canceled,Scaling,{'topic': 'us_east'},,0
+afed5747-f08f-4eac-ad96-6b077ed5d7dc,ec0779ba-08d3-4e1d-91df-237d310273c6,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T13:02:29.008230Z,1
+8cddc791-66ca-4ef9-83b2-a3893496efdd,ec0779ba-08d3-4e1d-91df-237d310273c6,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T13:03:39.088025Z,8
+2bcc34d1-4ce0-42b4-ba37-a93ba7b1f881,ec0779ba-08d3-4e1d-91df-237d310273c6,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:04:59.160339Z,10
+dbf8d21b-69f5-4aec-ac98-841744e3e8c6,852e3844-8682-4864-8743-eb6cae0cbf31,Canceled,Scaling,{'topic': 'us_east'},,0
+4332d13b-86ad-4d68-9460-3d2498a766ad,852e3844-8682-4864-8743-eb6cae0cbf31,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:59:13.810795Z,1
+61961d34-5b1d-417d-bc3a-d2f9f5cf45d9,852e3844-8682-4864-8743-eb6cae0cbf31,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:59:43.844708Z,8
+20974f9e-030d-402b-9e9f-49753a82ed3b,852e3844-8682-4864-8743-eb6cae0cbf31,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T13:01:03.918507Z,10
+5a652047-4fb6-490a-b462-0dbd6c247218,c204528f-31a3-4f5c-a142-30632e18affc,Canceled,Scaling,{'topic': 'singapore'},,0
+9aedf7f8-e0be-4459-b2ae-5acd414696b8,c204528f-31a3-4f5c-a142-30632e18affc,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:56:03.612364Z,1
+517f317f-7108-48be-99a6-78118eb16adb,c204528f-31a3-4f5c-a142-30632e18affc,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:56:33.646846Z,8
+34820c9a-83fe-41b1-9498-00c0e5958382,c204528f-31a3-4f5c-a142-30632e18affc,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:57:48.716469Z,10
+720e73d0-bbf5-42bf-8f6a-144d5dee95cc,29794b4c-5d60-46aa-a491-2edfb1c23ead,Canceled,Scaling,{'topic': 'hong_kong'},,0
+dee3e350-1c08-4150-b67a-062a1a19462c,29794b4c-5d60-46aa-a491-2edfb1c23ead,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:52:53.342599Z,1
+160543cb-51ef-4ac9-b61a-754451a72ad7,29794b4c-5d60-46aa-a491-2edfb1c23ead,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:53:18.373650Z,8
+f29e8aee-381f-4744-a0a1-39014c6c5e66,29794b4c-5d60-46aa-a491-2edfb1c23ead,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:54:38.451660Z,10
+ddb9c3f9-f19f-4c2e-acda-09f5702c2962,63ca3798-7166-4b9c-8859-ae752135a259,Canceled,Scaling,{'topic': 'hong_kong'},,0
+20df1720-4440-400e-8515-22ad2d239b43,63ca3798-7166-4b9c-8859-ae752135a259,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:49:18.114471Z,1
+7d081531-e10c-4046-887b-c16f904fa491,63ca3798-7166-4b9c-8859-ae752135a259,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:50:08.173983Z,8
+2be9eb4c-88c6-4127-86d1-d236b75d106b,63ca3798-7166-4b9c-8859-ae752135a259,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:51:28.253854Z,10
+69b0b0ef-d69a-4d09-8384-6c50111b0bcb,9a7d8296-9d9d-48c5-86af-21460bc4ba69,Canceled,Scaling,{'topic': 'singapore'},,0
+ae7c1df7-4ccd-4990-81e7-27102ae80c58,9a7d8296-9d9d-48c5-86af-21460bc4ba69,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:43:42.753527Z,1
+ba90e1fc-bade-4c4f-bdf9-1980da6ab1ec,9a7d8296-9d9d-48c5-86af-21460bc4ba69,Failed,CombinedDHP,"{'error': 'Deadline passed', 'partial': 80, 'workers_count': 8}",2025-01-13T12:44:32.820155Z,8
+a8e99a2b-f45a-475f-8226-c23139d72606,9a7d8296-9d9d-48c5-86af-21460bc4ba69,Failed,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 10}",2025-01-13T12:46:52.954096Z,10
+afa34def-d105-4526-93cc-504d8e957837,11603013-d76a-4ee8-a557-3531e27b0df1,Canceled,Scaling,{'topic': 'us_east'},,0
+7d6c4ee6-befa-49d5-a4f8-8ace85af09b4,11603013-d76a-4ee8-a557-3531e27b0df1,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:40:02.536069Z,1
+0d39341d-f7d8-42cb-ae20-aecb1c183be6,11603013-d76a-4ee8-a557-3531e27b0df1,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:40:57.589353Z,8
+18ed96cd-946f-4f44-b0b1-161ca3398a12,11603013-d76a-4ee8-a557-3531e27b0df1,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:42:17.669147Z,10
+a602a371-dfa0-4af8-b434-692f153a4fe0,e7cfd0e0-cb64-4cb6-be33-e736988fd089,Completed,Scaling,{'topic': 'us_east'},2025-01-13T12:57:56.047504Z,0
+835c57d6-bce6-4c93-8498-a9779133aa97,e7cfd0e0-cb64-4cb6-be33-e736988fd089,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:35:57.120573Z,1
+d2e19aa5-8593-46b0-8733-e6cade2d302e,e7cfd0e0-cb64-4cb6-be33-e736988fd089,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:37:17.351691Z,8
+86f7ed84-9097-437c-90a8-2095ca85cb26,e7cfd0e0-cb64-4cb6-be33-e736988fd089,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:38:37.443030Z,10
+bf3e55e2-0800-4e9d-a234-3bb4af8e659e,5ab38e34-c1a6-478e-ae9b-b502608205e5,Completed,Scaling,{'topic': 'hong_kong'},2025-01-13T12:51:55.395430Z,0
+7174ea45-8644-481c-b767-b7f12c25fd68,5ab38e34-c1a6-478e-ae9b-b502608205e5,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:30:06.466224Z,1
+a057e966-83a9-47e6-bf0f-b84c65994c34,5ab38e34-c1a6-478e-ae9b-b502608205e5,Failed,CombinedDHP,"{'error': 'Deadline passed', 'partial': 80, 'workers_count': 8}",2025-01-13T12:31:26.541555Z,8
+bc325a7a-45c7-43f5-8b0f-0dcaf64a9e57,5ab38e34-c1a6-478e-ae9b-b502608205e5,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:33:46.686129Z,10
+9cfc0a4b-b07a-482d-9a28-8399f7795f0f,61e021aa-be64-478c-b629-2b765c056351,Completed,Scaling,{'topic': 'singapore'},2025-01-13T12:47:08.090740Z,0
+af91b855-9c07-4341-8426-f844a39ad14c,61e021aa-be64-478c-b629-2b765c056351,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-13T12:25:04.173191Z,1
+9401c51e-bd64-45ce-88a0-f9a5ecc224fc,61e021aa-be64-478c-b629-2b765c056351,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-13T12:26:24.262296Z,8
+af07d920-533f-4b8f-bc72-bde5e1d6c61b,61e021aa-be64-478c-b629-2b765c056351,Completed,CombinedDHP,{'workers_count': 10},2025-01-13T12:27:44.335193Z,10
+602a79f1-4429-403e-9966-2f69c0c54f1e,02d466c5-ba4f-4bed-8651-7efbbed94d54,Completed,Scaling,{'topic': 'hong_kong'},2025-01-10T14:56:53.999740Z,0
+f2257478-2a8e-436b-b3cf-97038db9a212,02d466c5-ba4f-4bed-8651-7efbbed94d54,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-10T14:35:00.068005Z,1
+98f952e1-5d2b-493c-88e7-4b555578b430,02d466c5-ba4f-4bed-8651-7efbbed94d54,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-10T14:35:30.098919Z,8
+8ef4a069-c736-447d-bf20-d4f1dcb380fd,02d466c5-ba4f-4bed-8651-7efbbed94d54,Completed,CombinedDHP,{'workers_count': 10},2025-01-10T14:36:15.141548Z,10
+85586b0e-7b69-4389-a435-f6a7adc1d0c9,8a3107e8-772e-41ac-8d90-550684e1c371,Completed,Scaling,{'topic': 'singapore'},2025-01-10T14:53:59.142774Z,0
+2f4843a9-099f-44b2-a8e9-8e62b17770a9,8a3107e8-772e-41ac-8d90-550684e1c371,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-10T14:31:45.181521Z,1
+76878b9a-35a4-44dd-9197-e13383ccbcad,8a3107e8-772e-41ac-8d90-550684e1c371,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-10T14:32:15.215798Z,8
+4c35d901-992b-4e79-82c9-821ff63c79fc,8a3107e8-772e-41ac-8d90-550684e1c371,Completed,CombinedDHP,{'workers_count': 10},2025-01-10T14:33:17.530275Z,10
+c8c1a58d-2aaf-4f52-ad99-e58ecf34d060,0ed9699b-b898-458d-9e49-907e4c907d65,Completed,Scaling,{'topic': 'us_east'},2025-01-10T14:52:01.038176Z,0
+2f9a98c9-b209-45b7-a10e-dd29248c9782,0ed9699b-b898-458d-9e49-907e4c907d65,Completed,CombinedDHP,"{'partial': 1, 'workers_count': 1}",2025-01-10T14:29:47.256676Z,1
+a560ddef-9b91-40f8-99c9-00c44216b8b9,0ed9699b-b898-458d-9e49-907e4c907d65,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-10T14:30:02.678247Z,8
+a31d9578-11bc-40bb-a86d-aafcb8087458,0ed9699b-b898-458d-9e49-907e4c907d65,Completed,CombinedDHP,{'workers_count': 10},2025-01-10T14:30:37.719462Z,10
+c2960718-c7e3-47b5-beac-79846f03c8cc,29ec95d8-cbee-4907-8444-3f12da6a7426,Canceled,Scaling,{'topic': 'us_east'},,0
+25518521-3908-4be7-b6e8-cbbb3db73b7d,29ec95d8-cbee-4907-8444-3f12da6a7426,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-10T13:57:51.465716Z,8
+b12d73b0-20be-4c8b-9f2e-bee48f0f36a4,29ec95d8-cbee-4907-8444-3f12da6a7426,Completed,CombinedDHP,{'workers_count': 10},2025-01-10T13:58:26.514125Z,10
+cf6477b1-fb9d-4f0e-b02f-b5a1fb2e3cdb,aef4f589-395e-4fed-b4a0-90e6ad20134a,Completed,Scaling,{'topic': 'us_east'},2025-01-10T14:17:29.985971Z,0
+f0e62280-8141-43f2-98d4-99a8f1c4066e,aef4f589-395e-4fed-b4a0-90e6ad20134a,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2025-01-10T13:55:26.281561Z,8
+05e81d10-ea99-46c5-9856-54482b14ddcf,aef4f589-395e-4fed-b4a0-90e6ad20134a,Completed,CombinedDHP,{'workers_count': 10},2025-01-10T13:56:46.392662Z,10
+f6974bdf-b0b3-49e3-bea8-17158d650531,e21fde0b-243c-42c1-81c3-32b49651dbdd,Completed,Scaling,{'topic': 'hong_kong'},2024-12-18T15:44:52.960975Z,0
+423380c4-2a5a-43c5-9b36-7f47343f54a7,e21fde0b-243c-42c1-81c3-32b49651dbdd,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T15:22:59.050098Z,8
+9e454ee0-3f51-40c9-b209-cb04a813b102,e21fde0b-243c-42c1-81c3-32b49651dbdd,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T15:24:19.167271Z,10
+cd19efb3-6f56-4151-97da-f35a0cc534c5,3ed65aec-5697-404b-b869-567804eec977,Canceled,Scaling,{'topic': 'us_east'},,0
+33f37e53-d6ec-4cb6-a7b4-da852b28a58f,3ed65aec-5697-404b-b869-567804eec977,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T15:19:11.673218Z,8
+128b1da1-12db-4085-840a-8a87c486454e,3ed65aec-5697-404b-b869-567804eec977,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T15:20:31.801770Z,10
+2739aeb4-01de-4be5-8172-e182742cc91a,f1743201-f2e6-422e-b94f-44561cc3aa37,Canceled,Scaling,{'topic': 'us_east'},,0
+f6d641a5-8b16-4f58-b7d6-7776ab813d7f,f1743201-f2e6-422e-b94f-44561cc3aa37,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:56:40.597018Z,8
+0827d378-0c4c-4af9-9fa6-5a330ba98c97,f1743201-f2e6-422e-b94f-44561cc3aa37,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:57:20.645909Z,10
+8a07ba91-c983-4423-9a46-be073da030ad,3c8196f3-313b-4a84-94a1-c49684dc10fe,Canceled,Scaling,{'topic': 'us_east'},,0
+b24a58fa-3499-4f06-941d-cf4f89e75edf,3c8196f3-313b-4a84-94a1-c49684dc10fe,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:50:45.313167Z,8
+65de365a-da58-4b2d-b2c0-695695c558ec,3c8196f3-313b-4a84-94a1-c49684dc10fe,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:51:20.364133Z,10
+442290a5-bcc8-47cb-a1f1-2d217241d0fe,023624df-e299-4cdd-8228-2c529182642d,Canceled,Scaling,{'topic': 'us_east'},,0
+bb21188c-3636-4633-bf6f-b269bbc54048,023624df-e299-4cdd-8228-2c529182642d,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:41:49.843084Z,8
+ee6af797-848b-477f-a57f-2491762e3a67,023624df-e299-4cdd-8228-2c529182642d,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:43:29.971352Z,10
+06b011d0-e7f8-4b37-a2e4-6b982685bc16,4625d744-d723-4fd3-914f-7f2847c566d1,Canceled,Scaling,{'topic': 'us_east'},,0
+4e631cda-0ce6-41af-a997-a6a36f80b79a,4625d744-d723-4fd3-914f-7f2847c566d1,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:35:44.483682Z,8
+ca3717c3-902b-4c92-b616-f9ac505da8b9,4625d744-d723-4fd3-914f-7f2847c566d1,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:37:09.597370Z,10
+14d151dc-8202-4fc6-b1e7-40cab407c2e3,75579f18-65d8-4c61-9a92-fe51ea6bd7c5,Canceled,Scaling,{'topic': 'us_east'},,0
+6334998d-1e87-4e3d-a5d6-b0e61c6c0333,75579f18-65d8-4c61-9a92-fe51ea6bd7c5,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:34:09.364843Z,8
+2b88623f-4cb0-4497-802f-fb7564849547,75579f18-65d8-4c61-9a92-fe51ea6bd7c5,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:34:29.402535Z,10
+959e13ae-359e-49a7-89d0-8f85bcd28c4c,7ef16b49-a940-4b03-ba4b-d49f1bbaf599,Canceled,Scaling,{'topic': 'us_east'},,0
+1ddacce1-fc4f-45d7-aef0-f53c972caf5c,7ef16b49-a940-4b03-ba4b-d49f1bbaf599,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:32:34.219939Z,8
+f24e565e-ec26-45fe-94c3-9f11d9ccd597,7ef16b49-a940-4b03-ba4b-d49f1bbaf599,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:32:54.266044Z,10
+7150c4a9-1621-4ba2-9e5f-f3d6ef1c01d0,20e7f2d4-d853-4ce4-816d-25a2a8a0a73b,Completed,Scaling,{'topic': 'us_east'},2024-12-18T14:53:18.016889Z,0
+c50d64aa-1d7f-440f-a3b3-fb72901f425a,20e7f2d4-d853-4ce4-816d-25a2a8a0a73b,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-18T14:31:24.100581Z,8
+26382a1c-6b65-4f6a-8a58-b20188142f1b,20e7f2d4-d853-4ce4-816d-25a2a8a0a73b,Completed,CombinedDHP,{'workers_count': 10},2024-12-18T14:31:44.144625Z,10
+85331181-379e-4905-85be-0935034588b5,125abaf4-204f-43bc-844e-29b7de0d0ef8,Canceled,Scaling,{'topic': 'us_east'},2024-12-18T13:58:12.945457Z,0
+421f1f21-1a6e-40f5-bf1d-a8ba8ccf8de4,125abaf4-204f-43bc-844e-29b7de0d0ef8,Canceled,CombinedDHP,{'partial': 80},,0
+72d09c4d-19bb-43b1-9604-238e0b8b6e40,125abaf4-204f-43bc-844e-29b7de0d0ef8,Canceled,CombinedDHP,{},,0
+5efede94-f02c-4ee2-969e-59caffe2cae2,887bf991-5683-4bfb-8e38-09e2d344a333,Canceled,Scaling,{'topic': 'hong_kong'},,0
+bc439237-b3f3-4e0f-95c2-f03048006564,887bf991-5683-4bfb-8e38-09e2d344a333,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:25:02.629771Z,10
+fb3b51aa-f6e2-45ab-bef8-9c83b0ef5d60,887bf991-5683-4bfb-8e38-09e2d344a333,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:26:22.780476Z,10
+8cb8907f-0c73-420e-a7b2-6c36067ac193,e9f94805-e0ba-430d-ab6d-eb022ce9e6d5,Canceled,Scaling,{'topic': 'singapore'},,0
+9b6b74aa-de3c-46ea-a42c-df737ab824ae,e9f94805-e0ba-430d-ab6d-eb022ce9e6d5,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:22:27.297153Z,10
+21b95281-18e7-45df-814b-70635dc55764,e9f94805-e0ba-430d-ab6d-eb022ce9e6d5,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:23:42.444375Z,10
+646b6115-909e-4cf1-aa33-f891da7a27d1,aafdc19e-7c35-4413-8c84-5e70a28b0c97,Canceled,Scaling,{'topic': 'us_east'},,0
+23573a99-b1bb-4faa-95ef-f68ba1972596,aafdc19e-7c35-4413-8c84-5e70a28b0c97,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:19:46.920736Z,10
+fa867e00-8cfe-4e59-8b20-5657746c407f,aafdc19e-7c35-4413-8c84-5e70a28b0c97,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:21:02.093875Z,10
+b01c13dc-ec2c-4258-9141-417c7f0c2834,c7057de1-b64e-48ac-aafe-cc17cdd37556,Canceled,Scaling,{'topic': 'us_east'},,0
+2985aa49-a121-4450-bb65-431df00dfffc,c7057de1-b64e-48ac-aafe-cc17cdd37556,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:17:01.584488Z,10
+11af8522-5620-46ed-8421-7053249ba359,c7057de1-b64e-48ac-aafe-cc17cdd37556,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:18:21.737596Z,10
+f6b0154c-54c1-4e11-95d7-689755dc7a59,96bcb907-fcaf-46fb-8fb8-2346a615bff4,Canceled,Scaling,{'topic': 'singapore'},,0
+7846e223-742c-4253-8cc5-f5898dfb850b,96bcb907-fcaf-46fb-8fb8-2346a615bff4,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:13:00.958941Z,10
+a130ea89-8457-4238-8d48-d02340e4af86,96bcb907-fcaf-46fb-8fb8-2346a615bff4,Failed,CombinedDHP,"{'error': 'Deadline passed', 'workers_count': 10}",2024-12-10T14:14:36.288862Z,10
+8369b0a3-2178-40d1-b718-6c58a0f97cc8,731ce9e9-cbd9-4ece-952c-de4b5897cb0f,Canceled,Scaling,{'topic': 'hong_kong'},,0
+b4453069-05c2-4edb-9a03-c195771d1638,731ce9e9-cbd9-4ece-952c-de4b5897cb0f,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:10:15.608478Z,10
+ba650328-38b7-4b91-a706-8b5f1d15b5a1,731ce9e9-cbd9-4ece-952c-de4b5897cb0f,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:11:35.767667Z,10
+1827d647-96b5-42e2-99b3-fddf846099d7,a46dc055-fcaf-4757-92e1-24b217c6e21f,Canceled,Scaling,{'topic': 'hong_kong'},,0
+71db46de-5f75-43c5-8747-02ed9e2e32d2,a46dc055-fcaf-4757-92e1-24b217c6e21f,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:05:50.188766Z,10
+498d2432-ba1a-411c-be6b-530cd9af24e2,a46dc055-fcaf-4757-92e1-24b217c6e21f,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:07:10.351726Z,10
+04322153-2b5e-47cc-b933-513cbbd9379a,d91afa3b-be78-4f10-8de1-e385d0e28c21,Canceled,Scaling,{'topic': 'singapore'},,0
+77944449-4aec-41b4-aecd-dff8bc91b7ee,d91afa3b-be78-4f10-8de1-e385d0e28c21,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:03:04.842086Z,10
+8a195fa0-d38d-4abc-85e2-ba85d7063007,d91afa3b-be78-4f10-8de1-e385d0e28c21,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:04:25.008728Z,10
+d4a02ad5-e9ba-44b8-ab52-f11a53aa5e17,c2ff83c6-263f-4bbf-a8f3-af5164ad62af,Canceled,Scaling,{'topic': 'us_east'},,0
+c6a1d43f-c2ec-499e-b2cb-ec8b8f8ddd36,c2ff83c6-263f-4bbf-a8f3-af5164ad62af,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T14:00:19.472679Z,10
+ef198208-6a7f-4a30-9cba-3f55295ed4c2,c2ff83c6-263f-4bbf-a8f3-af5164ad62af,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T14:01:39.625564Z,10
+5eb5ec3b-8b9c-4dea-8c2b-95a427cdefc8,c1c718bc-1407-4678-8539-a16e9bcf46e1,Canceled,Scaling,{'topic': 'hong_kong'},,0
+cf937433-9a1d-47b7-b1df-ec83762e4a81,c1c718bc-1407-4678-8539-a16e9bcf46e1,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T13:57:34.128341Z,10
+b8d9a3d4-83b2-4297-a57b-ad2617f4ad54,c1c718bc-1407-4678-8539-a16e9bcf46e1,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T13:58:54.276428Z,10
+edc5d7d4-1b8a-40cd-89c7-4f39f76705e6,fe5f3e98-238a-4288-b48f-eae5cd4f3584,Canceled,Scaling,{'topic': 'singapore'},,0
+96ce0407-dd17-46c2-86f9-9c6cdc0422c8,fe5f3e98-238a-4288-b48f-eae5cd4f3584,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T13:54:48.789400Z,10
+236adce9-d8f8-4aa6-b325-f320c0b35e71,fe5f3e98-238a-4288-b48f-eae5cd4f3584,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T13:56:08.943881Z,10
+15270e0e-663f-4ddf-b52a-d5ab08efd7bc,bd910975-9ade-47d6-9e2f-edf9e2d49234,Canceled,Scaling,{'topic': 'us_east'},,0
+279096a6-8f5a-47ea-99ea-fd755443bb63,bd910975-9ade-47d6-9e2f-edf9e2d49234,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T13:52:03.446494Z,10
+114e3e17-1cc1-4189-9350-8d8b23a568d0,bd910975-9ade-47d6-9e2f-edf9e2d49234,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T13:53:23.613188Z,10
+0612a3f8-5f24-4a87-af4e-d494f1434923,db415af2-770a-40ce-a7ad-b319626cd356,Completed,Scaling,{'topic': 'hong_kong'},2024-12-10T14:11:06.960707Z,0
+042cf651-d5e7-4e53-8808-36cb94f93fc0,db415af2-770a-40ce-a7ad-b319626cd356,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T13:49:18.090925Z,10
+f7212e3e-549e-4bc0-b780-84fb08ae0eab,db415af2-770a-40ce-a7ad-b319626cd356,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T13:50:38.240098Z,10
+c7c79866-0c41-4f6e-bec2-dd31163bdcb1,c2c2157c-a1fc-467a-a06a-d823ced51648,Completed,Scaling,{'topic': 'singapore'},2024-12-10T14:07:44.548007Z,0
+a060f665-db3b-4796-91ba-de68a213e1f2,c2c2157c-a1fc-467a-a06a-d823ced51648,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T13:45:35.626923Z,10
+86f236b8-bf65-47be-aa7d-f5ba8c6f66b7,c2c2157c-a1fc-467a-a06a-d823ced51648,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T13:46:55.779573Z,10
+50f75f01-9c3a-4fa8-a498-f26e1bd2668f,cda01835-c064-4d98-bec2-aa681a1b33be,Completed,Scaling,{'topic': 'us_east'},2024-12-10T14:04:21.751422Z,0
+2c1b76dd-520f-47b1-bced-b4930b66f6b3,cda01835-c064-4d98-bec2-aa681a1b33be,Completed,CombinedDHP,"{'partial': 80, 'workers_count': 8}",2024-12-10T13:42:12.823879Z,10
+c594674c-4fc8-47f0-aa9d-ded657afc987,cda01835-c064-4d98-bec2-aa681a1b33be,Completed,CombinedDHP,{'workers_count': 10},2024-12-10T13:43:32.998816Z,10
+04d44ae1-6787-488d-a86a-ce81da54510a,097429f3-0702-439f-9c68-946730c4a83f,Canceled,Scaling,{'topic': 'us_east'},,0
+fa1a866a-52d8-4d01-8906-0308091b7105,097429f3-0702-439f-9c68-946730c4a83f,Canceled,CombinedDHP,{},,0
+945d89d2-6ccc-4096-927f-998fe3f8f813,097429f3-0702-439f-9c68-946730c4a83f,Canceled,CombinedDHP,{},,0
+99aca220-b3e5-4f9c-aa54-7e7576e089b2,eacb4295-f8b6-4ff8-a1d3-953f8eff7f64,Canceled,Scaling,{'topic': 'us_east'},2024-12-09T15:04:34.955512Z,0
+5f45f12e-971f-4ce6-8499-9c83339860fb,eacb4295-f8b6-4ff8-a1d3-953f8eff7f64,Canceled,CombinedDHP,{},,0
+94167b88-45cc-4b09-ad5c-82f1a5463f37,eacb4295-f8b6-4ff8-a1d3-953f8eff7f64,Canceled,CombinedDHP,{},,0
+b6322ca9-b6c9-4751-a4c1-3fbed625e685,dd32b8f7-9a0c-458b-8aff-8dccec91daaf,Canceled,Scaling,{'topic': 'us_east'},2024-12-09T14:44:02.457934Z,0
+98250200-28ec-4468-aa7a-1790afd13053,dd32b8f7-9a0c-458b-8aff-8dccec91daaf,Canceled,CombinedDHP,{},,0
+bb681daa-adf8-437c-bc7a-13d1541503f9,dd32b8f7-9a0c-458b-8aff-8dccec91daaf,Canceled,CombinedDHP,{},,0
+ffd0e40d-45c2-43cd-8556-605f42400cc2,301028b7-1dc9-48bb-93b6-d0151416d1a6,Canceled,Scaling,{'topic': 'hong_kong'},2024-12-09T14:40:16.939714Z,0
+fcbfa92d-89fb-4f1b-b237-c8421f551d4f,301028b7-1dc9-48bb-93b6-d0151416d1a6,Canceled,CombinedDHP,{},,0
+02cbb2b3-7abb-493e-8ac6-2169a3c686dd,301028b7-1dc9-48bb-93b6-d0151416d1a6,Canceled,CombinedDHP,{},,0
+49fb46b2-a99b-4c92-bba4-87cdf7c687fb,ce2a3365-9bd9-4f19-ad2c-0e64d4e1258b,Canceled,Scaling,{'topic': 'singapore'},2024-12-09T14:27:28.350827Z,0
+eb3a46ec-f6e7-4508-b17b-9c8326e03a21,ce2a3365-9bd9-4f19-ad2c-0e64d4e1258b,Canceled,CombinedDHP,{},,0
+0dab4e29-9b8a-46b1-96bd-e1b01966088b,ce2a3365-9bd9-4f19-ad2c-0e64d4e1258b,Canceled,CombinedDHP,{},,0
+76b93e2b-68d6-472b-94eb-5e411faa3eea,3c0e3370-3d2d-47ca-b323-763bb7bf1cf1,Canceled,Scaling,"{'error': 'Deadline passed', 'topic': 'us_east'}",2024-12-09T14:01:58.095815Z,0
+70dce330-fea8-49ab-9c0c-d8c449a70ec5,3c0e3370-3d2d-47ca-b323-763bb7bf1cf1,Canceled,CombinedDHP,{},,0
+94cd4a31-d994-46d9-a7aa-e74ece7efee0,3c0e3370-3d2d-47ca-b323-763bb7bf1cf1,Canceled,CombinedDHP,{},,0
+18ccce54-d6cf-43c9-9857-e2562f5afae5,15f41be7-26a0-4351-90e2-14ec21bc693f,Canceled,Scaling,{'topic': 'singapore'},,0
+a2938374-b5b4-49c7-960a-b1e8f306078d,15f41be7-26a0-4351-90e2-14ec21bc693f,Completed,CombinedDHP,{},2024-11-12T13:44:08.908439Z,10
+abda52b8-f1d5-4747-b163-96cb3bc04959,15f41be7-26a0-4351-90e2-14ec21bc693f,Completed,CombinedDHP,{},2024-11-12T13:45:09.037559Z,10
+c8d97260-a065-48a0-9f1d-9a4cf822903a,eab0091f-88ff-4c06-bce0-88ca2ce3d248,Canceled,Scaling,{'topic': 'singapore'},,0
+7dfed73d-1ab0-4755-8e55-3c6dc114de9e,eab0091f-88ff-4c06-bce0-88ca2ce3d248,Completed,CombinedDHP,{},2024-11-12T13:41:13.512433Z,10
+e22d95c0-6b7e-42ae-8302-cd1e121fffb4,eab0091f-88ff-4c06-bce0-88ca2ce3d248,Completed,CombinedDHP,{},2024-11-12T13:42:48.714393Z,10
+5dac9410-3298-4abf-a663-d89a170b22de,89a08ee5-4ac5-4521-8d6e-791d3c771a03,Canceled,Scaling,{'topic': 'hong_kong'},,0
+15fd166e-bf23-49c2-9d5c-fd07b55e3b43,89a08ee5-4ac5-4521-8d6e-791d3c771a03,Completed,CombinedDHP,{},2024-11-12T13:37:17.956921Z,10
+9fc0bc38-154a-4387-b1e5-9f2143fa5815,89a08ee5-4ac5-4521-8d6e-791d3c771a03,Completed,CombinedDHP,{},2024-11-12T13:39:28.269911Z,10
+10a4d0ad-8285-4e13-8e5f-8f0503d23350,7bccb4b6-7fde-4a1b-9a76-9aed14277e42,Canceled,Scaling,{'topic': 'us_east'},,0
+6737d374-5add-40d1-8d72-cf8c916e71c6,7bccb4b6-7fde-4a1b-9a76-9aed14277e42,Completed,CombinedDHP,{},2024-11-12T13:35:12.680389Z,10
+d803b205-0ec8-4499-96ee-2e89716c8c65,7bccb4b6-7fde-4a1b-9a76-9aed14277e42,Completed,CombinedDHP,{},2024-11-12T13:36:12.808687Z,10
+8291c070-1f3b-4515-a7df-a8f73a6d0514,ad3b74ec-c767-4b8c-94d6-f07cf3742c43,Canceled,Scaling,{'topic': 'hong_kong'},,0
+b8f7da85-d931-4fc7-9f7d-9a46520eba3a,ad3b74ec-c767-4b8c-94d6-f07cf3742c43,Completed,CombinedDHP,{},2024-11-12T13:33:22.434410Z,10
+eb602615-2fa2-46a6-8f2b-66cb2b8f1fb2,ad3b74ec-c767-4b8c-94d6-f07cf3742c43,Completed,CombinedDHP,{},2024-11-12T13:34:17.553056Z,10
+402d4e75-b4af-445c-a8fb-43b4fb601c03,db252037-a59c-43f1-adb5-538f5e24fbfd,Canceled,Scaling,{'topic': 'hong_kong'},,0
+dcf1e5eb-06fa-4940-9513-b18c87d0c82f,db252037-a59c-43f1-adb5-538f5e24fbfd,Completed,CombinedDHP,{},2024-11-12T13:29:16.848683Z,10
+59da326f-433b-4f68-943e-7e923a27af11,db252037-a59c-43f1-adb5-538f5e24fbfd,Completed,CombinedDHP,{},2024-11-12T13:31:57.240144Z,10
+8329cef4-23d3-492b-a899-734a510aa444,94926e15-2b50-427a-b2ba-207b88bc8787,Canceled,Scaling,{'topic': 'singapore'},,0
+5557ac57-e218-4fe4-ab88-d2427a8c1e36,94926e15-2b50-427a-b2ba-207b88bc8787,Completed,CombinedDHP,{},2024-11-12T13:27:56.673870Z,10
+1d4904ce-c854-45bc-a9cb-a4111fd954d3,94926e15-2b50-427a-b2ba-207b88bc8787,Completed,CombinedDHP,{},2024-11-12T13:30:37.023805Z,10
+d0048a58-2874-4ba8-adfb-3c142385a630,7d87222d-f472-416b-860e-a918d9367818,Canceled,Scaling,{'topic': 'singapore'},,0
+82bef855-998a-4d7d-91c2-a02d572be037,7d87222d-f472-416b-860e-a918d9367818,Completed,CombinedDHP,{},2024-11-12T13:26:21.416755Z,10
+9f89a1dc-139f-4e79-aa1c-79a7cefd3c9a,7d87222d-f472-416b-860e-a918d9367818,Completed,CombinedDHP,{},2024-11-12T13:27:06.505869Z,10
+26f1c064-866f-4288-9e49-5632a2472e45,23bcaba1-e419-4e9c-a4c8-2632873d454e,Canceled,Scaling,{'topic': 'singapore'},,0
+7662125c-57c0-4c0f-a696-c8dda81ad2b7,23bcaba1-e419-4e9c-a4c8-2632873d454e,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T13:21:35.543925Z,10
+9f342142-275c-498d-9b47-8f953ec3b8bf,23bcaba1-e419-4e9c-a4c8-2632873d454e,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T13:23:55.977361Z,10
+d5aec2da-d731-4f29-9449-8de3e119d380,69acafca-47c2-4e59-a191-d8528d4f1e2d,Canceled,Scaling,{'topic': 'hong_kong'},,0
+10619138-f294-420b-b387-1f510da29e5a,69acafca-47c2-4e59-a191-d8528d4f1e2d,Completed,CombinedDHP,{},2024-11-12T13:18:50.187891Z,10
+e547b5a3-63ef-4ae0-a2a0-939feed488be,69acafca-47c2-4e59-a191-d8528d4f1e2d,Completed,CombinedDHP,{},2024-11-12T13:20:10.349703Z,10
+c63a0d5e-0fc3-40f3-9499-8761c6eacea5,3113c5d2-29b3-4968-8d59-79d7b4730cb3,Canceled,Scaling,{'topic': 'us_east'},,0
+ab66b178-317a-43bd-b6da-70da8fe155b9,3113c5d2-29b3-4968-8d59-79d7b4730cb3,Completed,CombinedDHP,{},2024-11-12T13:16:04.783349Z,10
+8019c4c1-f562-43f0-8f0a-9e04f6da43b7,3113c5d2-29b3-4968-8d59-79d7b4730cb3,Completed,CombinedDHP,{},2024-11-12T13:17:29.996477Z,10
+949c5ba7-f5c5-4761-92d3-f8158e61a345,e25cad75-6db5-4d61-8217-293312c01378,Canceled,Scaling,{'topic': 'hong_kong'},,0
+f7186b93-98e9-4410-9266-3e83342eaeca,e25cad75-6db5-4d61-8217-293312c01378,Completed,CombinedDHP,{},2024-11-12T13:15:04.635229Z,10
+9ed2a16d-c4d3-409c-b7b1-8679a5b01a3e,e25cad75-6db5-4d61-8217-293312c01378,Completed,CombinedDHP,{},2024-11-12T13:15:34.703779Z,10
+d28004e1-187c-4b23-843d-4a77a1067061,7eb3d672-9c08-4a15-97ec-49b5dbfc2946,Canceled,Scaling,{'topic': 'us_east'},,0
+780b06a6-6c35-45c9-b42a-fdb449a029be,7eb3d672-9c08-4a15-97ec-49b5dbfc2946,Completed,CombinedDHP,{},2024-11-12T13:13:54.438814Z,10
+e44cfb32-b886-48dd-b920-c989cb71fa91,7eb3d672-9c08-4a15-97ec-49b5dbfc2946,Completed,CombinedDHP,{},2024-11-12T13:14:24.516207Z,10
+11c5863d-5c25-4cd4-8723-05886f4bbd06,fbad35ff-750c-4227-bbfc-2563ae420faa,Canceled,Scaling,{'topic': 'hong_kong'},,0
+a10c50d0-6b2a-4d16-8ba4-dc9eb0774c46,fbad35ff-750c-4227-bbfc-2563ae420faa,Completed,CombinedDHP,{},2024-11-12T13:10:59.034542Z,10
+64806bf6-10e9-4b3b-bfc4-68b0eeeb3cd4,fbad35ff-750c-4227-bbfc-2563ae420faa,Completed,CombinedDHP,{},2024-11-12T13:12:29.241606Z,10
+3d83e962-d7b3-485b-96f0-b5b26bd94404,48347532-c2e1-4813-afd5-7776250a5328,Canceled,Scaling,{'topic': 'us_east'},,0
+e416f307-c56a-4b24-917b-71c342a68f6b,48347532-c2e1-4813-afd5-7776250a5328,Completed,CombinedDHP,{},2024-11-12T13:07:58.618787Z,10
+6790e508-ecdb-4e1d-b59c-01abd3086403,48347532-c2e1-4813-afd5-7776250a5328,Completed,CombinedDHP,{},2024-11-12T13:09:18.803252Z,10
+a5c0a93d-d71b-4a82-b31d-5fa84c692896,30cdbbe8-ac43-4913-b34f-4d10b50f71e3,Canceled,Scaling,{'topic': 'hong_kong'},,0
+198bbd0b-afe9-41b9-a714-09d8f773b30a,30cdbbe8-ac43-4913-b34f-4d10b50f71e3,Completed,CombinedDHP,{},2024-11-12T13:05:43.309595Z,10
+530ab850-70c0-4a33-819c-c638477bb3f3,30cdbbe8-ac43-4913-b34f-4d10b50f71e3,Completed,CombinedDHP,{},2024-11-12T13:06:48.451240Z,10
+91860def-3602-4cdd-bbaf-fd7fc7699234,fb40bef1-7318-4fb2-8aa3-6811377f3c64,Canceled,Scaling,{'topic': 'us_east'},,0
+0a24427b-64cc-43b0-b525-529cce258e6c,fb40bef1-7318-4fb2-8aa3-6811377f3c64,Completed,CombinedDHP,{},2024-11-12T13:02:57.907974Z,10
+c40033dd-289e-4e79-b0a4-e4fd62a8da97,fb40bef1-7318-4fb2-8aa3-6811377f3c64,Completed,CombinedDHP,{},2024-11-12T13:04:18.098604Z,10
+2e862622-7fdb-4b1f-abf3-d32a925ec42c,06fa6c3f-bd69-4e21-aea5-3b30c758cdac,Canceled,Scaling,{'topic': 'us_east'},,0
+22b23c8d-cf13-44c6-99c0-f6da535d7c30,06fa6c3f-bd69-4e21-aea5-3b30c758cdac,Completed,CombinedDHP,{},2024-11-12T13:01:47.733614Z,10
+23877fa4-56b9-4043-aa3e-1d52c266a0fa,06fa6c3f-bd69-4e21-aea5-3b30c758cdac,Completed,CombinedDHP,{},2024-11-12T13:02:22.808443Z,10
+5d6e9679-baff-4407-86cd-97ce888114e6,55b54989-740c-47a9-b33d-19afda9f8753,Canceled,Scaling,{'topic': 'hong_kong'},,0
+6eb93c38-c3fb-432a-a232-93207240f77c,55b54989-740c-47a9-b33d-19afda9f8753,Completed,CombinedDHP,{},2024-11-12T12:59:57.446787Z,10
+a86e3979-8f37-4d4f-92ae-8969d2056fbc,55b54989-740c-47a9-b33d-19afda9f8753,Completed,CombinedDHP,{},2024-11-12T13:01:17.645260Z,10
+9db28baf-4f9c-49e0-8426-af4cb7beab7f,56bba3ef-1420-4874-9f21-c624d27a7066,Canceled,Scaling,{'topic': 'singapore'},,0
+d5fab82d-4423-45e6-bdba-aea92cbf7832,56bba3ef-1420-4874-9f21-c624d27a7066,Completed,CombinedDHP,{},2024-11-12T12:59:27.376540Z,10
+db0ccf59-602c-45bc-8a49-4a334853400c,56bba3ef-1420-4874-9f21-c624d27a7066,Completed,CombinedDHP,{},2024-11-12T13:00:52.586799Z,10
+16947185-1f02-4868-b4c9-3982ef868904,4092d50b-9e15-484d-89f1-56a49edc2eeb,Canceled,Scaling,{'topic': 'us_east'},,0
+f856950a-93b7-443f-8e06-7e1088e04376,4092d50b-9e15-484d-89f1-56a49edc2eeb,Completed,CombinedDHP,{},2024-11-12T12:58:57.316018Z,10
+c46680d9-7db6-4cf7-9710-5fee077e33e0,4092d50b-9e15-484d-89f1-56a49edc2eeb,Completed,CombinedDHP,{},2024-11-12T13:00:22.500360Z,10
+7885c4e4-485e-45af-a321-5b21bb7b6fe3,0083d0bb-74c9-44b4-aa37-76aa6421652c,Canceled,Scaling,{'topic': 'singapore'},,0
+517b14a6-e014-49e5-815b-9aee535c6f3c,0083d0bb-74c9-44b4-aa37-76aa6421652c,Completed,CombinedDHP,{},2024-11-12T12:56:01.894450Z,10
+210c79e9-f8db-48a7-ad72-414605ca7f90,0083d0bb-74c9-44b4-aa37-76aa6421652c,Completed,CombinedDHP,{},2024-11-12T12:57:22.075271Z,10
+7d3ff199-2c5a-4f34-b44f-58d1ce7a9878,a3eea625-18fb-42ab-b89a-fa90eb7428b1,Canceled,Scaling,{'topic': 'singapore'},,0
+1a3761e3-991c-41ae-8d59-7e06104019b4,a3eea625-18fb-42ab-b89a-fa90eb7428b1,Completed,CombinedDHP,{},2024-11-12T12:53:06.495043Z,10
+300af3e0-149b-4b05-804c-141a221e22ad,a3eea625-18fb-42ab-b89a-fa90eb7428b1,Completed,CombinedDHP,{},2024-11-12T12:54:26.674080Z,10
+8760436a-feac-4ab1-b08f-54aaba863f94,5173efe2-20d5-4131-a67e-8cfbd90a6eef,Canceled,Scaling,{'topic': 'hong_kong'},,0
+60402fe5-d6a8-4746-971a-8ce846c1f126,5173efe2-20d5-4131-a67e-8cfbd90a6eef,Completed,CombinedDHP,{},2024-11-12T12:51:11.186260Z,10
+75c26e75-ee0d-448b-afa0-52a856f2ad5f,5173efe2-20d5-4131-a67e-8cfbd90a6eef,Completed,CombinedDHP,{},2024-11-12T12:51:41.267190Z,10
+30430a58-e4ef-47ee-9750-693a5a559172,50e3de30-efbe-4d79-8da6-13a09c1a83a7,Canceled,Scaling,{'topic': 'singapore'},,0
+57d0cb1e-cda7-4851-8a62-b7662ec2002e,50e3de30-efbe-4d79-8da6-13a09c1a83a7,Completed,CombinedDHP,{},2024-11-12T12:50:21.022720Z,10
+544c0676-3d35-4521-9213-f200d01f6ab6,50e3de30-efbe-4d79-8da6-13a09c1a83a7,Completed,CombinedDHP,{},2024-11-12T12:52:11.347013Z,10
+8e5ed824-dddd-4f8e-a468-e9fa1ef49942,62146498-6d8b-4c39-a08b-62ea1e2bc0ec,Canceled,Scaling,{'topic': 'hong_kong'},,0
+b8bb508b-2fe0-44c6-8f94-bb857430e028,62146498-6d8b-4c39-a08b-62ea1e2bc0ec,Completed,CombinedDHP,{},2024-11-12T12:47:30.553550Z,10
+eb7857d4-48b8-4f33-b44d-45b4814cfd34,62146498-6d8b-4c39-a08b-62ea1e2bc0ec,Completed,CombinedDHP,{},2024-11-12T12:48:50.778205Z,10
+31ea5b7e-59a8-469f-a5be-b3dc916f425c,0b9b7cf0-c0ee-405a-8ed4-a11bba457525,Canceled,Scaling,{'topic': 'hong_kong'},,0
+7772fb98-9d0e-4fd5-8913-6e60d0b9c8db,0b9b7cf0-c0ee-405a-8ed4-a11bba457525,Completed,CombinedDHP,{},2024-11-12T12:44:40.164738Z,10
+ef30abd9-8e8d-421d-bdb7-6e62b2450206,0b9b7cf0-c0ee-405a-8ed4-a11bba457525,Completed,CombinedDHP,{},2024-11-12T12:46:00.344840Z,10
+25678c5e-fa48-4ee2-a178-17f4f14ac396,6d99272a-566b-4aac-87a6-80f1152e79f4,Canceled,Scaling,{'topic': 'us_east'},,0
+596884e6-738a-4f59-a00d-f53267ade793,6d99272a-566b-4aac-87a6-80f1152e79f4,Completed,CombinedDHP,{},2024-11-12T12:42:14.769891Z,10
+b88d8755-2b06-4a79-a4f3-1d772164f374,6d99272a-566b-4aac-87a6-80f1152e79f4,Completed,CombinedDHP,{},2024-11-12T12:43:14.907Z,10
+50e8826f-86a4-4390-88f0-0d0543029a0d,875f5273-bab0-467e-b1a1-0e03ef124b73,Canceled,Scaling,{'topic': 'us_east'},,0
+e427bc71-33e2-4342-8683-52bc508573e0,875f5273-bab0-467e-b1a1-0e03ef124b73,Completed,CombinedDHP,{},2024-11-12T12:40:04.484754Z,10
+7619e754-3cd6-438e-8f04-7b202b2dd570,875f5273-bab0-467e-b1a1-0e03ef124b73,Completed,CombinedDHP,{},2024-11-12T12:41:24.652754Z,10
+7f0a2175-e2b7-47b0-8450-a46a79f873cd,194b6fe7-6294-4564-91f8-63db94c08a87,Canceled,Scaling,{'topic': 'singapore'},,0
+88909834-c2f6-4070-bfb2-987725d5c101,194b6fe7-6294-4564-91f8-63db94c08a87,Completed,CombinedDHP,{},2024-11-12T12:37:09.098447Z,10
+312a0365-7d2b-45f0-add0-11c4a0e7a22c,194b6fe7-6294-4564-91f8-63db94c08a87,Completed,CombinedDHP,{},2024-11-12T12:38:34.287847Z,10
+18b8e191-76ec-40c9-a42c-eaffe810e1c7,23971dd3-9346-452d-8fcc-8787633225a3,Canceled,Scaling,{'topic': 'hong_kong'},,0
+5d8af224-0d10-405b-a134-8635bd3e5d4d,23971dd3-9346-452d-8fcc-8787633225a3,Completed,CombinedDHP,{},2024-11-12T12:34:18.718158Z,10
+a14f7205-7557-412a-bdee-93ddf94c114d,23971dd3-9346-452d-8fcc-8787633225a3,Completed,CombinedDHP,{},2024-11-12T12:35:38.884800Z,10
+c327d413-cdb5-4453-a5bd-07eba3be8f54,0995ff58-e2f1-4758-856a-199a1130cc48,Canceled,Scaling,{'topic': 'singapore'},,0
+750378f3-3e06-485d-8a2c-8fe16a9f1f84,0995ff58-e2f1-4758-856a-199a1130cc48,Completed,CombinedDHP,{},2024-11-12T12:31:23.336648Z,10
+0b063801-4312-4ae8-83dd-e317702afbcf,0995ff58-e2f1-4758-856a-199a1130cc48,Completed,CombinedDHP,{},2024-11-12T12:32:48.516849Z,10
+ad464e24-6761-4ec0-a3ff-c6420929e6dc,1555dffd-62cd-4024-bed5-42a0b2a4e0f7,Canceled,Scaling,{'topic': 'us_east'},,0
+dd144e66-a450-441f-88e6-2403277bccba,1555dffd-62cd-4024-bed5-42a0b2a4e0f7,Completed,CombinedDHP,{},2024-11-12T12:30:18.174935Z,10
+ce53945e-0bf2-44b2-a525-929291efb570,1555dffd-62cd-4024-bed5-42a0b2a4e0f7,Completed,CombinedDHP,{},2024-11-12T12:30:48.244506Z,10
+614018b3-995c-4f24-ac51-65c619d33719,d9ec93b7-a37b-4a66-89e1-b9e215e7c25d,Canceled,Scaling,{'topic': 'hong_kong'},,0
+7b912d1b-5b3b-4fad-89e5-adc5ffdcb4a8,d9ec93b7-a37b-4a66-89e1-b9e215e7c25d,Completed,CombinedDHP,{},2024-11-12T12:27:57.812106Z,10
+60c2f62d-5c74-49bf-97cb-d19f1d318c0b,d9ec93b7-a37b-4a66-89e1-b9e215e7c25d,Completed,CombinedDHP,{},2024-11-12T12:29:18.004448Z,10
+55ef6cce-fd8f-4811-a3d8-f815f2eb5f8d,27c30a3a-e893-4d49-a059-691a9c68d28a,Canceled,Scaling,{'topic': 'us_east'},,0
+c5b4f757-4e3d-4bf5-9392-ff798c5de974,27c30a3a-e893-4d49-a059-691a9c68d28a,Completed,CombinedDHP,{},2024-11-12T12:28:22.869660Z,10
+bb3e9226-f97d-4df5-8ed5-6e6b85816b91,27c30a3a-e893-4d49-a059-691a9c68d28a,Completed,CombinedDHP,{},2024-11-12T12:29:43.071987Z,10
+22e6c1f5-c663-409f-a18b-9954dd991aa5,764df5aa-ae55-46db-b185-6d43be3bd179,Canceled,Scaling,{'topic': 'singapore'},,0
+f0dc35a3-4e0d-4b5f-91a9-46388d113690,764df5aa-ae55-46db-b185-6d43be3bd179,Completed,CombinedDHP,{},2024-11-12T12:27:32.754937Z,10
+d186de20-a4da-4369-9864-3646ff421db6,764df5aa-ae55-46db-b185-6d43be3bd179,Completed,CombinedDHP,{},2024-11-12T12:28:52.946754Z,10
+71fc3112-a2ac-476d-a831-885ed3c2f575,bd7c0ffe-0168-40d2-b8c2-fc5bb47063b6,Canceled,Scaling,{'topic': 'us_east'},,0
+882d53dd-4589-41d3-bc7a-179557a6db3c,bd7c0ffe-0168-40d2-b8c2-fc5bb47063b6,Completed,CombinedDHP,{},2024-11-12T12:24:37.304123Z,10
+f956fe34-1c6d-49b8-add7-ad96dbbc6704,bd7c0ffe-0168-40d2-b8c2-fc5bb47063b6,Completed,CombinedDHP,{},2024-11-12T12:25:57.481562Z,10
+8916382e-aeb3-4890-a7b6-eb5fe7af0d5c,1f74596c-ef4b-4469-b225-391947f17174,Canceled,Scaling,{'topic': 'us_east'},,0
+ba69ad08-aa04-4401-9b76-53768b15554a,1f74596c-ef4b-4469-b225-391947f17174,Completed,CombinedDHP,{},2024-11-12T12:22:06.924640Z,10
+5a0c7500-f8d9-4fc2-b4aa-6417ad27ae1b,1f74596c-ef4b-4469-b225-391947f17174,Completed,CombinedDHP,{},2024-11-12T12:23:12.104166Z,10
+43da75ee-d996-4219-81be-1569e5068004,aa710fdc-3432-4be0-a4d6-ffce3511c2ec,Canceled,Scaling,{'topic': 'hong_kong'},,0
+5509c73a-583c-4db9-8bc0-bbf2a97bd30a,aa710fdc-3432-4be0-a4d6-ffce3511c2ec,Completed,CombinedDHP,{},2024-11-12T12:18:46.444045Z,10
+5fb9e803-0031-43c0-a2c4-9a251333eab3,aa710fdc-3432-4be0-a4d6-ffce3511c2ec,Completed,CombinedDHP,{},2024-11-12T12:20:21.647268Z,10
+a684ecaf-8d95-4397-92d3-0d1f75c5af06,75ab2357-a408-40d4-b6ae-8b15df90c15f,Canceled,Scaling,{'topic': 'us_east'},,0
+b64e9450-e294-4bd6-a13c-17545105f102,75ab2357-a408-40d4-b6ae-8b15df90c15f,Completed,CombinedDHP,{},2024-11-12T12:16:30.866658Z,10
+853eab54-9593-4467-91e7-1cd895cff0bf,75ab2357-a408-40d4-b6ae-8b15df90c15f,Completed,CombinedDHP,{},2024-11-12T12:17:36.027274Z,10
+36e7252c-12eb-4eeb-9110-3bf04d276899,4c5bda2e-cf5b-4beb-8735-a712d13badaa,Canceled,Scaling,{'topic': 'hong_kong'},,0
+d5fa4f27-abd8-4a27-a8a8-61d50eb8ec3f,4c5bda2e-cf5b-4beb-8735-a712d13badaa,Completed,CombinedDHP,{},2024-11-12T12:14:20.553851Z,10
+95649ddf-e6d1-433c-a1be-b5bfd0a5e0ad,4c5bda2e-cf5b-4beb-8735-a712d13badaa,Completed,CombinedDHP,{},2024-11-12T12:15:20.701797Z,10
+fe07aa8f-b785-43ef-9752-2c4178f4f843,1b04431c-1f53-4eea-95bc-3d7c84cde6b0,Canceled,Scaling,{'topic': 'us_east'},,0
+fa8e7d91-f803-4f66-9844-492453bb183e,1b04431c-1f53-4eea-95bc-3d7c84cde6b0,Completed,CombinedDHP,{},2024-11-12T12:09:19.813228Z,10
+38f82f7a-4230-47b8-a84e-266bb4c09998,1b04431c-1f53-4eea-95bc-3d7c84cde6b0,Completed,CombinedDHP,{},2024-11-12T12:12:50.313683Z,10
+5124f455-da05-45c7-a2f9-40e3ace66be5,7c24c227-9f95-47f4-a1f5-aed45d741c1d,Canceled,Scaling,{'topic': 'us_east'},,0
+0dda668f-7681-4e7a-af57-caafca5f69b6,7c24c227-9f95-47f4-a1f5-aed45d741c1d,Completed,CombinedDHP,{},2024-11-12T12:07:54.634952Z,10
+5dd2076f-224e-429a-bacc-38dcf541701e,7c24c227-9f95-47f4-a1f5-aed45d741c1d,Completed,CombinedDHP,{},2024-11-12T12:11:30.123682Z,10
+b7f5ad95-8191-4601-ba99-9d50b85af143,8dbdf583-3975-4f29-8294-c6068b3f6278,Canceled,Scaling,{'topic': 'hong_kong'},,0
+804d4927-32b9-401f-8343-eee21adabd31,8dbdf583-3975-4f29-8294-c6068b3f6278,Completed,CombinedDHP,{},2024-11-12T12:05:59.363906Z,10
+880f65ae-7f5a-4741-8ad5-e254c23c987b,8dbdf583-3975-4f29-8294-c6068b3f6278,Completed,CombinedDHP,{},2024-11-12T12:06:54.481181Z,10
+c470c46c-449c-44b6-af98-20e0790da732,ae51b993-7de7-4333-8b0c-b304aa2e14eb,Canceled,Scaling,{'topic': 'singapore'},,0
+84b03ce9-eb8e-4041-9e9e-d98b72757f20,ae51b993-7de7-4333-8b0c-b304aa2e14eb,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T12:01:13.743339Z,10
+17d14387-f757-4734-9211-5c9c08567a27,ae51b993-7de7-4333-8b0c-b304aa2e14eb,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T12:03:34.032849Z,10
+74a36633-5e97-4055-8881-3c92f4f75b07,d244dc3a-186e-4af8-8970-1b83096e727c,Canceled,Scaling,{'topic': 'singapore'},,0
+c6c6149a-decf-41f2-a962-2027d9f62b02,d244dc3a-186e-4af8-8970-1b83096e727c,Completed,CombinedDHP,{},2024-11-12T11:57:43.292972Z,10
+316fb96f-c43e-43e7-bbaf-d853c61f41c1,d244dc3a-186e-4af8-8970-1b83096e727c,Completed,CombinedDHP,{},2024-11-12T11:59:33.527651Z,10
+bf550b89-4605-4574-90ce-4e3dbcfd7710,4d642642-b99a-4278-880c-164621d01abb,Canceled,Scaling,{'topic': 'hong_kong'},,0
+651ad2dd-5862-4bc5-bf0b-8d9aebcb570e,4d642642-b99a-4278-880c-164621d01abb,Completed,CombinedDHP,{},2024-11-12T11:54:52.898908Z,10
+e8fe9bdf-6c63-4e7c-afa2-d69cd043ba7e,4d642642-b99a-4278-880c-164621d01abb,Completed,CombinedDHP,{},2024-11-12T11:56:13.075693Z,10
+8731c5a1-3889-413c-b926-c3794c43a2af,408fc2c0-a8eb-4503-9ee5-ccefb6896cad,Canceled,Scaling,{'topic': 'singapore'},,0
+c1cf686f-a822-4676-8227-2e8f33d70c33,408fc2c0-a8eb-4503-9ee5-ccefb6896cad,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T11:50:07.314750Z,10
+90b9640b-e12c-41a1-978e-d2f488bf82a3,408fc2c0-a8eb-4503-9ee5-ccefb6896cad,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T11:52:27.600142Z,10
+8a3536e7-f705-4560-8852-4a6459ba8f28,c2c89732-9315-4011-83df-e7531f6a0c2e,Canceled,Scaling,{'topic': 'singapore'},,0
+0890c051-ba3b-4b3a-9bdf-41fcc88c743c,c2c89732-9315-4011-83df-e7531f6a0c2e,Completed,CombinedDHP,{},2024-11-12T11:47:11.815851Z,10
+5baf384c-dfa8-4f82-a412-001ee0637d84,c2c89732-9315-4011-83df-e7531f6a0c2e,Completed,CombinedDHP,{},2024-11-12T11:48:42.102745Z,10
+84196629-efc5-4ff4-8f50-0e759ac92b53,00aefe85-2182-4102-a7b9-68a31c0ffe87,Canceled,Scaling,{'topic': 'hong_kong'},,0
+5cd429dc-5cab-44d9-a6dc-7449907878e2,00aefe85-2182-4102-a7b9-68a31c0ffe87,Completed,CombinedDHP,{},2024-11-12T11:44:06.405603Z,10
+19765f0e-cb5e-4c73-8dde-e1c419eb8d84,00aefe85-2182-4102-a7b9-68a31c0ffe87,Completed,CombinedDHP,{},2024-11-12T11:45:36.594071Z,10
+242d9fd6-7337-42a1-87c5-775e3f7eb0c6,b1088d33-5118-4791-92d8-2764b1070355,Canceled,Scaling,{'topic': 'singapore'},,0
+4dc5f42f-8962-4831-a828-b021123d7b02,b1088d33-5118-4791-92d8-2764b1070355,Completed,CombinedDHP,{},2024-11-12T11:41:10.708604Z,10
+83590a9f-1097-4efd-be32-8e97ea6197ca,b1088d33-5118-4791-92d8-2764b1070355,Completed,CombinedDHP,{},2024-11-12T11:42:41.032527Z,10
+ccfa6214-d3dd-4b07-b432-965c82d41b7f,e628ffc4-d29d-4dcd-8270-4617109ac914,Canceled,Scaling,{'topic': 'us_east'},,0
+ae467b13-6d06-4b14-8553-6f1276d3acc6,e628ffc4-d29d-4dcd-8270-4617109ac914,Completed,CombinedDHP,{},2024-11-12T11:38:20.305928Z,10
+39c39f47-c73d-4d2a-9751-a63ea8e105c4,e628ffc4-d29d-4dcd-8270-4617109ac914,Completed,CombinedDHP,{},2024-11-12T11:39:45.491419Z,10
+28b267b8-7e1b-4605-886b-c29ddc61b516,37f79e12-592e-4bdd-818b-1b68bb73280f,Canceled,Scaling,{'topic': 'us_east'},,0
+90dcd4ed-2387-43a4-9bcb-25d676c8ed0e,37f79e12-592e-4bdd-818b-1b68bb73280f,Completed,CombinedDHP,{},2024-11-12T11:35:34.888564Z,10
+d0ab0afb-6737-4be4-9dd7-cdf2fdc7027b,37f79e12-592e-4bdd-818b-1b68bb73280f,Completed,CombinedDHP,{},2024-11-12T11:36:55.073598Z,10
+e8cafe36-f594-4c3b-b5eb-c20c8180eca2,b2810b80-01cf-447a-bbdf-da65226d6f55,Canceled,Scaling,{'topic': 'singapore'},,0
+19e0ce5e-afea-43e8-86c6-2626302371c0,b2810b80-01cf-447a-bbdf-da65226d6f55,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T11:30:49.229763Z,10
+681fbd29-b6f8-4324-aadc-58cde4703b07,b2810b80-01cf-447a-bbdf-da65226d6f55,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-12T11:33:09.546500Z,10
+81b7dc46-f859-4e54-baea-8a0750bd8e33,b6e26c12-eebf-413d-b190-f8d1e5402c13,Canceled,Scaling,{'topic': 'us_east'},,0
+eca3a3be-aa12-4de0-96dc-8036c011cf50,b6e26c12-eebf-413d-b190-f8d1e5402c13,Completed,CombinedDHP,{},2024-11-12T11:29:19.013544Z,10
+91054405-330d-4f3d-b648-b8ee64527891,b6e26c12-eebf-413d-b190-f8d1e5402c13,Completed,CombinedDHP,{},2024-11-12T11:30:19.148942Z,10
+ab259667-fb47-428d-ba85-440d8509d22b,5b7c9c8d-6819-4b49-a091-b10155a10ed8,Canceled,Scaling,{'topic': 'singapore'},,0
+03b9a246-32ef-4d0e-951c-418ecf2850ed,5b7c9c8d-6819-4b49-a091-b10155a10ed8,Completed,CombinedDHP,{},2024-11-12T11:28:38.907504Z,10
+6436bbc6-8cb3-455b-9fc5-b0e7a932c08f,5b7c9c8d-6819-4b49-a091-b10155a10ed8,Completed,CombinedDHP,{},2024-11-12T11:29:44.067688Z,10
+fad2a7d5-f2d1-4e59-b0e5-c970d2ffb620,64ef3cc4-215c-43cb-b89a-b87dfd78a047,Canceled,Scaling,{'topic': 'hong_kong'},,0
+4083e653-1fcc-40c4-8a71-9f9a12d0287c,64ef3cc4-215c-43cb-b89a-b87dfd78a047,Completed,CombinedDHP,{},2024-11-12T11:27:18.707459Z,10
+16c29ef3-f51c-4c8b-a726-32e0bd8de72e,64ef3cc4-215c-43cb-b89a-b87dfd78a047,Completed,CombinedDHP,{},2024-11-12T11:27:53.798505Z,10
+73a245c3-75e6-4c79-826b-c88672e1266b,6cdcf5d0-a6db-4be1-b758-5789b32b4237,Canceled,Scaling,{'topic': 'hong_kong'},,0
+21623201-f500-42af-8b23-7e03c641176e,6cdcf5d0-a6db-4be1-b758-5789b32b4237,Completed,CombinedDHP,{},2024-11-12T11:25:48.471547Z,10
+4b1335a8-ea18-4722-976c-eb6d5b59109b,6cdcf5d0-a6db-4be1-b758-5789b32b4237,Completed,CombinedDHP,{},2024-11-12T11:26:43.610001Z,10
+b7125ede-3541-46e5-a978-a4006a77ddb1,dc100bbf-b6bc-436d-90a4-8d0921e97afb,Canceled,Scaling,{'topic': 'us_east'},,0
+dc5d74a1-906f-42f1-a978-12830e9f215e,dc100bbf-b6bc-436d-90a4-8d0921e97afb,Completed,CombinedDHP,{},2024-11-12T11:25:23.415590Z,10
+1bfbdcc8-25ec-4989-a764-172d5792eb49,dc100bbf-b6bc-436d-90a4-8d0921e97afb,Completed,CombinedDHP,{},2024-11-12T11:26:18.550063Z,10
+45f11f34-3a2e-42ec-a3c6-9eea6e71b63a,dc4872b5-7c9d-40f5-8511-b55c6f98475e,Canceled,Scaling,{'topic': 'singapore'},,0
+db123cc5-2452-4184-8904-dacb535c397f,dc4872b5-7c9d-40f5-8511-b55c6f98475e,Completed,CombinedDHP,{},2024-11-12T11:24:08.228860Z,10
+e1800760-4ea8-493d-ae08-d557ae5128df,dc4872b5-7c9d-40f5-8511-b55c6f98475e,Completed,CombinedDHP,{},2024-11-12T11:24:38.300934Z,10
+c659ab9f-4f86-492f-a737-df3f1ff55814,0c66d895-471b-4059-a1ff-9a7926ed099e,Completed,Scaling,{'topic': 'singapore'},2024-11-12T11:40:24.200087Z,0
+c40afbb4-0293-491b-b2b4-6cc57abba68b,0c66d895-471b-4059-a1ff-9a7926ed099e,Completed,CombinedDHP,{},2024-11-12T11:20:52.727447Z,10
+a686db8a-50cc-4775-8295-e79df5e312e3,0c66d895-471b-4059-a1ff-9a7926ed099e,Completed,CombinedDHP,{},2024-11-12T11:22:22.944874Z,10
+b6e7a0d4-d50b-45a0-a107-2997c4e6d4c0,b32db341-8233-426e-a82a-eb5c6f358ebf,Completed,Scaling,{'topic': 'us_east'},2024-11-12T11:41:34.645488Z,0
+c2d64a94-f1f1-4f90-88ed-06a5d19ee940,b32db341-8233-426e-a82a-eb5c6f358ebf,Completed,CombinedDHP,{},2024-11-12T11:21:22.804446Z,10
+b003ece1-ff38-48f8-84f6-0cac153b5bcd,b32db341-8233-426e-a82a-eb5c6f358ebf,Completed,CombinedDHP,{},2024-11-12T11:23:03.069159Z,10
+e959adec-a355-460f-a7eb-19795f8ac0d2,414d998b-a49d-4e65-b6f9-dc9379b1d288,Completed,Scaling,{'topic': 'hong_kong'},2024-11-12T11:42:41.616838Z,0
+ff98f515-293e-453e-841c-2b3e5adda780,414d998b-a49d-4e65-b6f9-dc9379b1d288,Completed,CombinedDHP,{},2024-11-12T11:21:47.861511Z,10
+edb86760-ae45-42c4-8f27-4dc60dfe4dc6,414d998b-a49d-4e65-b6f9-dc9379b1d288,Completed,CombinedDHP,{},2024-11-12T11:23:28.130591Z,10
+9e001938-4e0d-4794-a8dd-cd09a842653f,57de4cfe-ff4e-4aa8-8e78-a270a99c2cbd,Canceled,Scaling,{'topic': 'us_east'},,0
+227632d6-329d-4776-a810-a1d83d25f8df,57de4cfe-ff4e-4aa8-8e78-a270a99c2cbd,Completed,CombinedDHP,{},2024-11-12T10:23:00.424244Z,10
+05d0a4cf-b8f5-4a5d-8036-19f2630e47b0,57de4cfe-ff4e-4aa8-8e78-a270a99c2cbd,Completed,CombinedDHP,{},2024-11-12T10:24:20.598658Z,10
+025f618e-7ea4-438f-9d36-ad7d13e938e8,c854ca33-b6dd-4e56-bb20-385e8f712b25,Completed,Scaling,{'topic': 'us_east'},2024-11-12T10:42:49.092666Z,0
+16dcbb2a-03ef-4ae8-9195-8e2bf6299f8f,c854ca33-b6dd-4e56-bb20-385e8f712b25,Completed,CombinedDHP,{},2024-11-12T10:20:50.196175Z,10
+0d68e0f4-0fb0-47af-9444-240532ea6a05,c854ca33-b6dd-4e56-bb20-385e8f712b25,Completed,CombinedDHP,{},2024-11-12T10:21:15.254027Z,10
+49ac1872-86b0-4657-895b-1acf38108e3b,f84dd79d-0bfb-4c3b-9d43-a8a7dce26fa7,Completed,Scaling,{'topic': 'us_east'},2024-11-08T17:11:13.238401Z,0
+7bfa9347-e2a1-4a75-b067-6399346ffd21,f84dd79d-0bfb-4c3b-9d43-a8a7dce26fa7,Completed,CombinedDHP,{},2024-11-08T16:48:59.306479Z,10
+a40ae954-9fb9-436c-974e-a370148900ff,f84dd79d-0bfb-4c3b-9d43-a8a7dce26fa7,Completed,CombinedDHP,{},2024-11-08T16:50:19.491542Z,10
+1e8eaa74-853e-4849-815e-c2af6c64dc1a,6fdc8043-0101-450a-9733-5a5c54de69e0,Completed,Scaling,{'topic': 'us_east'},2024-11-08T11:25:50.664805Z,0
+cab055bc-39d4-40a0-a59f-d34e3a3f2359,6fdc8043-0101-450a-9733-5a5c54de69e0,Completed,CombinedDHP,{},2024-11-08T11:03:36.735410Z,10
+3f294494-3fe7-47fd-8f2a-f15a536fc8da,6fdc8043-0101-450a-9733-5a5c54de69e0,Completed,CombinedDHP,{},2024-11-08T11:04:56.906343Z,10
+5503fe90-7fad-4e87-a186-a7b9561c0e48,e1032366-5276-4375-9262-a854b777054e,Completed,Scaling,{'topic': 'asia'},2024-11-08T11:20:59.749354Z,0
+96cfedb9-626e-4c3e-bb32-75d5016a8769,e1032366-5276-4375-9262-a854b777054e,Completed,CombinedDHP,{},2024-11-08T10:59:10.859388Z,10
+09f62e91-9705-464e-820b-827ac9983032,e1032366-5276-4375-9262-a854b777054e,Completed,CombinedDHP,{},2024-11-08T11:00:31.030027Z,10
+a6f68e42-341b-46e2-b067-b2019d06b3b1,47e83c0c-7642-4ba6-9c7e-4c0e28fe5e76,Failed,Scaling,"{'error': 'No deadline', 'topic': 'asia'}",,0
+27a3d2e6-8990-4c6f-8176-5c8ec7556705,47e83c0c-7642-4ba6-9c7e-4c0e28fe5e76,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-07T13:36:42.351284Z,0
+6ffff0b5-f253-4745-baec-0c471e025644,47e83c0c-7642-4ba6-9c7e-4c0e28fe5e76,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-07T13:39:02.528771Z,0
+e039e704-dc9c-4fed-ac39-654120d37aad,d0b3872b-b68c-417f-ac20-a9ec83b07a35,Canceled,Scaling,{'topic': 'all'},,0
+d72f2eac-0e00-4459-b0f1-dc3df3a3137e,d0b3872b-b68c-417f-ac20-a9ec83b07a35,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-05T12:01:47.921126Z,10
+5cd6f07f-4f8f-4000-95e1-d118a119392b,d0b3872b-b68c-417f-ac20-a9ec83b07a35,Failed,CombinedDHP,{'error': 'Deadline passed'},2024-11-05T12:04:08.304528Z,10
+d344a80d-6615-42d7-ae97-7e4751c030d1,7c626bba-3cbc-4664-a2e6-bfb7834978b5,Completed,Scaling,{'topic': 'us_east'},,0
+02844f7a-7290-49ee-9809-c0b6af6c8ae5,7c626bba-3cbc-4664-a2e6-bfb7834978b5,Completed,CombinedDHP,{},2024-11-05T11:52:17.215787Z,10
+f96b3600-8b22-41c9-bf56-2483e33ec301,7c626bba-3cbc-4664-a2e6-bfb7834978b5,Completed,CombinedDHP,{},2024-11-05T11:53:37.413188Z,10
