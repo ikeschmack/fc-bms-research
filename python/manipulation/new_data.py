@@ -5,9 +5,9 @@ import os
 import socket # Import the socket module for DNS lookups
 
 # Define file paths
-JOB_DETAILS_CSV = '/Users/sofiahirao/fc-bms-research-1/csv/job_details_with_bandwidth.csv'
-GEO_LOCATION_JSON = '/Users/sofiahirao/fc-bms-research-1/json/geo-location.json'
-JOB_WITH_SUBJOBS_JSON = '/Users/sofiahirao/fc-bms-research-1/json/job_with_subjobs.json'
+JOB_DETAILS_CSV = '/csv/job_details_with_bandwidth.csv'
+GEO_LOCATION_JSON = '/json/geo-location.json'
+JOB_WITH_SUBJOBS_JSON = '/json/job_with_subjobs.json'
 
 # Output file path for the specific CSV requested
 OUTPUT_JOB_COMPANY_CSV = 'job_company_summary.csv' 
