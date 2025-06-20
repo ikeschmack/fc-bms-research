@@ -20,7 +20,7 @@ for job in data:
         print("Job ID not found, skipping job.")
         continue
 
-    response = requests.get(f"{BASE_URL}/{job_id}", headers=HEADERS)
+    response = requests.get(f"{BASE_URL}/{job_id}?extended=true", headers=HEADERS)
     
     if response.status_code != 200:
         print(f"Request failed for job {job_id} (status {response.status_code}): {response.text}")
