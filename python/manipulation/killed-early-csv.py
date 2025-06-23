@@ -49,12 +49,12 @@ for index, row in df_worker_data.iterrows():
                 log_time = datetime.fromisoformat(log[0].replace('Z', '+00:00'))
                 next_log_time = datetime.fromisoformat(logs[i + 1][0].replace('Z', '+00:00')) if i + 1 < len(logs) else None
                 if log_time <= earliest_end_time and (next_log_time is None):
-                    total_bytes_downloaded = log[2]
+                    total_bytes_downloaded += log[2]
                     elapsed_seconds = worker['download']['elapsed_secs']
                     break
 
                 if log_time <= earliest_end_time and (next_log_time > earliest_end_time):
-                    total_bytes_downloaded = log[2]  # Log format: [time, interval bytes, total_bytes]
+                    total_bytes_downloaded += log[2]  # Log format: [time, interval bytes, total_bytes]
                     download_start_time = datetime.fromisoformat(worker['download']['download_start_time'].replace('Z', '+00:00'))
                     elapsed_seconds = (earliest_end_time - download_start_time).total_seconds()
                     break
