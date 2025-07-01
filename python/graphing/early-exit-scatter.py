@@ -55,25 +55,20 @@ for index, row in df_worker_data.iterrows():
     for worker in worker_data:
         if 'download' in worker and 'second_by_second_logs' in worker['download']:
             logs = worker['download']['second_by_second_logs']
-            first_log = logs[0] if logs else None
             for i, log in enumerate(logs):
-                
                 log_time = datetime.fromisoformat(log[0].replace('Z', '+00:00'))
                 next_log_time = datetime.fromisoformat(logs[i + 1][0].replace('Z', '+00:00')) if i + 1 < len(logs) else None
                 if log_time <= earliest_end_time and (next_log_time is None):
-                    total_bytes_downloaded = log[2] - first_log[2] + total_bytes_downloaded if first_log else log[2]
-                    elapsed_seconds = worker['download']['elapsed_secs'] - 1
+                    total_bytes_downloaded += log[2]
+                    elapsed_seconds = worker['download']['elapsed_secs']
                     break
 
                 if log_time <= earliest_end_time and (next_log_time > earliest_end_time):
-                    total_bytes_downloaded = log[2] - first_log[2] + total_bytes_downloaded if first_log else log[2] # Log format: [time, interval bytes, total_bytes]
+                    total_bytes_downloaded += log[2]  # Log format: [time, interval bytes, total_bytes]
                     download_start_time = datetime.fromisoformat(worker['download']['download_start_time'].replace('Z', '+00:00'))
-                    elapsed_seconds = (earliest_end_time - download_start_time).total_seconds() - 1
+                    elapsed_seconds = (earliest_end_time - download_start_time).total_seconds()
                     break
 
-    
-    
-    
     # Append the processed data for this row
     processed_data.append({
         "id": row["id"],
@@ -84,32 +79,17 @@ for index, row in df_worker_data.iterrows():
 # Create a DataFrame from the processed data
 df_results = pd.DataFrame(processed_data)
 
-# Ensure total_bytes > 0 and elapsed_seconds > 0
-df_results = df_results[(df_results['total_bytes'] > 0) & (df_results['elapsed_seconds'] > 0)]
-# Convert total_bytes and elapsed_seconds to float
-
-
 # Display the resulting DataFrame
 print(df_results)
 
-
-
-
-
-
-
-
-
-
-
 # Save the results to a CSV file
-df_results.to_csv("csv/le_ee_downloads.csv", index=False)
-print("Processed data saved to csv/le_ee_downloads.csv")
+df_results.to_csv("csv/sbs_downloads.csv", index=False)
+print("Processed data saved to csv/sbs_downloads.csv")
 
 
 # load job_with_subjobs.json and second_by_second_downloads.csv
 df_jobs = pd.read_json("json/job_with_subjobs.json")
-df_downloads = pd.read_csv("csv/le_ee_downloads.csv")    
+df_downloads = pd.read_csv("csv/sbs_downloads.csv")    
 
 
 # Calculate across dataframes on 'parent_summary['id']' in df_jobs_summary and 'id' in df_downloads
@@ -153,11 +133,6 @@ df_difference.to_csv("csv/difference_killed.csv", index=False)
 # Calculate the percentage difference of killed_mbps and download_speed
 df_difference['percentage_difference'] = (df_difference['difference_killed_dl'] / df_difference['download_speed']) * 100
 
-# Remove maximum value for better visualization
-max_value = df_difference['percentage_difference'].max()
-df_difference = df_difference[df_difference['percentage_difference'] < max_value]
-
-
 # plot percentage difference with respect to the killed_mbps
 plt.figure(figsize=(10, 6))
 plt.scatter(df_difference['killed_mbps'], df_difference['percentage_difference'], alpha=0.5)
@@ -169,5 +144,5 @@ plt.axhline(0, color='red', linestyle='--', linewidth=1)
 plt.xscale('log')  # Use logarithmic scale for better visibility
 plt.yscale('linear')  # Linear scale for percentage difference
 plt.tight_layout()
-plt.savefig("graphs/killed_early_scatter_log.png", dpi=300)
+plt.savefig("graphs/early_exit_scatter.png", dpi=300)
 plt.show()
