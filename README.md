@@ -38,7 +38,7 @@ Based off of Loqman's template & [Daniel Otto](https://www.youtube.com/watch?v=b
 }
 ```
 
-### How to run data-extract.py
+### How to run
 ```bash
 make job_data.json
 ```
@@ -103,7 +103,7 @@ Based off of Loqman's template & [Daniel Otto](https://www.youtube.com/watch?v=b
 }
 ```
 
-### How to run process-jobs.py
+### How to run
 
 ```bash
 make job_with_subjobs.json
@@ -114,22 +114,6 @@ make job_with_subjobs.json
  - "summary" will be extremely useful as it gives a very clear "download_speed" for
     each subjob which can be used
 
----------------------------------------------------------------------------------
-## cdf.py
-Based off code from our original Colab. Use of LLM to create the graph.
-- Displays a Cumulative Distribution Function from the job_with_subjobs.json data
-- Mimics original CDF from Exploratory Project by averaging the download speed across subjobs
-- Removes the top 4 download speeds and displays them above the title. These speeds make the graph unreadable when included.
-
-### How to run
-
-```bash
-make cdf.png
-```
-
-### Notes
-- Not beautiful, but it will be used as a jumping off point to analyze further
-- Based on first glances, it appears very similar to the results from the exploratory project, but this CDF needs to be vetted further to ensure that it behaves exactly the same way, and should be cast into the same scale.
 ---------------------------------------------------------------------------------
 ## url-domain-extract.py
 Simple script to extract domains from URLs, used LLM assistance
@@ -189,6 +173,49 @@ make geo-location.json
 ### Notes
 - This data will be used in conjunction with BMS data to map the global bandwidth distribution
 ---------------------------------------------------------------------------------
+## sbsl-early-exit.py
+Creates a PDF of the second by second logs simulating an early exit of workers after the first worker completes their download.
+- Each graph is a separate sub job
+- Y-axis scales based on the sub job
+
+### How to run
+
+```bash
+make sbsl_early_exit.pdf
+```
+
+
+### Findings
+
+By analyzing each DHP sub job separately, we have noticed that the cause of the bandwidth inflation is due to the un-representative increase in bandwidth that workers experience once the first few workers complete their downloads. This method attempts to negate this inflation by ignoring all measured values after the first download has completed.
+
+We have found that this method does reduce the inflation of bandwidth seen in the bandwidth-measurement-system. This is displayed by the early-exit-scatter.py
+
+
+### Notes
+- This graphing method is extremely inefficient with O(n^4), with each layer of depth into the function n increases enormously
+- Temporarily this has horizontal lines graphing the 90th percentile values to compare the impact an early-exit strategy if the 90th percentile is considered as the new measurent calculation method
+---------------------------------------------------------------------------------
+## sbsl-late-entry.py
+Creates a PDF of the second by second logs simulating a late-entry of workers.
+- Each graph is a separate sub job
+- Y-axis scales based on the sub job
+- Compared theoretical late-entry calculations ignoring values from the left of the vertical lines
+
+### How to run
+
+```bash
+make sbsl_late_entry.pdf
+```
+
+### Findings
+
+Ths purpose of this graph was to attempt to find whether considering the removal of the TCP slow-start will more accurately represent the bandwidth reported. This may not have much of an affect on the actual value and may need to be modified in the future.
+
+
+---------------------------------------------------------------------------------
+# Currently non-functional
+---------------------------------------------------------------------------------
 ## cdf-max-mean.py
 Creates a CDF using second by second logs in the old worker data.
 - CDF displays the differences between the Max, 90th Percentile, and Median with the Mean
@@ -204,10 +231,20 @@ make calculation_cdf.png
 ### Notes
 - May be iterated on
 ---------------------------------------------------------------------------------
-## provider-contribution-bar.py
 
-### Unfinished
+## cdf.py
+Based off code from our original Colab. Use of LLM to create the graph.
+- Displays a Cumulative Distribution Function from the job_with_subjobs.json data
+- Mimics original CDF from Exploratory Project by averaging the download speed across subjobs
+- Removes the top 4 download speeds and displays them above the title. These speeds make the graph unreadable when included.
 
+### How to run
+
+```bash
+make cdf.png
+```
+
+### Notes
+- Not beautiful, but it will be used as a jumping off point to analyze further
+- Based on first glances, it appears very similar to the results from the exploratory project, but this CDF needs to be vetted further to ensure that it behaves exactly the same way, and should be cast into the same scale.
 ---------------------------------------------------------------------------------
-
-
