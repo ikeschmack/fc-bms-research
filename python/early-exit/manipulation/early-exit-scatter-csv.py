@@ -1,4 +1,3 @@
-# Convert to Scatter Plot with histogram
 import pandas as pd
 import json
 from datetime import datetime
@@ -79,34 +78,12 @@ for index, row in df_worker_data.iterrows():
 
 # Create a DataFrame from the processed data
 df_results = pd.DataFrame(processed_data)
-
-# Display the resulting DataFrame
-print(df_results)
-
-# Save the results to a CSV file
-df_results.to_csv("csv/sbs_downloads.csv", index=False)
-print("Processed data saved to csv/sbs_downloads.csv")
-
-
-# load job_with_subjobs.json and second_by_second_downloads.csv
-df_jobs = pd.read_json("json/job_with_subjobs.json")
-df_downloads = pd.read_csv("csv/sbs_downloads.csv")    
-
-
-# Calculate across dataframes on 'parent_summary['id']' in df_jobs_summary and 'id' in df_downloads
-# Normalize dataframe from JSON
 df_jobs = pd.json_normalize(data)
 
-
-
-
-
-
-
 # Calculate total bytes/elapsed_seconds for each id in df_downloads in Mega bits/s
-df_downloads['total_bytes'] = df_downloads['total_bytes'].astype(float)
-df_downloads['elapsed_seconds'] = df_downloads['elapsed_seconds'].astype(float)
-df_downloads['killed_mbps'] = (df_downloads['total_bytes'] * 8) / (df_downloads['elapsed_seconds'] * 1_000_000)  # Convert bytes to bits and calculate bps
+df_results['total_bytes'] = df_results['total_bytes'].astype(float)
+df_results['elapsed_seconds'] = df_results['elapsed_seconds'].astype(float)
+df_results['killed_mbps'] = (df_results['total_bytes'] * 8) / (df_results['elapsed_seconds'] * 1_000_000)  # Convert bytes to bits and calculate bps
 
 # Apply the function to extract `download_speeds` for each row
 df_jobs["summary_downloads"] = df_jobs['summary.download_speeds'].apply(extract_download_speeds)
@@ -123,7 +100,7 @@ for index, row in df_jobs.iterrows():
 df_download_speeds = pd.DataFrame(download_speeds_data)
 
 # Subtract the download_speed from the killed_mbps in df_download_speeds by sub_job_id
-df_difference = df_download_speeds.merge(df_downloads[['id', 'killed_mbps']], left_on='sub_job_id', right_on='id', how='left')
+df_difference = df_download_speeds.merge(df_results[['id', 'killed_mbps']], left_on='sub_job_id', right_on='id', how='left')
 df_difference['download_speed'] = df_difference['download_speed'].astype(float)
 df_difference['killed_mbps'] = df_difference['killed_mbps'].astype(float)
 df_difference['difference_killed_dl'] = df_difference['killed_mbps'] - df_difference['download_speed']
@@ -134,26 +111,3 @@ df_difference = df_difference[['sub_job_id', 'killed_mbps', 'download_speed', 'd
 
 # Save the difference DataFrame to a CSV file
 df_difference.to_csv("csv/difference_killed.csv", index=False)
-
-# Calculate the percentage difference of killed_mbps and download_speed
-df_difference['percentage_difference'] = (df_difference['difference_killed_dl'] / df_difference['download_speed']) * 100
-
-# plot percentage difference with respect to the killed_mbps
-plt.figure(figsize=(10, 6))
-
-# Not using percentage TEMPORARY
-plt.scatter(df_difference['download_speed'], df_difference['percentage_difference'], alpha=0.5)
-
-plt.title('Percentage of Deviation of Early Exit Mbps from Download Speed')
-plt.xlabel('Non-Early Exit Download Speed (Mbps)')
-plt.ylabel('Deviation From Download Speed (%)')
-
-
-
-plt.grid(True)
-plt.axhline(0, color='red', linestyle='--', linewidth=1)
-plt.xscale('log')  # Use logarithmic scale for better visibility
-plt.yscale('linear')  # Log scale for different, TEMPORARY
-plt.tight_layout()
-plt.savefig("graphs/early_exit_scatter.png", dpi=300)
-plt.show()
