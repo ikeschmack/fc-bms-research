@@ -30,4 +30,6 @@ for job in data:
     job_details = response.json()
     all_jobs.append(job_details)
 
-print(json.dumps(all_jobs, indent=4))
+with open("json/jobs_with_subjobs.json", "w") as f:
+    json.dump(all_jobs, f, indent=4)
+f.close()
