@@ -24,7 +24,9 @@ job_with_subjobs.json: job_data.json
 	@echo "Processed job data saved to job_with_subjobs.json"
 
 # Location
-job_domain.json: job_with_subjobs.json
+# job_with_subjobs.json must exist before everything below this can be run
+
+job_domain.json: 
 	@echo "All tasks completed successfully."
 	python3 python/manipulation/url-domain-extract.py json/job_with_subjobs.json
 	@echo "Domain data saved to job_domain.json"
@@ -39,12 +41,12 @@ geo-location.json: job_domain.json
 # Graphs
 
 # Second by second logs graphs
-sbsl_early_exit.pdf: job_with_subjobs.json
+sbsl_early_exit.pdf: 
 	@echo "Generating second by second logs graph..."
 	python3 python/graphing/sbsl-early-exit.py
 	@echo "Second by second logs graph saved to sbsl_early_exit.pdf"
 
-sbsl_late_entry.pdf: job_with_subjobs.json
+sbsl_late_entry.pdf: 
 	@echo "Generating second by second logs graph..."
 	python3 python/graphing/sbsl-late-entry.py
 	@echo "Second by second logs graph saved to sbsl_late_entry.pdf"
@@ -52,12 +54,16 @@ sbsl_late_entry.pdf: job_with_subjobs.json
 
 
 # Early exit scatter plot
-early_exit_scatter.png: job_with_subjobs.json
+early_exit_scatter.png: 
 	@echo "Generating early exit scatter plot..."
 	python3 python/graphing/early-exit-scatter.py json/job_with_subjobs.json > graphs/early_exit_scatter.png
 	@echo "Clearning temporary CSV files..."
 	rm -f csv/difference_killed.csv csv/sbs_downloads.csv
 	@echo "Early exit scatter plot saved to early_exit_scatter.png"
+
+
+
+
 
 
 
