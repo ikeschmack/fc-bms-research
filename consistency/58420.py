@@ -2,10 +2,10 @@ import json
 import pandas as pd
 from urllib.parse import urlparse
 
-# 目标节点
+# target node
 target_node = "47.236.144.226:58420"
 
-# 读取json文件
+# read json
 with open('/Users/zoezhao/Columbia/25Summer/fc-bms-research/json/job_with_subjobs.json', 'r') as f:
     data = json.load(f)
 
@@ -38,7 +38,7 @@ for job in data:
         subjob_details = subjob.get('details', {})
         worker_count = subjob_details.get('workers_count')
         if worker_count is None:
-            # 备选：用worker_data的数量
+            # planb: use worker_data count
             worker_data = subjob.get('worker_data', [])
             worker_count = len(worker_data) if worker_data else None
 
@@ -67,7 +67,7 @@ for job in data:
 
 df = pd.DataFrame(records)
 
-# 保存CSV
+# save CSV
 csv_path = 'node_47.236.144.226_58420_bandwidth_analysis.csv'
 df.to_csv(csv_path, index=False)
 
