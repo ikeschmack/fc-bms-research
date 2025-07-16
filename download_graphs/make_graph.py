@@ -1,9 +1,15 @@
+# COMPARING 10MB AND 100MB (1:1 REFERENCE LINE)
+# COMPARING 50MB AND 100MB (1:1 REFERENCE LINE)
+
 import pandas as pd
-import plotly.express as px
+import numpy as np
+import plotly.graph_objects as go
+import webbrowser
+import os
 
 # --- File paths ---
-throughput_path = "/Users/sofiahirao/Desktop/fc-bms-research/Plateau_analysis/simulated_cutoff_throughputs.csv"
-meta_path = "/Users/sofiahirao/fc-bms-research-5/csv/job_ip_location.csv"
+throughput_path = "csv/simulated_cutoff_throughputs.csv"
+meta_path = "csv/job_ip_location.csv"
 
 # --- Load and merge data ---
 df = pd.read_csv(throughput_path)
@@ -15,52 +21,113 @@ for col in ["simulated10MB", "simulated50MB", "simulated100MB"]:
     df[col] = pd.to_numeric(df[col], errors='coerce')
 df = df.dropna(subset=["simulated10MB", "simulated50MB", "simulated100MB"])
 
-# --- Prepare data for dot-matrix plot ---
-plot_rows = []
-for _, row in df.iterrows():
-    vals = [row['simulated10MB'], row['simulated50MB'], row['simulated100MB']]
-    diffs = [vals[i+1] - vals[i] for i in range(2)]
-    # Determine saturation point
-    if abs(diffs[0]) < 0.05 * max(vals[0], 1e-6):
-        saturation = "10MB"
-    elif abs(diffs[1]) < 0.05 * max(vals[1], 1e-6):
-        saturation = "50MB"
-    else:
-        saturation = "100MB"
-    for i, size in enumerate(["10MB", "50MB", "100MB"]):
-        if vals[i] == 0.0:
-            status = "Zero"
-        elif saturation == size:
-            status = "Saturated"
-        else:
-            status = "Valid"
-        plot_rows.append({
-            "subjob_id": row["subjob_id"],
-            "File Size": size,
-            "Throughput": vals[i],
-            "Status": status,
-            "job_id": row["job_id"]
-        })
-plot_df = pd.DataFrame(plot_rows)
+# --- Plotting function ---
+def make_comparison_plot(x, y, x_label, y_label, y_color, title):
+    # Filter out non-positive values (log scale)
+    mask = (x > 0) & (y > 0)
+    x = x[mask]
+    y = y[mask]
 
-# --- Plotly dot-matrix plot ---
-fig = px.scatter(
-    plot_df,
-    x="File Size",
-    y="subjob_id",
-    color="Status",
-    symbol="Status",
-    color_discrete_map={"Saturated": "green", "Valid": "blue", "Zero": "red"},
-    symbol_map={"Saturated": "star", "Valid": "circle", "Zero": "x"},
-    hover_data=["job_id", "Throughput"],
-    title="Saturation and Validity by File Size and Subjob"
+    # Reference line data (1:1 line — throughput would be equal)
+    x_ref = x
+    y_ref = x  # y = x for the reference line
+
+    # Log scale ranges
+    min_x = max(x.min() * 0.8, 1e-3)
+    max_x = x.max() * 1.1
+    min_y = max(min(y.min(), y_ref.min()) * 0.8, 1e-3)
+    max_y = max(y.max(), y_ref.max()) * 1.1
+
+    min_x_log = np.log10(min_x)
+    max_x_log = np.log10(max_x)
+    min_y_log = np.log10(min_y)
+    max_y_log = np.log10(max_y)
+
+    fig = go.Figure()
+
+    # Colored dots: throughput from smaller file size
+    fig.add_trace(go.Scatter(
+        x=x,
+        y=y,
+        mode='markers',
+        name=f'{y_label}',
+        marker=dict(color=y_color, size=8, opacity=0.75),
+        hovertemplate=f'{y_label}: %{{y:.2f}} Mbps<br>{x_label}: %{{x:.2f}} Mbps<extra></extra>'
+    ))
+
+    # Red dots: reference line (y = x)
+    fig.add_trace(go.Scatter(
+        x=x_ref,
+        y=y_ref,
+        mode='markers',
+        name='Throughput at 100MB',
+        marker=dict(color='red', size=6, opacity=0.6),
+        hovertemplate='Reference (100MB Match): %{y:.2f} Mbps<extra></extra>'
+    ))
+
+    fig.update_layout(
+        title=title,
+        xaxis=dict(
+            title=f"{x_label} (Mbps, log scale)",
+            type="log",
+            range=[min_x_log, max_x_log],
+            showgrid=True
+        ),
+        yaxis=dict(
+            title=f"{y_label} (Mbps, log scale)",
+            type="log",
+            range=[min_y_log, max_y_log],
+            showgrid=True
+        ),
+        legend=dict(
+            x=0.01, y=0.99,
+            bgcolor='rgba(255,255,255,0)',
+            bordercolor='rgba(0,0,0,0)'
+        ),
+        width=900,
+        height=700,
+        margin=dict(t=60)
+    )
+
+    return fig
+
+# --- Prepare data ---
+x_100MB = df["simulated100MB"]
+y_10MB = df["simulated10MB"]
+y_50MB = df["simulated50MB"]
+
+# --- Plot 1: 10MB vs 100MB ---
+fig1 = make_comparison_plot(
+    x=x_100MB,
+    y=y_10MB,
+    x_label="Throughput at 100MB",
+    y_label="Throughput at 10MB",
+    y_color="blue",
+    title="Comparison of 10MB vs 100MB Throughput (Log Scale)"
 )
-fig.update_traces(marker=dict(size=14))
-fig.update_layout(
-    yaxis_title="Subjob",
-    xaxis_title="File Size",
-    yaxis={'categoryorder':'total ascending'},
-    height=800
+
+# --- Plot 2: 50MB vs 100MB ---
+fig2 = make_comparison_plot(
+    x=x_100MB,
+    y=y_50MB,
+    x_label="Throughput at 100MB",
+    y_label="Throughput at 50MB",
+    y_color="green",
+    title="Comparison of 50MB vs 100MB Throughput (Log Scale)"
 )
-fig.write_html("/Users/sofiahirao/fc-bms-research-5/Coding/saturation_dot_matrix.html")
-fig.show()
+
+# --- Save and open plots ---
+output_dir = "download_graphs"
+os.makedirs(output_dir, exist_ok=True)
+
+output_path1 = os.path.join(output_dir, "comparison_10MB_vs_100MB.html")
+output_path2 = os.path.join(output_dir, "comparison_50MB_vs_100MB.html")
+
+fig1.write_html(output_path1)
+fig2.write_html(output_path2)
+
+print(f"✅ Plot saved to: {output_path1}")
+print(f"✅ Plot saved to: {output_path2}")
+
+webbrowser.open(f"file://{os.path.abspath(output_path1)}")
+webbrowser.open(f"file://{os.path.abspath(output_path2)}")
