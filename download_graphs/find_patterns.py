@@ -1,10 +1,18 @@
+#INTERACTIVE GRAPH COMPARING 10MB VS 100MB AND 50MB VS 100MB
+#SIMULATED FILE SIZES 
+
+
+#make sure to add a disscription box under to say what the movement patterns mean 
+
 import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
+import plotly.express as px
+import plotly.graph_objects as go
+import os
+import webbrowser
 
 # --- File paths ---
-throughput_path = "/Users/sofiahirao/Desktop/fc-bms-research/Plateau_analysis/simulated_cutoff_throughputs.csv"
-meta_path = "/Users/sofiahirao/fc-bms-research-5/csv/job_ip_location.csv"
+throughput_path = "/Users/sofiahirao/untitled folder/fc-bms-research/csv/simulated_cutoff_throughputs.csv"
+meta_path = "/Users/sofiahirao/untitled folder/fc-bms-research/csv/job_ip_location.csv"
 
 # --- Load data ---
 df = pd.read_csv(throughput_path)
@@ -12,6 +20,10 @@ df_meta = pd.read_csv(meta_path)
 
 # --- Merge on job_id ---
 df = pd.merge(df, df_meta, on='job_id', how='left')
+
+# --- Fill missing provider/location with 'Unknown' ---
+df['as_name'] = df['as_name'].fillna('Unknown')
+df['location'] = df['location'].fillna('Unknown')
 
 # --- Clean & process throughput data ---
 for col in ["simulated10MB", "simulated50MB", "simulated100MB"]:
@@ -22,76 +34,71 @@ df = df.dropna(subset=["simulated10MB", "simulated50MB", "simulated100MB"])
 df["pct_diff_10_100"] = ((df["simulated10MB"] - df["simulated100MB"]) / df["simulated100MB"]) * 100
 df["pct_diff_50_100"] = ((df["simulated50MB"] - df["simulated100MB"]) / df["simulated100MB"]) * 100
 
-# --- Set up color + marker mapping ---
-providers = df['as_name'].dropna().unique()
-locations = df['location'].dropna().unique()
-color_map = {prov: plt.cm.tab20(i % 20) for i, prov in enumerate(providers)}
-marker_map = {loc: m for loc, m in zip(locations, ['o', 's', '^', 'D', 'P', '*', 'X', 'v', '<', '>'])}
+# --- Ensure output directory exists ---
+output_dir = "/Users/sofiahirao/fc-bms-research-5/Coding"
+os.makedirs(output_dir, exist_ok=True)
 
-# --- Function to generate plots ---
-def make_plot(x_col, y_col, title, save_path, color_map, marker_map):
-    plt.figure(figsize=(12, 7))
+def make_plotly_plot(x_col, y_col, title, save_path, color_col, symbol_col, yaxis_label):
+    fig = px.scatter(
+        df,
+        x=x_col,
+        y=y_col,
+        color=color_col,
+        symbol=symbol_col,
+        hover_data=["job_id", "location", "as_name"],
+        title=title,
+        labels={x_col: "Throughput at 100MB (Mbps, log scale)", y_col: yaxis_label},
+    )
 
-    # Highlight ±5% band
-    plt.axhspan(-5, 5, color='lightgray', alpha=0.5, label='±5% Band')
+    # Add ±5% shaded band
+    fig.add_shape(
+        type="rect",
+        xref="paper", yref="y",
+        x0=0, x1=1,
+        y0=-5, y1=5,
+        fillcolor="lightgray",
+        opacity=0.4,
+        layer="below",
+        line_width=0,
+    )
+    # Add 0% reference line
+    fig.add_hline(y=0, line_dash="dash", line_color="red", annotation_text="0% Difference", annotation_position="top left")
 
-    # Scatter each point
-    for _, row in df.iterrows():
-        plt.scatter(
-            row[x_col],
-            row[y_col],
-            color=color_map.get(row['as_name'], 'gray'),
-            marker=marker_map.get(row['location'], 'o'),
-            alpha=0.75,
-            edgecolor='black',
-            linewidth=0.3,
-            s=60
-        )
+    fig.update_xaxes(type="log")
+    fig.update_traces(marker=dict(size=10, line=dict(width=0.5, color='DarkSlateGrey')))
+    fig.update_layout(
+        legend=dict(itemsizing='constant'),
+        height=700,
+        margin=dict(l=40, r=40, t=80, b=40)
+    )
+    fig.write_html(save_path)
+    print(f"Graph saved to: {save_path}")
 
-    plt.xscale("log")
-    plt.axhline(0, color='red', linestyle='--', linewidth=1)
-    plt.title(title)
-    plt.xlabel("Throughput at 100MB (Mbps, log scale)")
-    plt.ylabel("Percentage Difference from 100MB (%)")
-    plt.grid(True)
-
-    # Legends
-    provider_legend = [
-        Line2D([0], [0], marker='o', color='w', label=prov,
-               markerfacecolor=color_map[prov], markersize=8)
-        for prov in providers[:10]
-    ]
-    location_legend = [
-        Line2D([0], [0], marker=marker_map[loc], color='black', linestyle='None',
-               label=loc, markersize=8)
-        for loc in locations
-    ]
-    extra_legend = [
-        Line2D([0], [0], color='lightgray', lw=10, label='±5% Band', alpha=0.5),
-        Line2D([0], [0], color='red', lw=1, linestyle='--', label='0% Difference')
-    ]
-
-    plt.legend(handles=provider_legend + location_legend + extra_legend, loc='best', fontsize=8)
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=300)
-    plt.show()
-    print(f" Graph saved to: {save_path}")
+# --- Output paths ---
+output_path1 = os.path.join(output_dir, "subjob_10MB_vs_100MB_Shaded.html")
+output_path2 = os.path.join(output_dir, "subjob_50MB_vs_100MB_Shaded.html")
 
 # --- Create both plots ---
-make_plot(
+make_plotly_plot(
     x_col="simulated100MB",
     y_col="pct_diff_10_100",
     title="Throughput % Difference (10MB vs 100MB)",
-    save_path="/Users/sofiahirao/fc-bms-research-5/Coding/subjob_10MB_vs_100MB_Shaded.png",
-    color_map=color_map,
-    marker_map=marker_map
+    save_path=output_path1,
+    color_col="as_name",
+    symbol_col="location",
+    yaxis_label="Percentage Difference in Throughput: 10MB Relative to 100MB"
 )
 
-make_plot(
+make_plotly_plot(
     x_col="simulated100MB",
     y_col="pct_diff_50_100",
     title="Throughput % Difference (50MB vs 100MB)",
-    save_path="/Users/sofiahirao/fc-bms-research-5/Coding/subjob_50MB_vs_100MB_Shaded.png",
-    color_map=color_map,
-    marker_map=marker_map
+    save_path=output_path2,
+    color_col="as_name",
+    symbol_col="location",
+    yaxis_label="Percentage Difference in Throughput: 50MB Relative to 100MB"
 )
+
+# --- Open both plots in the default web browser ---
+webbrowser.open(f"file://{os.path.abspath(output_path1)}")
+webbrowser.open(f"file://{os.path.abspath(output_path2)}")
