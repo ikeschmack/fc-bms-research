@@ -27,10 +27,23 @@ def generate_graphs():
         subprocess.check_call([sys.executable, script])
 
 
-# Two API Pulls for this function
+# Two API Pulls for this function. PULLS FROM THE API EVERY TIME TO EASILY GET THE MOST UP-TO-DATE DATA
 # Must be run before the other graphing functions
+#Files:
+    # job_data.json -> all jobs in the api download from the /jobs endpoint
+    # job_with_subjobs.json -> all jobs in the api downloaded from /job endpoint and extended=true
 def generate_job_with_subjobs():
     print("Generating job_with_subjobs.json...")
+    print("checking for json/jobs_data.json...")
+    if os.path.exists("json/jobs_data.json"):
+        # Removing old file if it exists
+        print("Found json/jobs_data.json, removing it...")
+        subprocess.check_call([sys.executable, script])
+    if os.path.exists("json/jobs_with_subjobs.json"):
+        # Removing old file if it exists
+        print("Found json/jobs_with_subjobs.json, removing it...")
+        os.remove("json/jobs_with_subjobs.json")
+    
     graph_scripts = [
         "python/api-pulls/swagger-ui/data-extract.py",
         "python/api-pulls/swagger-ui/process-jobs.py"
@@ -39,16 +52,73 @@ def generate_job_with_subjobs():
         print(f"Running {script}...")
         subprocess.check_call([sys.executable, script])
 
-def generate_seaborn_ee_csv():
-    pass
+# Generates 2 CSV files for seaborn-early-exit.py
+# 1. csv/early_exit_wne_filtered.csv -> contains all sub jobs that do not download the entire file (100MB)
+# 2. csv/early_exit_comparison.csv -> merged dataframe containing all sub jobs with reported download speed and early exit download speed
+def generate_seaborn_early_exit_csv():
+    print("Checking for required filed...")
+    if not os.path.exists("json/jobs_with_subjobs.json"):
+        print(f"json/jobs_with_subjobs.json not found. Please run \033[1mpython build.py jobdata\033[0m first.")
+        exit(1)
 
-def generate_early_exit_csv():
-    pass
+    print("Checking for old CSV files...")
+    if os.path.exists("csv/early_exit_comparison.csv"):
+        # Removing old file if it exists
+        print("Found csv/early_exit_comparison.csv, removing it...")
+        os.remove("csv/early_exit_comparison.csv")
+    if os.path.exists("csv/early_exit_wne_filtered.csv"):
+        # Removing old file if it exists
+        print("Found csv/early_exit_wne_filtered.csv, removing it...")
+        os.remove("csv/early_exit_wne_filtered.csv")
 
+    script = "python/early-exit/manipulation/seaborn-ee-csv.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
+
+# Generates seaborn-early-exit.py graph
+# Requires csv/early_exit_comparison.csv and early_exit_wne_filtered to be generated first    
 def generate_seaborn_ee_graph():
-    pass
+    print("Checking for required files...")
+    if not os.path.exists("csv/early_exit_comparison.csv") or not os.path.exists("csv/early_exit_wne_filtered.csv"):
+        print(f"Required CSV files not found. Please run \033[1mpython build.py seaborn-ee-csv\033[0m first.")
+        exit(1)
+
+    script = "python/early-exit/graphing/seaborn-early-exit.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
+
+# Generates graphs/sbsl_early_exit.pdf
+# Requires json/jobs_with_subjobs to be generated first
+def generate_second_by_second_logs_early_exit_simulation_graph():
+    print("Checking for required files...")
+    if not os.path.exists("json/jobs_with_subjobs.json"):
+        print(f"json/jobs_with_subjobs.json not found. Please run \033[1mpython build.py jobdata\033[0m first.")
+        exit(1)
+
+    script = "python/sbsl-pdfs/graphing/sbsl-early-exit.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
 
 
+# Generates graphs/second-by-second-logs/sum-sbsl-graphs.pdf
+# Requires csv/early_exit_comparison.csv and json/jobs_with_subjobs.json to be generated first
+def generate_sum_sbsl_pdf():
+    print("Generating second-by-second logs PDF...")
+    if not os.path.exists("json/jobs_with_subjobs.json"):
+        print(f"json/jobs_with_subjobs.json not found. Please run \033[1mpython build.py jobdata\033[0m first.")
+        exit(1)
+    
+    if not os.path.exists("csv/early_exit_comparison.csv"):
+        print(f"csv/early_exit_comparison.csv not found. Please run \033[1mpython build.py seaborn-ee-csv\033[0m first.")
+        exit(1)
+
+    if os.path.exists("graphs/second-by-second-logs/sum_sbsl_graphs.pdf"):
+        print("Found graphs/second-by-second-logs/sum_sbsl_graphs.pdf, removing it...")
+        os.remove("graphs/second-by-second-logs/sum_sbsl_graphs.pdf")
+
+    script = "python/sbsl-pdfs/graphing/sum-sbsl-graphing.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
 
 def clean():
     """Clean up temporary files."""
@@ -65,13 +135,18 @@ def main():
     """Main entry point for the build script."""
     tasks = {
         "install": install_dependencies,
+        "jobdata": generate_job_with_subjobs,
+        "seaborn-ee-csv": generate_seaborn_early_exit_csv,
+        "seaborn-ee-graph": generate_seaborn_ee_graph,
+        "sbsl-ee-graphs": generate_second_by_second_logs_early_exit_simulation_graph,
+        "sum-sbsl-graphs": generate_sum_sbsl_pdf,
         "test": run_tests,
         "graphs": generate_graphs,
         "clean": clean,
     }
 
     if len(sys.argv) < 2 or sys.argv[1] not in tasks:
-        print("Usage: python build.py [install|test|graphs|clean]")
+        print("Usage: python build.py [install|jobdata|seaborn-ee-csv|seaborn-ee-graph|sbsl-ee-graphs|sum-sbsl-graphs|test|graphs|clean]")
         sys.exit(1)
 
     task = sys.argv[1]
