@@ -98,7 +98,7 @@ def compute_aggregated_throughput(subjob):
 df = pd.read_csv("csv/early_exit_comparison.csv")
 
 # Read the JSON file
-json_file_path = "json/job_with_subjobs.json"
+json_file_path = "json/jobs_with_subjobs.json"
 with open(json_file_path, 'r') as f:
     data = json.load(f)
 if not data:
@@ -150,7 +150,7 @@ print(df.head())
 
 
 # Read the JSON file
-with open("json/job_with_subjobs.json", "r") as f:
+with open("json/jobs_with_subjobs.json", "r") as f:
     data = json.load(f)
 if not data:
     print("No jobs to process.")
@@ -238,7 +238,7 @@ df_flattened = pd.DataFrame(flattened_worker_data)
 
 
 # Plot the behavior of each sub-job
-pdf_file_path = 'graphs/sub_job_behavior.pdf'
+pdf_file_path = 'graphs/second-by-second-logs/sum_sbsl_graphs.pdf'
 with PdfPages(pdf_file_path) as pdf_pages:
     for sub_job_id, sub_job_group in df.groupby('sub_job_id'):
         

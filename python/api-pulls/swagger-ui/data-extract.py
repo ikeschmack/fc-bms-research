@@ -27,6 +27,6 @@ if not data:
     print("No more jobs to fetch.")
 
 
-with open('jobs_data.json', 'w') as f:
+with open('json/jobs_data.json', 'w') as f:
     json.dump(data, f, indent=4)
 f.close()

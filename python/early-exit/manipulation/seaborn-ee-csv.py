@@ -5,7 +5,7 @@ import pandas as pd
 import json
 from datetime import datetime
 # Read the JSON file
-with open("json/job_with_subjobs.json", "r") as f:
+with open("json/jobs_with_subjobs.json", "r") as f:
     data = json.load(f)
 if not data:
     print("No jobs to process.")

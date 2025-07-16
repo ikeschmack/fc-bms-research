@@ -117,9 +117,9 @@ def plot_subjob(subjob, job_id, pdf, thresholds_bytes):
     plt.close()
 
 def main():
-    json_path = "/Users/sofiahirao/fc-bms-research-5/json/job_with_subjobs.json"
-    output_csv_path = "/Users/sofiahirao/fc-bms-research-5/Coding/simulated_cutoff_throughputs.csv"
-    pdf_output_path = "/Users/sofiahirao/fc-bms-research-5/Coding/subjob_worker_throughputs.pdf"
+    json_path = "json/jobs_with_subjobs.json"
+    output_csv_path = "csv/simulated_cutoff_throughputs.csv"
+    pdf_output_path = "graphs/simulated-file-sizes/subjob_worker_throughputs.pdf"
 
     with open(json_path, "r") as f:
         jobs = json.load(f)
