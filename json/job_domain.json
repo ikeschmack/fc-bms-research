@@ -1,15 +1,15 @@
-{"domain":"47.236.144.226"}
-{"domain":"222.214.219.199"}
-{"domain":"47.254.47.133"}
+{"domain":"47.236.144.226"} - 2, different ports and CIDs
+{"domain":"222.214.219.199"} - 2, same ports different CIDs
+{"domain":"47.254.47.133"} - 2, different ports and CIDs
 {"domain":"203.160.91.76"}
 {"domain":"103.1.65.126"}
 {"domain":"103.1.65.125"}
 {"domain":"162.219.87.217"}
 {"domain":"162.219.87.220"}
-{"domain":"157.148.101.187"}
+{"domain":"157.148.101.187"} - 3, 2 have same ports and different CIDs, but one has different port and CID
 {"domain":"203.160.91.78"}
 {"domain":"52.217.202.58"}
-{"domain":"125.67.244.19"}
+{"domain":"125.67.244.19"} - 2, same ports, different CIDs
 {"domain":"122.114.2.214"}
 {"domain":"222.74.153.82"}
 {"domain":"76.219.232.45"}
@@ -18,7 +18,7 @@
 {"domain":"54.158.66.216"}
 {"domain":"43.229.79.68"}
 {"domain":"188.227.57.12"}
-{"domain":"8.211.145.187"}
+{"domain":"8.211.145.187"} - 2, different ports & CIDs
 {"domain":"93.183.72.2"}
 {"domain":"207.189.117.196"}
 {"domain":"120.236.8.226"}

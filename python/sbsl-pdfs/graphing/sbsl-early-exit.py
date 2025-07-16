@@ -18,7 +18,7 @@ def extract_second_by_second(download_json):
         return []
 
 # Read the JSON file
-with open("json/job_with_subjobs.json", "r") as f:
+with open("json/jobs_with_subjobs.json", "r") as f:
     data = json.load(f)
 
 if not data:
@@ -78,7 +78,7 @@ for _, row in df_worker_data.iterrows():
 # Create a new DataFrame with flattened worker data
 df_flattened = pd.DataFrame(flattened_worker_data)
 
-pdf_file_path = 'graphs/sbsl_early_exit.pdf'
+pdf_file_path = 'graphs/second-by-second-logs/sbsl_early_exit.pdf'
 with PdfPages(pdf_file_path) as pdf_pages:
     # Group workers by their sub_job_id
     for sub_job_id, job_group in df_flattened.groupby('sub_job_id'):

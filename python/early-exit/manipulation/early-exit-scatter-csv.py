@@ -13,7 +13,7 @@ def extract_download_speeds(summary):
         return []
 
 # Read the JSON file
-with open("json/job_with_subjobs.json", "r") as f:
+with open("json/jobs_with_subjobs.json", "r") as f:
     data = json.load(f)
 
 if not data:
