@@ -145,7 +145,7 @@ Based off of Loqman's template & [Daniel Otto](https://www.youtube.com/watch?v=b
 ## Early-Exit
 
 
-#### What is Early-Exit?
+### What is Early-Exit?
 
 
 DHP Early Exit (EE) refers to a method where the DHP sub job ends once the first worker completes their download.
@@ -158,7 +158,7 @@ DHP Early Exit (EE) refers to a method where the DHP sub job ends once the first
 This method can be used after measurements, or can be directly integrated into the behavior of the workers. 
 It is important to note that the following graphics and values are estimations as by the second values are not absolutely representative of the downloads.
 
-#### Inaccuracies of the current measurement system
+### Inaccuracies of the current measurement system
 
 
 The current method of calculating bandwidth measurements is the following equation:
@@ -175,9 +175,9 @@ What are its problems?
 ![inaccuries in current measurement](./docs/inaccuracies_current_measurement.png)
 
 
-#### Why would DHP Early Exit be beneficial?
+### Why would DHP Early Exit be beneficial?
 
-##### Accuracy:
+#### Accuracy:
 
 1. Bandwidth inflation
 - Accuracy in mid-to-high bandwidth increases
@@ -188,7 +188,7 @@ What are its problems?
 - The only bandwidth considered is when all workers are downloading
 
 
-#### Comparison between current method and Early Exit
+### Comparison between current method and Early Exit
 
 ![seaborn plot](./docs/seaborn_plot.png)
 
@@ -203,6 +203,50 @@ As bandwidth increases, so does this discrepancy
 
 The values in the 104 range (X-axis) are all AWS storage nodes (us-east) measured by workers in us_east (19 points ranging from 6 Gbps to 37 Gbps)
 - EE is more representative and takes less time
+
+
+### Advantages of Early Exit
+
+Two possible ways to improve the accuracy of the system:
+
+#### Updating throughput estimate after download:
+
+Pros:
+- Increases accuracy in mid to high bandwidth
+- No change to the current method of calculating bandwidth individually for each worker or across a sub job
+
+Cons:
+- Need increased file size 
+    - Such that each worker can be guaranteed to reach its maximum bandwidth and the EE does not create uncharacteristic results
+- Requires for workers to individually be capable of completing a download.
+- May also need increased frequency of logs 
+
+#### Altering the BMS pipeline:
+
+Pros:
+- Less expensive (less download & time)
+- Reduced time to measure for each sub job
+- More sub jobs can be run per job
+
+Cons:
+- Added complexity in the management of workers
+- Struggles with very high bandwidth
+- Increased file size so that workers are given more time to saturate
+
+
+
+### Results from this research
+
+The bandwidth measurement system is in the process of being updated. The new data should contain extra fields:
+
+- "ip" field
+- shorter time frames for "second_by_second_logs" (10th of a second)
+- Varying file sizes
+- More "routing_keys"
+- TCP Measurement information (cwnd, etc.) 
+
+The measurement system will most likely also contain a more fleshed out and complex version of the "services" which handle worker synchronization. In theory, it will be adaptable and better allocate resources when measuring different storage nodes.
+
 
 
 ---------------------------------------------------------------------------------
@@ -252,8 +296,15 @@ This form of bandwidth inflation is the reason why I decided the method of early
 
 #### Notes
 - Early exit calculations only include sub jobs where the entire file was downloaded by at least one worker.
----------------------------------------------------------------------------------
-# Depreciated
+
+
+
+
+
+
+
+
+## Depreciated
 ---------------------------------------------------------------------------------
 ## url-domain-extract.py
 Simple script to extract domains from URLs, used LLM assistance
