@@ -115,7 +115,6 @@ fig2 = make_comparison_plot(
     y_color="green",
     title="Comparison of 50MB vs 100MB Throughput (Log Scale)"
 )
-<<<<<<< HEAD:download_graphs/make_graph.py
 
 # --- Save and open plots ---
 output_dir = "download_graphs"
@@ -132,7 +131,3 @@ print(f"✅ Plot saved to: {output_path2}")
 
 webbrowser.open(f"file://{os.path.abspath(output_path1)}")
 webbrowser.open(f"file://{os.path.abspath(output_path2)}")
-=======
-fig.write_html("graphs/simulated-file-sizes/saturation_dot_matrix.html")
-fig.show()
->>>>>>> refs/remotes/origin/main:python/simulated-file-sizes/graphing/saturation_dot_matrix_interactive.py

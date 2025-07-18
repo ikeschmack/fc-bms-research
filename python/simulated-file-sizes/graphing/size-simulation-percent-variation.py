@@ -11,13 +11,8 @@ import os
 import webbrowser
 
 # --- File paths ---
-<<<<<<< HEAD:download_graphs/find_patterns.py
 throughput_path = "/Users/sofiahirao/untitled folder/fc-bms-research/csv/simulated_cutoff_throughputs.csv"
 meta_path = "/Users/sofiahirao/untitled folder/fc-bms-research/csv/job_ip_location.csv"
-=======
-throughput_path = "csv/simulated_cutoff_throughputs.csv"
-meta_path = "csv/job_ip_location.csv"
->>>>>>> refs/remotes/origin/main:python/simulated-file-sizes/graphing/size-simulation-percent-variation.py
 
 # --- Load data ---
 df = pd.read_csv(throughput_path)
@@ -88,32 +83,19 @@ make_plotly_plot(
     x_col="simulated100MB",
     y_col="pct_diff_10_100",
     title="Throughput % Difference (10MB vs 100MB)",
-<<<<<<< HEAD:download_graphs/find_patterns.py
-    save_path=output_path1,
-    color_col="as_name",
-    symbol_col="location",
-    yaxis_label="Percentage Difference in Throughput: 10MB Relative to 100MB"
-=======
     save_path="graphs/simulated-file-sizes/subjob_10MB_vs_100MB_Shaded.png",
     color_map=color_map,
     marker_map=marker_map
->>>>>>> refs/remotes/origin/main:python/simulated-file-sizes/graphing/size-simulation-percent-variation.py
 )
 
 make_plotly_plot(
     x_col="simulated100MB",
     y_col="pct_diff_50_100",
     title="Throughput % Difference (50MB vs 100MB)",
-<<<<<<< HEAD:download_graphs/find_patterns.py
     save_path=output_path2,
     color_col="as_name",
     symbol_col="location",
     yaxis_label="Percentage Difference in Throughput: 50MB Relative to 100MB"
-=======
-    save_path="graphs/simulated-file-sizes/subjob_50MB_vs_100MB_Shaded.png",
-    color_map=color_map,
-    marker_map=marker_map
->>>>>>> refs/remotes/origin/main:python/simulated-file-sizes/graphing/size-simulation-percent-variation.py
 )
 
 # --- Open both plots in the default web browser ---

@@ -3,6 +3,8 @@
 import pandas as pd
 import json
 
+
+
 # Read the JSON file
 with open("json/jobs_with_subjobs.json", "r") as f:
     data = json.load(f)

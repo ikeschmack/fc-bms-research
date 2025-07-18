@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import webbrowser
+import os
 # Read CSV files
 df_merged = pd.read_csv("csv/early_exit_comparison.csv")
 df_wne_filtered = pd.read_csv("csv/early_exit_wne_filtered.csv")
@@ -38,7 +40,7 @@ plt.xlabel('Non-Early Exit Download Speed (Mbps)')
 plt.ylabel('Early Exit Download Speed (Mbps)')
 plt.legend()
 plt.tight_layout()
-plt.savefig("graphs/seaborn_jointplot.png", dpi=300)
+plt.savefig("graphs/early-exit/seaborn_jointplot.png", dpi=300)
 plt.show()
 
 
@@ -88,5 +90,10 @@ fig.update_layout(
     hovermode='closest'
 )
 
-# Show the interactive plot
-fig.show()
+# Save the interactive plot to an HTML file
+output_path = "graphs/early-exit/seaborn_early_exit_interactive.html"
+fig.write_html(output_path)
+
+# Optionally, open the saved file in the browser
+
+webbrowser.open(f"file://{os.path.abspath(output_path)}")

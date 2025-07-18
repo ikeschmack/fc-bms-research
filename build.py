@@ -10,21 +10,23 @@ def install_dependencies():
     # Install dependencies with binary wheels and no build isolation
     subprocess.check_call([sys.executable, "-m", "pip", "install", "--only-binary=:all:", "--no-build-isolation", "-r", "requirements.txt"])
 
-def run_tests():
-    """Run all tests in the repository."""
-    print("Running tests...")
-    subprocess.check_call(["pytest", "tests/"])
+def generate_top_sub_jobs_csv():
+    """Generate a CSV file of top sub jobs."""
+    print("Checking for required files...")
+    if not os.path.exists("json/jobs_with_subjobs.json"):
+        print(f"json/jobs_with_subjobs.json not found. Please run \033[1mpython build.py jobdata\033[0m first.")
+        exit(1)
 
-def generate_graphs():
-    """Generate graphs for the project."""
-    print("Generating graphs...")
-    graph_scripts = [
-        "python/early-exit/graphing/seaborn-early-exit.py",
-        "python/simulated-file-sizes/graphing/saturation_dot_matrix_interactive.py"
-    ]
-    for script in graph_scripts:
-        print(f"Running {script}...")
-        subprocess.check_call([sys.executable, script])
+    print("Checking for old CSV files...")
+    if os.path.exists("csv/top_sub_jobs.csv"):
+        # Removing old file if it exists
+        print("Found csv/top_sub_jobs.csv, removing it...")
+        os.remove("csv/top_sub_jobs.csv")
+
+    script = "python/manipulation/detect-top-subjobs.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
+
 
 
 # Two API Pulls for this function. PULLS FROM THE API EVERY TIME TO EASILY GET THE MOST UP-TO-DATE DATA
@@ -140,13 +142,12 @@ def main():
         "seaborn-ee-graph": generate_seaborn_ee_graph,
         "sbsl-ee-graphs": generate_second_by_second_logs_early_exit_simulation_graph,
         "sum-sbsl-graphs": generate_sum_sbsl_pdf,
-        "test": run_tests,
-        "graphs": generate_graphs,
+        "ordered-subjobs": generate_top_sub_jobs_csv,
         "clean": clean,
     }
 
     if len(sys.argv) < 2 or sys.argv[1] not in tasks:
-        print("Usage: python build.py [install|jobdata|seaborn-ee-csv|seaborn-ee-graph|sbsl-ee-graphs|sum-sbsl-graphs|test|graphs|clean]")
+        print("Usage: python build.py [install|jobdata|seaborn-ee-csv|seaborn-ee-graph|sbsl-ee-graphs|sum-sbsl-graphs|ordered-subjobs|clean]")
         sys.exit(1)
 
     task = sys.argv[1]

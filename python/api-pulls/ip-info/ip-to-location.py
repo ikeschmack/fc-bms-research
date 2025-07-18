@@ -1,4 +1,5 @@
 # Convert given IP address to country of origin using ipinfo.io API
+# Tenative, might be deleted later since there is an IP field coming in the new data
 import requests
 import json
 import pandas as pd
@@ -8,17 +9,16 @@ TOKEN = "?token=a4be2d0d13524d"
 HEADERS = {
     "accept": "application/json"
 }
-data = []
+
 with open("json/job_domain.json", "r") as f:
-    for l in f:
-        data.append(json.loads(l))
+    data = json.load(f)
 if not data:
     print("No IPs to fetch.")
     exit()
-
+df = pd.DataFrame(data)
 retrieved = []
 for entry in data:
-    ip = entry.get('domain')  # Assuming the domain field contains the IP address
+    ip = entry['ip_address']
     if not ip:
         print("IP address not found, skipping entry.")
         continue

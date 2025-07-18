@@ -1,11 +1,12 @@
 # This script reads a JSON file (job_with_subjobs.json) and creates another JSON file (job_domain.json) that contains only the URLs domain name
-
+# Tenative, might be deleted later since there is an IP field coming in the new data
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
+import subprocess
 
 # Load jobs into a DataFrame
-with open("json/job_with_subjobs.json", "r") as f:
+with open("json/jobs_with_subjobs.json", "r") as f:
     data = json.load(f)
 if not data:
     print("No jobs to process.")
@@ -17,30 +18,63 @@ df['domain'] = df['url'].str.extract(r'https?://([^/:]+)')
 
 
 # Create json file with only the domain names
-# df_domain = df[['domain', 'routing_key']].drop_duplicates()
+df = df[['domain', 'routing_key']].drop_duplicates()
+
+df_non_ip = df[~df['domain'].str.match(r'^((?:\d{1,3}\.){3}\d{1,3})$')]
+df_ip = df[df['domain'].str.match(r'^((?:\d{1,3}\.){3}\d{1,3})$')]
 
 
-# Hardcoded domain replacements
-if (df['domain'] == "yablufc.ddns.net").any():
-    print("Domain yablufc.ddns.net found, changing it to 129.236.226.20.")
-    df['domain'] = df['domain'].replace("yablufc.ddns.net", "129.236.226.20")
 
-if (df['domain'] == "f010479.twinquasar.io").any():
-    print("Domain f010479.twinquasar.io found, changing it to 212.106.124.229.")
-    df['domain'] = df['domain'].replace("f010479.twinquasar.io", "212.106.124.229")
-
-if (df['domain'] == "cesginc.com").any():
-    print("Domain cesginc.com found, changing it to 76.219.232.45.")
-    df['domain'] = df['domain'].replace("cesginc.com", "76.219.232.45")
-
-if (df['domain'] == "ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com").any():
-    print("Domain ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com found, changing it to 52.217.202.58.")
-    df['domain'] = df['domain'].replace("ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com", "52.217.202.58")
-
-#Temporary remove non-IP address domains
-# df_domain = df_domain[df_domain['domain'].str.match(r'^((?:\d{1,3}\.){3}\d{1,3})$')]
-# End temporary
+# Create an iterable list of df_non_ip
+if df_non_ip.empty:
+    print("No non-IP domains found.")
 
 
-df_domain = df[['domain']].drop_duplicates()
-df_domain.to_json("json/job_domain.json", orient="records", lines=True)
+
+# Use nslookup to resolve the domains
+# Appens the resolved IP addresses in a json format
+resolved_domains = []
+for _, row in df_non_ip.iterrows():
+    try:
+        domain = row['domain']
+        routing_key = row['routing_key']
+        result = subprocess.run(['nslookup', domain] , capture_output=True, text=True)
+        if result.returncode == 0:
+            # Extract the IP address from the nslookup output
+            ip_address = result.stdout.split('Address: ')[-1].strip()
+            json_data = {
+                "domain": domain,
+                "ip_address": ip_address,
+                "routing_key": routing_key
+            }
+            resolved_domains.append((json_data))
+            # Debugging output
+            print(f"Resolved {domain} to {ip_address}")
+        else:
+            print(f"Failed to resolve {domain}: {result.stderr.strip()}")
+    except Exception as e:
+        print(f"Error resolving {row['domain']}: {e}") 
+
+
+# Append IP to resolved domain list
+for _, row in df_ip.iterrows():
+    try:
+        domain = row['domain']
+        routing_key = row['routing_key']
+        json_data = {
+            "domain": domain,
+            "ip_address": ip_address,
+            "routing_key": routing_key
+        }
+        resolved_domains.append((json_data)) # Keep the original domain as IP
+    except Exception as e:
+        print(f"Error processing {row['domain']}: {e}")
+
+# Convert the list of resolved domains to a DataFrame
+resolved_domains = pd.DataFrame(resolved_domains)
+
+json_data = resolved_domains.to_json(orient='index', indent=4)
+# Write the resolved domains to a JSON file
+with open("json/job_domain.json", "w") as f:
+    f.write(json_data)
+
