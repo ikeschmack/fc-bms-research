@@ -272,9 +272,6 @@ By analyzing each DHP sub job separately, we have noticed that the cause of the 
 We have found that this method does reduce the inflation of bandwidth seen in the bandwidth-measurement-system. This is displayed by the seaborn-early-exit.py
 
 
-#### Notes
-- Temporarily this has horizontal lines graphing the 90th percentile values to compare the impact an early-exit strategy if the 90th percentile is considered as the new measurent calculation method
-
 ---------------------------------------------------------------------------------
 ### sum-sbsl-graphing.py
 Creates a PDF of the second by second logs simulated with an early exit of the workers.
@@ -305,7 +302,22 @@ This form of bandwidth inflation is the reason why I decided the method of early
 
 
 
+---------------------------------------------------------------------------------
+### detect-top-subjobs.py
 
+Creates a [csv file](./csv/top_sub_jobs.csv) of sub jobs ordered by their reported throughput.
+- The reported throughput value is determine dy the "download_speeds" array within the "summary" field
+
+
+
+#### Findings
+
+This script is used to isolate the top performing nodes. The result of this analysis determined that the top 19 performing sub jobs are measurements of AWS storage nodes within the same data center which the workers reside. 
+
+
+
+#### Notes
+- The location of this script is subject to change, but for now there is no better folder to place it in.
 
 
 
