@@ -5,6 +5,22 @@ import seaborn as sns
 import os
 from matplotlib.backends.backend_pdf import PdfPages
 from urllib.parse import urlparse
+# URL (tuple URL and routing key) -> IP extraction -> match country to IP -> 
+#WITH THE CACULATIONS!!!
+
+domain_to_ip = [
+    {"cesginc.com": "76.219.232.45"},
+    {"f010479.twinquasar.io/piece/baga6ea4seaqfhg3glmn7wfousy3tyemhferh3qr6p4yynuyjdnkl3ytyuerhynq": "212.106.124.229"},
+    {"ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com": "3.5.8.96"},
+]
+def get_ip_from_url(url):
+    from urllib.parse import urlparse
+    parsed = urlparse(url)
+    hostname = parsed.hostname
+    # If hostname is a domain in the mapping, return mapped IP
+    if hostname in domain_to_ip:
+        return domain_to_ip[hostname]
+    return hostname  # If already an IP or not in mapping
 
 # Hardcoded IP to country mapping
 ip_country_data = [
@@ -33,6 +49,8 @@ ip_country_data = [
     {"ip": "207.189.117.196", "country": "United States"},
     {"ip": "120.236.8.226", "country": "China"},
     {"ip": "129.236.226.20", "country": "United States"},
+    {"ip": "76.219.232.45", "country":"United States"}, #http://cesginc.com domain 
+    {"ip": "3.5.8.96", "country": "United States"},  # ahnawee8-xupio2pi-production.s3.us-east-1.amazonaws.com
 ]
 
 # Distances in miles from country to each routing key location
@@ -47,6 +65,7 @@ distance_miles = {
     "Russia":        {"US_east": 5200, "Hong_kong": 3600, "Singapore": 4300},
 }
 
+
 def get_country_for_ip(ip):
     for entry in ip_country_data:
         if entry["ip"] == ip:
@@ -59,7 +78,7 @@ def extract_ip(url):
     except:
         return None
 
-def load_and_prepare_data(json_file_path="json/job_with_subjobs.json"):
+def load_and_prepare_data(json_file_path="json/jobs_with_subjobs.json"):
     try:
         with open(json_file_path, 'r') as f:
             data = json.load(f)
@@ -228,7 +247,7 @@ def generate_graphs_per_ip(df, output_pdf_path="latency_with_routingKeys/all_ips
 
             final_score = 0.8 * latency_norm + 0.2 * ttfb_norm
             threshold = 0.7
-            pass_fail = "✅ above threshold" if final_score >= threshold else f"⚠️ below threshold ({threshold})"
+            pass_fail = "above threshold" if final_score >= threshold else f"below threshold ({threshold})"
 
             # Page 1: Plots
             fig, axs = plt.subplots(2, 2, figsize=(15, 12))

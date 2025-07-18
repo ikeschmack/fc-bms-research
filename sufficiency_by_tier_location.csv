@@ -1,0 +1,18 @@
+Node_Tier,location,count,sum,Sufficiency Rate (%)
+Extra Extra Small,China,21,0,0.0
+Extra Extra Small,Russia,6,0,0.0
+Extra Extra Small,United States,6,0,0.0
+Extra Small,China,17,12,70.58823529411765
+Extra Small,Germany,2,2,100.0
+Extra Small,Hong Kong,10,0,0.0
+Extra Small,United Kingdom,1,1,100.0
+Extra Small,United States,12,5,41.666666666666664
+High,Hong Kong,38,7,18.42105263157895
+High,United States,22,6,27.272727272727273
+Low,China,14,14,100.0
+Low,France,1,1,100.0
+Medium,China,45,36,80.0
+Medium,Hong Kong,1,0,0.0
+Medium,Thailand,6,5,83.33333333333333
+Medium,United Kingdom,1,1,100.0
+Medium,United States,7,3,42.857142857142854

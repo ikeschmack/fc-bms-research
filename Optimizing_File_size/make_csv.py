@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 from datetime import datetime
 
+#NOT CORRECT DATA DO NOT USE KEEPING TO MAKE SURE THE METHOD I AM USING NOW IS CORRECT IF NOT WILL HAVE SOMEONE LOOK AT THIS 
+
 def parse_timestamp(ts_str):
     ts_str = ts_str.rstrip('Z')
     if '+' not in ts_str and '-' not in ts_str[-6:]:
@@ -158,8 +160,8 @@ def main():
         writer.writerow(headers)
         writer.writerows(rows)
 
-    print(f"➡️ CSV saved to: {output_csv_path}")
-    print(f"✅ PDF saved to: {pdf_output_path}")
+    print(f"CSV saved to: {output_csv_path}")
+    print(f" PDF saved to: {pdf_output_path}")
 
 if __name__ == "__main__":
     main()
