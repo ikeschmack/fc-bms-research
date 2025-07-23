@@ -40,7 +40,7 @@ def generate_job_with_subjobs():
     if os.path.exists("json/jobs_data.json"):
         # Removing old file if it exists
         print("Found json/jobs_data.json, removing it...")
-        subprocess.check_call([sys.executable, script])
+        os.remove("json/jobs_data.json")
     if os.path.exists("json/jobs_with_subjobs.json"):
         # Removing old file if it exists
         print("Found json/jobs_with_subjobs.json, removing it...")

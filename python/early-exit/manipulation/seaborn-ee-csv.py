@@ -108,9 +108,9 @@ for index, row in df_worker_data.iterrows():
 
     processed_data.append({
         'sub_job_id': row['id'],
-        'elapsed_seconds_ee': elapsed_seconds,
+        'elapsed_seconds_ee_x': elapsed_seconds,
         'earliest_end_time': earliest_end_time,
-        'ee_download_speed': ee_download_speed
+        'ee_download_speed_x': ee_download_speed
     })
 
 # Create a DataFrame from the processed data
@@ -145,23 +145,30 @@ for index, row in df_worker_data.iterrows():
                     non_ee_download_speed += ((total_bytes*8) / (elapsed_secs * 1024 * 1024))
                 else:
                     continue
-                
+
+
+    elapsed_seconds = (last_end_time - min([datetime.fromisoformat(worker['download']['download_start_time'].replace('Z', '+00:00')) for worker in worker_data if 'download' in worker and 'download_start_time' in worker['download']])).total_seconds()
+
     if elapsed_secs > 0 and non_ee_download_speed > 0:          
         if row['id'] not in df_wne_filtered['sub_job_id'].values:
             non_ee_data.append({
                 'sub_job_id': row['id'],
                 'non_ee_download_speed': non_ee_download_speed,
-                'ee_download_speed': None,
-                'elapsed_seconds_non_ee': last_end_time
+                'ee_download_speed_y': None,
+                'elapsed_seconds_non_ee': elapsed_seconds
                 
             })
         else:
             non_ee_data.append({
                 'sub_job_id': row['id'],
                 'non_ee_download_speed': non_ee_download_speed,
-                'ee_download_speed': non_ee_download_speed,
-                'elapsed_seconds_non_ee': last_end_time
+                'ee_download_speed_y': non_ee_download_speed,
+                'elapsed_seconds_non_ee': elapsed_seconds,
+                'elapsed_seconds_ee_y': elapsed_seconds
             })
+    else: 
+        continue
+
 # Create a DataFrame from the non-early exit data
 df_non_ee = pd.DataFrame(non_ee_data)
 
@@ -176,7 +183,7 @@ print(df_merged.head())
 
 #Combine ee_download_speed_x and ee_download_speed_y into one column
 df_merged['ee_download_speed'] = df_merged['ee_download_speed_x'].combine_first(df_merged['ee_download_speed_y'])
-
+df_merged['elapsed_seconds_ee'] = df_merged['elapsed_seconds_ee_x'].combine_first(df_merged['elapsed_seconds_ee_y'])
 # Calculate the difference between early exit and non-early exit download speeds
 df_merged['difference'] = df_merged['ee_download_speed'] - df_merged['non_ee_download_speed']
 df_merged['percentage_difference'] = (df_merged['difference'] / df_merged['non_ee_download_speed']) * 100
