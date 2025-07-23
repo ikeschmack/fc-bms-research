@@ -42,7 +42,7 @@ def classify_app_group(tp):
         return "5–25 Mbps: Streaming"
     elif tp < 50:
         return "20–50 Mbps: Small DB Backup"
-    if tp < 100:
+    elif tp < 100:
         return "50–100 Mbps: Zoom 4K Calls"
     elif tp < 200:
         return "100–200 Mbps: Security Archives"

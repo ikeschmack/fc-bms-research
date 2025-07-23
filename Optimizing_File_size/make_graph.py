@@ -1,25 +1,24 @@
 import pandas as pd
 import numpy as np
-import plotly.express as px
-import plotly.io as pio
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.lines import Line2D
 
-    #CODE MAKES THREE GRAPHS using the new CSV!!!!!
-
-
-# === Load Data ===
+# === Load and clean data ===
 throughput_path = "/Users/sofiahirao/untitled folder/fc-bms-research/Optimizing_File_size/test_simulated_file_size.csv"
 meta_path = "/Users/sofiahirao/untitled folder/fc-bms-research/csv/job_ip_location.csv"
 
 df = pd.read_csv(throughput_path)
 df_meta = pd.read_csv(meta_path)
+
 df = pd.merge(df, df_meta[["job_id", "as_name"]], on="job_id", how="left")
 
-# === Clean and Prepare ===
 for col in ["simulated10MB", "simulated50MB", "simulated100MB", "download_speed"]:
     df[col] = pd.to_numeric(df[col], errors="coerce")
+
 df = df.dropna(subset=["simulated10MB", "simulated50MB", "simulated100MB"])
 
-# === Categorize Node Tier based on 100MB throughput ===
+# === Classification functions ===
 def classify_node_type(tp_100):
     if tp_100 < 100:
         return "Low"
@@ -28,9 +27,6 @@ def classify_node_type(tp_100):
     else:
         return "High"
 
-df["Node_Tier"] = df["simulated100MB"].apply(classify_node_type)
-
-# === Application Grouping based on throughput ===
 def classify_app_group(tp):
     if tp < 25:
         return "5–25 Mbps: Streaming"
@@ -55,65 +51,66 @@ def classify_app_group(tp):
     else:
         return "1000+ Mbps: Large Backup"
 
+df["Node_Tier"] = df["simulated100MB"].apply(classify_node_type)
 df["Application_10MB"] = df["simulated10MB"].apply(classify_app_group)
 df["Application_50MB"] = df["simulated50MB"].apply(classify_app_group)
 df["Application_100MB"] = df["simulated100MB"].apply(classify_app_group)
 
-# === Sufficiency Logic ===
-def is_50mb_sufficient(row):
-    # Compare 50MB app group to 100MB app group, for all tiers
-    return row["Application_50MB"] == row["Application_100MB"]
+df["50MB_Sufficient"] = df["Application_50MB"] == df["Application_100MB"]
 
-df["50MB_Sufficient"] = df.apply(is_50mb_sufficient, axis=1)
+# === Plot all node tiers in one figure ===
+tier_colors = {
+    "Low": "#1f77b4",    # Blue
+    "Medium": "#ff7f0e", # Orange
+    "High": "#2ca02c"    # Green
+}
+markers = {True: "o", False: "X"}
+marker_labels = {
+    True: "50MB Same App as 100MB",
+    False: "50MB Different App than 100MB"
+}
 
-# === Plotting Setup ===
-pio.renderers.default = "browser"
-tiers_to_plot = ["Low", "Medium", "High"]
+fig, ax = plt.subplots(figsize=(10, 8))
 
-for tier in tiers_to_plot:
+for tier, color in tier_colors.items():
     tier_df = df[df["Node_Tier"] == tier]
-    if tier_df.empty:
-        continue
+    for suff in [True, False]:
+        subset = tier_df[tier_df["50MB_Sufficient"] == suff]
+        ax.scatter(
+            subset["simulated100MB"],
+            subset["simulated50MB"],
+            color=color,
+            marker=markers[suff],
+            edgecolor='k',
+            linewidth=0.5,
+            alpha=0.7,
+            s=80,
+            label=f"{tier} - {'Same App' if suff else 'Diff App'}"
+        )
 
-    # For all tiers plot 100MB throughput (x) vs 50MB throughput (y)
-    x_col = "simulated100MB"
-    y_col = "simulated50MB"
-    color_col = "Application_100MB"
-    title = f"{tier} Nodes — 100MB vs 50MB Throughput"
-    x_label = "100MB Throughput (Mbps)"
-    y_label = "50MB Throughput (Mbps)"
+# === Identity line ===
+min_val = max(1, df[["simulated100MB", "simulated50MB"]].min().min())
+max_val = df[["simulated100MB", "simulated50MB"]].max().max()
+ax.plot([min_val, max_val], [min_val, max_val], 'k--', lw=1, label='x = y')
 
-    # Compute sufficiency percentage
-    suff_rate = tier_df["50MB_Sufficient"].mean() * 100
-    title += f"<br><sup>{suff_rate:.1f}% classified same app group</sup>"
+# === Scale and Labels ===
+ax.set_xscale("log")
+ax.set_yscale("log")
+ax.set_xlabel("100MB Throughput (Mbps)", fontsize=12)
+ax.set_ylabel("50MB Throughput (Mbps)", fontsize=12)
+ax.set_title("50MB vs 100MB Throughput — Node Tier & Application Sufficiency", fontsize=14)
+ax.grid(True, which="both", ls="--", lw=0.5)
 
-    fig = px.scatter(
-        tier_df,
-        x=x_col,
-        y=y_col,
-        color=color_col,
-        symbol="50MB_Sufficient",
-        hover_data=["job_id", "as_name", "Application_10MB", "Application_50MB", "Application_100MB"],
-        title=title,
-        log_x=True,
-        log_y=True,
-        labels={x_col: x_label, y_col: y_label},
-        width=950,
-        height=700
-    )
+# === Legend ===
+legend_elements = [
+    Line2D([0], [0], marker='o', color='w', markerfacecolor='gray', markeredgecolor='k', label=marker_labels[True], markersize=8),
+    Line2D([0], [0], marker='X', color='w', markerfacecolor='gray', markeredgecolor='k', label=marker_labels[False], markersize=8)
+] + [
+    Line2D([0], [0], marker='o', color='w', markerfacecolor=color, label=f"{tier} Tier", markersize=8)
+    for tier, color in tier_colors.items()
+]
 
-    # Add diagonal line x = y
-    min_val = max(1, tier_df[[x_col, y_col]].min().min())
-    max_val = tier_df[[x_col, y_col]].max().max()
-    diag = np.logspace(np.log10(min_val), np.log10(max_val), 100)
-    fig.add_scatter(
-        x=diag,
-        y=diag,
-        mode='lines',
-        line=dict(dash='dash', color='gray'),
-        name='x = y',
-        showlegend=True
-    )
+ax.legend(handles=legend_elements, title="Legend", loc="lower right", fontsize=10)
 
-    fig.update_layout(legend=dict(title="Legend", x=1.05))
-    fig.show()
+plt.tight_layout()
+plt.show()

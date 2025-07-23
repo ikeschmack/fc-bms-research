@@ -2,7 +2,9 @@ import json
 import csv
 import os
 from datetime import datetime
-#This is the correct code!!!
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+from collections import defaultdict
 
 def parse_timestamp(ts_str):
     ts_str = ts_str.rstrip('Z')
@@ -23,10 +25,13 @@ def parse_timestamp(ts_str):
         ts_str = f"{date_part}.{frac}{tz}"
     return datetime.fromisoformat(ts_str)
 
-def normalize_worker_logs(logs):
+def normalize_worker_logs(logs, start_time=None):
     if not logs:
         return []
-    t0 = parse_timestamp(logs[0][0])
+    if start_time is None:
+        t0 = parse_timestamp(logs[0][0])
+    else:
+        t0 = start_time
     normalized = []
     for ts_str, bytes_this_sec, cum_bytes in logs:
         t = parse_timestamp(ts_str)
@@ -35,7 +40,6 @@ def normalize_worker_logs(logs):
     return normalized
 
 def merge_all_workers_logs(all_worker_logs):
-    from collections import defaultdict
     merged = defaultdict(int)
     for logs in all_worker_logs:
         for elapsed_sec, bytes_this_sec, _ in logs:
@@ -85,8 +89,17 @@ def compute_overall_download_speed(cumulative_bytes):
     return (total_bytes * 8) / (total_time * 1e6)  # Mbps
 
 def simulate_cutoff_throughputs(subjob, thresholds_bytes):
+    all_timestamps = []
+    for w in subjob.get("worker_data", []):
+        logs = w.get("download", {}).get("second_by_second_logs", [])
+        if logs:
+            all_timestamps.append(parse_timestamp(logs[0][0]))
+    if not all_timestamps:
+        return [], [], 0.0
+    t0 = min(all_timestamps)
+
     worker_logs = [
-        normalize_worker_logs(w.get("download", {}).get("second_by_second_logs", []))
+        normalize_worker_logs(w.get("download", {}).get("second_by_second_logs", []), start_time=t0)
         for w in subjob.get("worker_data", [])
         if w.get("download", {}).get("second_by_second_logs", [])
     ]
@@ -101,9 +114,81 @@ def simulate_cutoff_throughputs(subjob, thresholds_bytes):
     avg_speed = compute_overall_download_speed(cumulative_bytes)
     return total_tps, cutoff_times, avg_speed
 
+def plot_subjob_workers(subjob, pdf, thresholds_bytes=[10e6, 50e6, 100e6]):
+    all_timestamps = []
+    for w in subjob.get("worker_data", []):
+        logs = w.get("download", {}).get("second_by_second_logs", [])
+        if logs:
+            all_timestamps.append(parse_timestamp(logs[0][0]))
+    if not all_timestamps:
+        return
+    t0 = min(all_timestamps)
+
+    worker_logs_raw = [
+        w.get("download", {}).get("second_by_second_logs", [])
+        for w in subjob.get("worker_data", [])
+        if w.get("download", {}).get("second_by_second_logs", [])
+    ]
+    if not worker_logs_raw:
+        return
+
+    # Normalize logs relative to t0
+    worker_logs = [normalize_worker_logs(logs, start_time=t0) for logs in worker_logs_raw]
+
+    # Prepare instantaneous throughput per worker:
+    # x = elapsed seconds, y = throughput Mbps = (bytes_this_sec * 8)/1e6
+    plt.figure(figsize=(12, 7))
+    for idx, logs in enumerate(worker_logs):
+        if not logs:
+            continue
+        elapsed = [x[0] for x in logs]
+        throughput_mbps = [(x[1] * 8) / 1e6 for x in logs]
+        plt.plot(elapsed, throughput_mbps, label=f'Worker {idx+1}')
+
+    # Find cutoffs based on cumulative bytes of first worker
+    first_worker_cum = [(elapsed, cum_bytes) for elapsed, _, cum_bytes in worker_logs[0]]
+
+    def find_worker_cutoffs(cum_bytes_list, thresholds):
+        cutoffs = []
+        for threshold in thresholds:
+            cutoff = find_cutoff_time(cum_bytes_list, threshold)
+            cutoffs.append(cutoff)
+        return cutoffs
+
+    cutoffs = find_worker_cutoffs(first_worker_cum, thresholds_bytes)
+
+    colors = ['r', 'g', 'b']
+    labels = ['10MB', '50MB', '100MB']
+    for cutoff, color, label in zip(cutoffs, colors, labels):
+        if cutoff is not None:
+            plt.axvline(x=cutoff, color=color, linestyle='--', label=f'First worker {label} at {cutoff:.2f}s')
+
+    plt.xlabel("Elapsed Time (seconds)")
+    plt.ylabel("Throughput (Mbps)")
+    plt.title(f"Subjob ID: {subjob.get('id', 'N/A')} - Workers Throughput Over Time")
+    plt.legend(loc='upper right', fontsize='small')
+    plt.grid(True)
+    plt.tight_layout()
+
+    pdf.savefig()
+    plt.close()
+
+def generate_pdf_for_all_subjobs(jobs, pdf_path):
+    thresholds = [10e6, 50e6, 100e6]
+
+    with PdfPages(pdf_path) as pdf:
+        for job in jobs:
+            subjobs = job.get("sub_jobs", [])
+            subs = [sj for sj in subjobs if len(sj.get("worker_data", [])) in [8, 10]]
+            for sj in subs:
+                plot_subjob_workers(sj, pdf, thresholds_bytes=thresholds)
+
+    print(f"PDF saved to: {pdf_path}")
+
 def main():
     json_path = "/Users/sofiahirao/untitled folder/fc-bms-research/json/jobs_with_subjobs.json"
     output_csv_path = "Optimizing_File_size/test_simulated_file_size.csv"
+    output_pdf_path = "Optimizing_File_size/subjob_worker_throughput.pdf"
 
     with open(json_path, "r") as f:
         jobs = json.load(f)
@@ -142,6 +227,10 @@ def main():
         writer.writerows(rows)
 
     print(f"CSV saved to: {output_csv_path}")
+
+    os.makedirs(os.path.dirname(output_pdf_path), exist_ok=True)
+    generate_pdf_for_all_subjobs(jobs, output_pdf_path)
+
 
 if __name__ == "__main__":
     main()
