@@ -101,6 +101,22 @@ def generate_second_by_second_logs_early_exit_simulation_graph():
     print(f"Running {script}...")
     subprocess.check_call([sys.executable, script])
 
+def generate_worker_data_csv():
+    """Generate worker_data.csv from json/jobs_with_subjobs.json."""
+    print("Generating worker_data.csv...")
+    if not os.path.exists("json/jobs_with_subjobs.json"):
+        print(f"json/jobs_with_subjobs.json not found. Please run \033[1mpython build.py jobdata\033[0m first.")
+        exit(1)
+
+    if os.path.exists("csv/worker_data.csv"):
+        print("Found csv/worker_data.csv, removing it...")
+        os.remove("csv/worker_data.csv")
+
+    script = "python/simulated-file-sizes/manipulation/worker-data.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
+
+
 
 # Generates graphs/second-by-second-logs/sum-sbsl-graphs.pdf
 # Requires csv/early_exit_comparison.csv and json/jobs_with_subjobs.json to be generated first
@@ -143,11 +159,13 @@ def main():
         "sbsl-ee-graphs": generate_second_by_second_logs_early_exit_simulation_graph,
         "sum-sbsl-graphs": generate_sum_sbsl_pdf,
         "ordered-subjobs": generate_top_sub_jobs_csv,
+        "workerdata": generate_worker_data_csv,
+        
         "clean": clean,
     }
 
     if len(sys.argv) < 2 or sys.argv[1] not in tasks:
-        print("Usage: python build.py [install|jobdata|seaborn-ee-csv|seaborn-ee-graph|sbsl-ee-graphs|sum-sbsl-graphs|ordered-subjobs|clean]")
+        print("Usage: python build.py [install|jobdata|workerdata|seaborn-ee-csv|seaborn-ee-graph|sbsl-ee-graphs|sum-sbsl-graphs|ordered-subjobs|clean]")
         sys.exit(1)
 
     task = sys.argv[1]
