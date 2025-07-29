@@ -15,6 +15,18 @@ with open("json/job_domain.json", "r") as f:
 if not data:
     print("No IPs to fetch.")
     exit()
+
+'''
+# When new data is available, use the newly generated json/resolved_ips.json file
+# to fetch the IPs and their locations.
+with open("json/resolved_ips.json", "r") as f:
+    data = json.load(f)
+if not data:
+    print("No resolved IPs found.")
+    exit()
+'''
+
+
 df = pd.DataFrame(data)
 retrieved = []
 for entry in data:
