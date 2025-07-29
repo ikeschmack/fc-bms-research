@@ -27,8 +27,6 @@ def generate_top_sub_jobs_csv():
     print(f"Running {script}...")
     subprocess.check_call([sys.executable, script])
 
-
-
 # Two API Pulls for this function. PULLS FROM THE API EVERY TIME TO EASILY GET THE MOST UP-TO-DATE DATA
 # Must be run before the other graphing functions
 #Files:
@@ -116,8 +114,6 @@ def generate_worker_data_csv():
     print(f"Running {script}...")
     subprocess.check_call([sys.executable, script])
 
-
-
 # Generates graphs/second-by-second-logs/sum-sbsl-graphs.pdf
 # Requires csv/early_exit_comparison.csv and json/jobs_with_subjobs.json to be generated first
 def generate_sum_sbsl_pdf():
@@ -138,6 +134,64 @@ def generate_sum_sbsl_pdf():
     print(f"Running {script}...")
     subprocess.check_call([sys.executable, script])
 
+def generate_consistency_clean_data():
+    """Generate cleaned data for consistency analysis."""
+    print("Generating cleaned data for consistency analysis...")
+    
+    # Check for required input files
+    required_files = [
+        "json/jobs_data.json",
+        "json/jobs_with_subjobs.json", 
+        "json/geo-location.json"
+    ]
+    
+    for file_path in required_files:
+        if not os.path.exists(file_path):
+            print(f"{file_path} not found. Please run \033[1mpython build.py jobdata\033[0m first.")
+            exit(1)
+    
+    # Remove old CSV file if it exists
+    if os.path.exists("csv/node_level_cleaned_data.csv"):
+        print("Found csv/node_level_cleaned_data.csv, removing it...")
+        os.remove("csv/node_level_cleaned_data.csv")
+    
+    script = "python/consistency/data_cleaner.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
+
+def generate_consistency_analysis():
+    """Generate consistency analysis graphs and reports."""
+    print("Generating consistency analysis...")
+    
+    # Check for required CSV file
+    if not os.path.exists("csv/node_level_cleaned_data.csv"):
+        print(f"csv/node_level_cleaned_data.csv not found. Please run \033[1mpython build.py consistency-clean\033[0m first.")
+        exit(1)
+    
+    # Remove old output files if they exist
+    output_files = [
+        "graphs/consistency/node_throughput_by_routing_key_analysis.pdf",
+        "graphs/consistency/throughput_by_routing_key_summary.txt"
+    ]
+    
+    for file_path in output_files:
+        if os.path.exists(file_path):
+            print(f"Found {file_path}, removing it...")
+            os.remove(file_path)
+    
+    script = "python/consistency/consistency_analyzer.py"
+    print(f"Running {script}...")
+    subprocess.check_call([sys.executable, script])
+
+def run_full_consistency_pipeline():
+    """Run the complete consistency analysis pipeline."""
+    print("Running full consistency analysis pipeline...")
+    print("Step 1: Cleaning data...")
+    generate_consistency_clean_data()
+    print("\nStep 2: Generating analysis...")
+    generate_consistency_analysis()
+    print("\nConsistency analysis pipeline complete!")
+
 def clean():
     """Clean up temporary files."""
     print("Cleaning up...")
@@ -146,8 +200,6 @@ def clean():
         if os.path.exists(temp_dir):
             print(f"Removing {temp_dir}...")
             subprocess.check_call(["rm", "-rf", temp_dir])
-
-
 
 def main():
     """Main entry point for the build script."""
@@ -160,12 +212,27 @@ def main():
         "sum-sbsl-graphs": generate_sum_sbsl_pdf,
         "ordered-subjobs": generate_top_sub_jobs_csv,
         "workerdata": generate_worker_data_csv,
-        
+        "consistency-clean": generate_consistency_clean_data,
+        "consistency-analysis": generate_consistency_analysis,
+        "consistency": run_full_consistency_pipeline,
         "clean": clean,
     }
 
     if len(sys.argv) < 2 or sys.argv[1] not in tasks:
-        print("Usage: python build.py [install|jobdata|workerdata|seaborn-ee-csv|seaborn-ee-graph|sbsl-ee-graphs|sum-sbsl-graphs|ordered-subjobs|clean]")
+        print("Usage: python build.py [command]")
+        print("\nAvailable commands:")
+        print("  install              - Install dependencies from requirements.txt")
+        print("  jobdata              - Generate job data from API")
+        print("  workerdata           - Generate worker data CSV")
+        print("  seaborn-ee-csv       - Generate early exit CSV files")
+        print("  seaborn-ee-graph     - Generate early exit graphs") 
+        print("  sbsl-ee-graphs       - Generate second-by-second logs early exit graphs")
+        print("  sum-sbsl-graphs      - Generate sum SBSL graphs")
+        print("  ordered-subjobs      - Generate top subjobs CSV")
+        print("  consistency-clean    - Clean data for consistency analysis")
+        print("  consistency-analysis - Generate consistency analysis graphs")
+        print("  consistency          - Run full consistency pipeline (clean + analysis)")
+        print("  clean                - Clean up temporary files")
         sys.exit(1)
 
     task = sys.argv[1]
