@@ -31,6 +31,7 @@ df = pd.DataFrame(data)
 retrieved = []
 for entry in data:
     ip = entry['ip_address']
+    # Change to ip = entry['resolved_ip'] when using jobs_with_subjobs.json (if ip field in job data)
     if not ip:
         print("IP address not found, skipping entry.")
         continue
