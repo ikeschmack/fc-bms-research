@@ -18,7 +18,7 @@ plt.plot([df_merged['non_ee_download_speed'].min(), df_merged['non_ee_download_s
         [df_merged['non_ee_download_speed'].min(), df_merged['non_ee_download_speed'].max()],
         color='red', linestyle='--', label='Y = X')
 # If sub_job_id in df_wne_filtered['sub_job_id'].values make them green on the sns.jointplot
-
+print(f"Number of early exit sub jobs: {len(df_wne_filtered)}")
 #           DOUBLE COLOR        #
 for i, row in df_merged.iterrows():
     if row['sub_job_id'] in df_wne_filtered['sub_job_id'].values:
