@@ -2,10 +2,12 @@
 NODE THROUGHPUT ANALYSIS BY ROUTING KEY - SUMMARY
 ================================================================================
 
-Total Valid Subjobs: 329
+Valid Subjobs Analyzed: 329
 Unique Nodes: 31
 Routing Keys: ['all', 'asia', 'hong_kong', 'singapore', 'us_east']
 Worker Counts: [np.int64(1), np.int64(5), np.int64(6), np.int64(8), np.int64(10), np.int64(12), np.int64(15), np.int64(16), np.int64(20), np.int64(24), np.int64(40), np.int64(50)]
+
+Current Memory Usage: 495.4 MB
 
 PERFORMANCE BY ROUTING KEY:
 ----------------------------------------------------------------------
@@ -18,30 +20,30 @@ singapore       |     567.92 |     946.38 |       79 |           1 |          24
 us_east         |    2235.05 |    6657.34 |      168 |           1 |          50
 
 
-TOP PERFORMING CONFIGURATIONS:
+TOP PERFORMING CONFIGURATIONS (Top 20):
 --------------------------------------------------------------------------------
-Node                           | Route           | Workers | Avg MB/s  
+Node                           | Route           | Workers | Avg MB/s   | Count
 --------------------------------------------------------------------------------
-ahnawee8-xupio2pi-production.s | us_east         |      50 |   38499.85
-ahnawee8-xupio2pi-production.s | us_east         |      40 |   30345.79
-ahnawee8-xupio2pi-production.s | us_east         |      10 |    7598.28
-ahnawee8-xupio2pi-production.s | us_east         |       8 |    5047.61
-203.160.91.76:11876            | singapore       |      10 |    2878.56
-207.189.117.196:26195          | us_east         |      10 |    1598.04
-162.219.87.217:34985           | us_east         |      10 |     886.82
-103.1.65.125:42398             | us_east         |      10 |     886.75
-203.160.91.76:11876            | us_east         |      10 |     867.73
-203.160.91.78:7812             | us_east         |      10 |     832.86
-cesginc.com                    | us_east         |      10 |     807.91
-103.1.65.126:18924             | us_east         |      10 |     790.99
-cesginc.com                    | us_east         |       8 |     780.24
-207.189.117.196:26195          | singapore       |      10 |     694.00
-207.189.117.196:26195          | hong_kong       |      10 |     686.64
-ahnawee8-xupio2pi-production.s | us_east         |       1 |     472.79
-203.160.91.76:11876            | singapore       |       1 |     450.11
-157.148.101.187:58420          | singapore       |      10 |     297.28
-157.148.101.187:58420          | hong_kong       |      10 |     278.91
-157.148.101.187:58421          | us_east         |      10 |     252.18
+ahnawee8-xupio2pi-production.s | us_east         |      50 |   38499.85 |     3
+ahnawee8-xupio2pi-production.s | us_east         |      40 |   30345.79 |     3
+ahnawee8-xupio2pi-production.s | us_east         |      10 |    7598.28 |     7
+ahnawee8-xupio2pi-production.s | us_east         |       8 |    5047.61 |     7
+203.160.91.76:11876            | singapore       |      10 |    2878.56 |     3
+207.189.117.196:26195          | us_east         |      10 |    1598.04 |     8
+162.219.87.217:34985           | us_east         |      10 |     886.82 |     3
+103.1.65.125:42398             | us_east         |      10 |     886.75 |     3
+203.160.91.76:11876            | us_east         |      10 |     867.73 |     4
+203.160.91.78:7812             | us_east         |      10 |     832.86 |     3
+cesginc.com                    | us_east         |      10 |     807.91 |     4
+103.1.65.126:18924             | us_east         |      10 |     790.99 |     3
+cesginc.com                    | us_east         |       8 |     780.24 |     4
+207.189.117.196:26195          | singapore       |      10 |     694.00 |     6
+207.189.117.196:26195          | hong_kong       |      10 |     686.64 |     6
+ahnawee8-xupio2pi-production.s | us_east         |       1 |     472.79 |     7
+203.160.91.76:11876            | singapore       |       1 |     450.11 |     3
+157.148.101.187:58420          | singapore       |      10 |     297.28 |     5
+157.148.101.187:58420          | hong_kong       |      10 |     278.91 |     5
+157.148.101.187:58421          | us_east         |      10 |     252.18 |     3
 
 
 WORKER COUNT SCALING ANALYSIS:
